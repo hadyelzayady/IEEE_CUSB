@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="seeding.cs" />
     <Compile Include="SubmitRequest.cs">
       <SubType>Form</SubType>
     </Compile>

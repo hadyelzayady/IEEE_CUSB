@@ -71,5 +71,10 @@ namespace IEEECUSB
             new ViewRequest().Show();
             new SubmitRequest().Show();
         }
+
+        private void homeHeader_Pnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

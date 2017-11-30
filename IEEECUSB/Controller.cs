@@ -11,7 +11,8 @@ namespace IEEECUSB
     {
         private DBManager dbMan; // A Reference of type DBManager 
                                  // (Initially NULL; NO DBManager Object is created yet)
-
+        public int UserID;
+        public int CommitteeID;
         public Controller()
         {
             dbMan = new DBManager(); // Create the DBManager Object
@@ -22,31 +23,57 @@ namespace IEEECUSB
         }
         //checks the username/password and returns the priviledges associated with this user
         //Returns 0 in case of error
-        public int CheckPassword_Basic(string username, string password)
+        public DataTable Login(string username, string password)
         {
             //Query the DB to check for username/password
-            string query = $"SELECT priv from Users_basic where username = '{username}' and password={password};";            
-            object p = dbMan.ExecuteScalar(query);
-            if (p == null) return 0;
-            else return (int)p;
+            string query = $"SELECT ID ,Committee_ID from Volunteer where Mail = '{username}' and password={password} limit 1;";            
+            DataTable p = dbMan.ExecuteReader(query);
+            //UserID=p
+            return p;
         }
 
 
 
         public DataTable SelectAllEmp()
         {
+            
             string query = "SELECT * FROM Employee;";
             return dbMan.ExecuteReader(query);
         }
-
-
-        public int InsertProject(string Pname, int pnumber, string Plocation, int Dnum)
+        public DataTable SelectReceivedRequests()
         {
-            string query = "INSERT INTO Project (Pname, Pnumber, Plocation, Dnum)" +
-                            "Values ('" + Pname + "'," + pnumber + ",'" + Plocation + "'," + Dnum + ");";
+
+            string query = $"SELECT * FROM Request join Committee on Reciever_Comm_ID = {CommitteeID};";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectSentRequests()
+        {
+
+            string query = $"SELECT * FROM Request join Committee on Sender_Comm_ID = {CommitteeID};";
+            return dbMan.ExecuteReader(query);
+        }
+        public int InsertRequest(string Title, int Reciever_Comm_ID, int Sender_Comm_ID)
+        {
+            string query = $"INSERT INTO Request (Title, Reciever_Comm_ID, Sender_Comm_ID) Values ({Title},{Reciever_Comm_ID},{Sender_Comm_ID})";
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int InsertTask(string Title, int Reciever_ID, int Sender_ID,int Committee_ID)
+        {
+            string query = $"INSERT INTO Task (Title, Reciever_ID, Assigner_ID,Committee_ID) Values ({Title},{Reciever_ID},{Sender_ID},{Committee_ID})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertVolunteer(string Name )
+        {
+            string query = $"INSERT INTO Volunteer (Name) Values ({Name})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertCommittee(int Season,string Name)
+        {
+            string query = $"INSERT INTO Committee (Season, ID, Name) Values ({Season},{Name})";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public int UpdateEmployee(int ssn, string fname, char minit, string lname, DateTime bdate, String address, String sex, int salary, int dno, int? super_ssn)
         {
             string query = "UPDATE Employee SET "+

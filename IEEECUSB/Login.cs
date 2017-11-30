@@ -11,9 +11,12 @@ namespace IEEECUSB
 {
     public partial class Login : Form
     {
+        public int IDOfCurrentUser;
+        private Controller controllerObj;
         public Login()
         {
             InitializeComponent();
+            controllerObj = new Controller(); // Create the Controler Object
         }
         private bool CheckPassword_Hash(string password)
         {
@@ -25,8 +28,10 @@ namespace IEEECUSB
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             new HeadForm().ShowDialog();
+            
             this.Close();
         }
 
