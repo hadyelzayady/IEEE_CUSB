@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
 
@@ -10,13 +10,16 @@ namespace IEEECUSB
 {
     public class DBManager
     {
-        SqlConnection myConnection;
+        MySqlConnection myConnection;
 
         public DBManager()
         {
-            myConnection = new SqlConnection(Properties.Settings.Default.ConnectionString);
+            string connString = "server=160.153.16.55;user id=TestDB1;database=MahmoudMorsy;PASSWORD=12345678;";
+            myConnection = new MySqlConnection();
+            //Checking Connection
             try
             {
+                myConnection.ConnectionString = connString;
                 myConnection.Open();
                 Console.WriteLine("The DB connection is opened successfully");
             }
@@ -31,7 +34,7 @@ namespace IEEECUSB
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
+                MySqlCommand myCommand = new MySqlCommand(query, myConnection);
                 return myCommand.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -45,8 +48,8 @@ namespace IEEECUSB
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
-                SqlDataReader reader = myCommand.ExecuteReader();
+                MySqlCommand myCommand = new MySqlCommand(query, myConnection);
+                MySqlDataReader reader = myCommand.ExecuteReader();
                 if (reader.HasRows)
                 {
                     DataTable dt = new DataTable();
@@ -71,7 +74,7 @@ namespace IEEECUSB
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
+                MySqlCommand myCommand = new MySqlCommand(query, myConnection);
                 return myCommand.ExecuteScalar();
             }
             catch (Exception ex)

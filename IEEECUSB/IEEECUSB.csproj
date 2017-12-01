@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\..\..\..\..\..\..\mysql6.0.7\mysql6.0.7\mysql.data.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -81,6 +84,11 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MahmoudMorsyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MahmoudMorsyDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MemberForm.cs">
       <SubType>Form</SubType>
@@ -132,6 +140,18 @@
       <DependentUpon>ViewRequest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="MahmoudMorsyDataSet.xsc">
+      <DependentUpon>MahmoudMorsyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MahmoudMorsyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MahmoudMorsyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MahmoudMorsyDataSet.xss">
+      <DependentUpon>MahmoudMorsyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,6 +225,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\feedback1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="docs\MySqlCommand.xml" />
+    <Content Include="docs\MySqlCommandBuilder.xml" />
+    <Content Include="docs\MySqlConnection.xml" />
+    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
+    <Content Include="docs\MySqlDataAdapter.xml" />
+    <Content Include="docs\MySqlDataReader.xml" />
+    <Content Include="docs\MySqlException.xml" />
+    <Content Include="docs\MySqlHelper.xml" />
+    <Content Include="docs\MySqlParameter.xml" />
+    <Content Include="docs\MySqlParameterCollection.xml" />
+    <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

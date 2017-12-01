@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+
 namespace IEEECUSB
 {
     public partial class Login : Form
@@ -28,7 +29,6 @@ namespace IEEECUSB
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             new HeadForm().ShowDialog();
             

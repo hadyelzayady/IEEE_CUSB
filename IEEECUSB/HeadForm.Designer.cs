@@ -186,11 +186,11 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.SentReqList = new System.Windows.Forms.DataGridView();
             this.panel34 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.panel35 = new System.Windows.Forms.Panel();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.ReceivedReqList = new System.Windows.Forms.DataGridView();
             this.panel36 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
@@ -284,10 +284,10 @@
             this.panel32.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel33.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SentReqList)).BeginInit();
             this.panel34.SuspendLayout();
             this.panel35.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceivedReqList)).BeginInit();
             this.panel36.SuspendLayout();
             this.panel37.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -298,7 +298,7 @@
             // 
             this.timetableTab.Controls.Add(this.tableLayoutPanel9);
             this.timetableTab.Location = new System.Drawing.Point(4, 25);
-            this.timetableTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.timetableTab.Margin = new System.Windows.Forms.Padding(2);
             this.timetableTab.Name = "timetableTab";
             this.timetableTab.Size = new System.Drawing.Size(1186, 790);
             this.timetableTab.TabIndex = 9;
@@ -314,7 +314,7 @@
             this.tableLayoutPanel9.Controls.Add(this.panel31, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -330,7 +330,7 @@
             this.panel16.Controls.Add(this.button27);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(2, 750);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1182, 38);
             this.panel16.TabIndex = 7;
@@ -338,7 +338,7 @@
             // button25
             // 
             this.button25.Location = new System.Drawing.Point(337, 0);
-            this.button25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button25.Margin = new System.Windows.Forms.Padding(2);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(191, 37);
             this.button25.TabIndex = 2;
@@ -348,7 +348,7 @@
             // button26
             // 
             this.button26.Location = new System.Drawing.Point(168, 0);
-            this.button26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button26.Margin = new System.Windows.Forms.Padding(2);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(163, 37);
             this.button26.TabIndex = 1;
@@ -358,7 +358,7 @@
             // button27
             // 
             this.button27.Location = new System.Drawing.Point(0, 0);
-            this.button27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button27.Margin = new System.Windows.Forms.Padding(2);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(163, 37);
             this.button27.TabIndex = 0;
@@ -370,7 +370,7 @@
             this.panel29.Controls.Add(this.dataGridView7);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel29.Location = new System.Drawing.Point(2, 124);
-            this.panel29.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel29.Margin = new System.Windows.Forms.Padding(2);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(1182, 622);
             this.panel29.TabIndex = 1;
@@ -382,7 +382,7 @@
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView7.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.ReadOnly = true;
             this.dataGridView7.RowTemplate.Height = 28;
@@ -398,7 +398,7 @@
             this.panel31.Controls.Add(this.pictureBox9);
             this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel31.Location = new System.Drawing.Point(2, 2);
-            this.panel31.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel31.Margin = new System.Windows.Forms.Padding(2);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(1182, 118);
             this.panel31.TabIndex = 1;
@@ -408,7 +408,7 @@
             this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox18.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox18.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(122, 118);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -456,7 +456,7 @@
             // 
             this.pictureBox9.Image = global::IEEECUSB.Properties.Resources.Timetable;
             this.pictureBox9.Location = new System.Drawing.Point(2, 17);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(83, 86);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -467,7 +467,7 @@
             // 
             this.emailTab.Controls.Add(this.tableLayoutPanel8);
             this.emailTab.Location = new System.Drawing.Point(4, 25);
-            this.emailTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTab.Margin = new System.Windows.Forms.Padding(2);
             this.emailTab.Name = "emailTab";
             this.emailTab.Size = new System.Drawing.Size(1186, 790);
             this.emailTab.TabIndex = 8;
@@ -482,7 +482,7 @@
             this.tableLayoutPanel8.Controls.Add(this.panel26, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -496,7 +496,7 @@
             this.panel24.Controls.Add(this.webBrowser2);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel24.Location = new System.Drawing.Point(2, 124);
-            this.panel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(1182, 664);
             this.panel24.TabIndex = 1;
@@ -505,7 +505,7 @@
             // 
             this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser2.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowser2.Margin = new System.Windows.Forms.Padding(2);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(17, 17);
             this.webBrowser2.Name = "webBrowser2";
             this.webBrowser2.Size = new System.Drawing.Size(1182, 664);
@@ -520,7 +520,7 @@
             this.panel26.Controls.Add(this.pictureBox8);
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel26.Location = new System.Drawing.Point(2, 2);
-            this.panel26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel26.Margin = new System.Windows.Forms.Padding(2);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(1182, 118);
             this.panel26.TabIndex = 1;
@@ -530,7 +530,7 @@
             this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox17.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox17.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(122, 118);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -577,7 +577,7 @@
             // 
             this.pictureBox8.Image = global::IEEECUSB.Properties.Resources.Email;
             this.pictureBox8.Location = new System.Drawing.Point(2, 17);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(83, 83);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -588,7 +588,7 @@
             // 
             this.chatTab.Controls.Add(this.tableLayoutPanel7);
             this.chatTab.Location = new System.Drawing.Point(4, 25);
-            this.chatTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chatTab.Margin = new System.Windows.Forms.Padding(2);
             this.chatTab.Name = "chatTab";
             this.chatTab.Size = new System.Drawing.Size(1186, 790);
             this.chatTab.TabIndex = 7;
@@ -603,7 +603,7 @@
             this.tableLayoutPanel7.Controls.Add(this.panel27, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -617,7 +617,7 @@
             this.panel25.Controls.Add(this.webBrowser1);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Location = new System.Drawing.Point(2, 124);
-            this.panel25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(1182, 664);
             this.panel25.TabIndex = 1;
@@ -626,7 +626,7 @@
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(17, 17);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1182, 664);
@@ -641,7 +641,7 @@
             this.panel27.Controls.Add(this.pictureBox7);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel27.Location = new System.Drawing.Point(2, 2);
-            this.panel27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel27.Margin = new System.Windows.Forms.Padding(2);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(1182, 118);
             this.panel27.TabIndex = 1;
@@ -651,7 +651,7 @@
             this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox16.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox16.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(122, 118);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -698,7 +698,7 @@
             // 
             this.pictureBox7.Image = global::IEEECUSB.Properties.Resources.Chat;
             this.pictureBox7.Location = new System.Drawing.Point(2, 15);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(83, 91);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -709,7 +709,7 @@
             // 
             this.monthlyReportTab.Controls.Add(this.tableLayoutPanel6);
             this.monthlyReportTab.Location = new System.Drawing.Point(4, 25);
-            this.monthlyReportTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.monthlyReportTab.Margin = new System.Windows.Forms.Padding(2);
             this.monthlyReportTab.Name = "monthlyReportTab";
             this.monthlyReportTab.Size = new System.Drawing.Size(1186, 790);
             this.monthlyReportTab.TabIndex = 6;
@@ -726,7 +726,7 @@
             this.tableLayoutPanel6.Controls.Add(this.panel23, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 5;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -745,7 +745,7 @@
             this.panel9.Controls.Add(this.button16);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(2, 750);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1182, 38);
             this.panel9.TabIndex = 7;
@@ -753,7 +753,7 @@
             // button13
             // 
             this.button13.Location = new System.Drawing.Point(532, 0);
-            this.button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(212, 37);
             this.button13.TabIndex = 3;
@@ -763,7 +763,7 @@
             // button14
             // 
             this.button14.Location = new System.Drawing.Point(337, 0);
-            this.button14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(191, 37);
             this.button14.TabIndex = 2;
@@ -773,7 +773,7 @@
             // button15
             // 
             this.button15.Location = new System.Drawing.Point(168, 0);
-            this.button15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(163, 37);
             this.button15.TabIndex = 1;
@@ -783,7 +783,7 @@
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(0, 0);
-            this.button16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button16.Margin = new System.Windows.Forms.Padding(2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(163, 37);
             this.button16.TabIndex = 0;
@@ -795,7 +795,7 @@
             this.panel21.Controls.Add(this.dataGridView6);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(2, 182);
-            this.panel21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(1182, 564);
             this.panel21.TabIndex = 1;
@@ -807,7 +807,7 @@
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView6.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.ReadOnly = true;
             this.dataGridView6.RowTemplate.Height = 28;
@@ -819,7 +819,7 @@
             this.panel22.Controls.Add(this.label17);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel22.Location = new System.Drawing.Point(2, 142);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(1182, 36);
             this.panel22.TabIndex = 1;
@@ -846,7 +846,7 @@
             this.panel23.Controls.Add(this.pictureBox6);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel23.Location = new System.Drawing.Point(2, 2);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1182, 118);
             this.panel23.TabIndex = 1;
@@ -856,7 +856,7 @@
             this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox15.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox15.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(122, 118);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -903,7 +903,7 @@
             // 
             this.pictureBox6.Image = global::IEEECUSB.Properties.Resources.report_icon;
             this.pictureBox6.Location = new System.Drawing.Point(2, 7);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(83, 102);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -914,7 +914,7 @@
             // 
             this.calendarTab.Controls.Add(this.calendarLayout_Pnl);
             this.calendarTab.Location = new System.Drawing.Point(4, 25);
-            this.calendarTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calendarTab.Margin = new System.Windows.Forms.Padding(2);
             this.calendarTab.Name = "calendarTab";
             this.calendarTab.Size = new System.Drawing.Size(1186, 790);
             this.calendarTab.TabIndex = 5;
@@ -930,7 +930,7 @@
             this.calendarLayout_Pnl.Controls.Add(this.calendarHeader_Pnl, 0, 0);
             this.calendarLayout_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.calendarLayout_Pnl.Location = new System.Drawing.Point(0, 0);
-            this.calendarLayout_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calendarLayout_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.calendarLayout_Pnl.Name = "calendarLayout_Pnl";
             this.calendarLayout_Pnl.RowCount = 4;
             this.calendarLayout_Pnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -948,7 +948,7 @@
             this.panel8.Controls.Add(this.button38);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(2, 750);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1182, 38);
             this.panel8.TabIndex = 7;
@@ -956,7 +956,7 @@
             // button28
             // 
             this.button28.Location = new System.Drawing.Point(337, 0);
-            this.button28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button28.Margin = new System.Windows.Forms.Padding(2);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(191, 37);
             this.button28.TabIndex = 2;
@@ -966,7 +966,7 @@
             // button37
             // 
             this.button37.Location = new System.Drawing.Point(168, 0);
-            this.button37.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button37.Margin = new System.Windows.Forms.Padding(2);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(163, 37);
             this.button37.TabIndex = 1;
@@ -976,19 +976,20 @@
             // button38
             // 
             this.button38.Location = new System.Drawing.Point(0, 0);
-            this.button38.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button38.Margin = new System.Windows.Forms.Padding(2);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(163, 37);
             this.button38.TabIndex = 0;
             this.button38.Text = "Add Event / Meeting";
             this.button38.UseVisualStyleBackColor = true;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
             // 
             // calendarData_Pnl
             // 
             this.calendarData_Pnl.Controls.Add(this.tableLayoutPanel1);
             this.calendarData_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.calendarData_Pnl.Location = new System.Drawing.Point(2, 136);
-            this.calendarData_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calendarData_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.calendarData_Pnl.Name = "calendarData_Pnl";
             this.calendarData_Pnl.Size = new System.Drawing.Size(1182, 610);
             this.calendarData_Pnl.TabIndex = 1;
@@ -1002,7 +1003,7 @@
             this.tableLayoutPanel1.Controls.Add(this.ieeeCalendar, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1014,7 +1015,7 @@
             this.panel2.Controls.Add(this.eventDetails_GridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(294, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(886, 606);
             this.panel2.TabIndex = 2;
@@ -1024,7 +1025,7 @@
             this.eventDetails_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDetails_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventDetails_GridView.Location = new System.Drawing.Point(0, 0);
-            this.eventDetails_GridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eventDetails_GridView.Margin = new System.Windows.Forms.Padding(2);
             this.eventDetails_GridView.Name = "eventDetails_GridView";
             this.eventDetails_GridView.RowTemplate.Height = 28;
             this.eventDetails_GridView.Size = new System.Drawing.Size(886, 606);
@@ -1035,10 +1036,11 @@
             this.ieeeCalendar.CalendarDimensions = new System.Drawing.Size(1, 3);
             this.ieeeCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ieeeCalendar.Location = new System.Drawing.Point(7, 7);
-            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
             this.ieeeCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.ieeeCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateSelected);
             // 
             // calendarHeader_Pnl
             // 
@@ -1049,17 +1051,18 @@
             this.calendarHeader_Pnl.Controls.Add(this.pictureBox1);
             this.calendarHeader_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.calendarHeader_Pnl.Location = new System.Drawing.Point(2, 2);
-            this.calendarHeader_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calendarHeader_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.calendarHeader_Pnl.Name = "calendarHeader_Pnl";
             this.calendarHeader_Pnl.Size = new System.Drawing.Size(1182, 118);
             this.calendarHeader_Pnl.TabIndex = 2;
+            this.calendarHeader_Pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.calendarHeader_Pnl_Paint);
             // 
             // pictureBox14
             // 
             this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox14.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox14.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(122, 118);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1106,7 +1109,7 @@
             // 
             this.pictureBox1.Image = global::IEEECUSB.Properties.Resources.EventsIcon;
             this.pictureBox1.Location = new System.Drawing.Point(7, 20);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(87, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1117,7 +1120,7 @@
             // 
             this.filesTab.Controls.Add(this.tableLayoutPanel5);
             this.filesTab.Location = new System.Drawing.Point(4, 25);
-            this.filesTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filesTab.Margin = new System.Windows.Forms.Padding(2);
             this.filesTab.Name = "filesTab";
             this.filesTab.Size = new System.Drawing.Size(1186, 790);
             this.filesTab.TabIndex = 4;
@@ -1134,7 +1137,7 @@
             this.tableLayoutPanel5.Controls.Add(this.panel19, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 5;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -1153,7 +1156,7 @@
             this.panel7.Controls.Add(this.button12);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(2, 750);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1182, 38);
             this.panel7.TabIndex = 7;
@@ -1161,7 +1164,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(532, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(212, 37);
             this.button2.TabIndex = 3;
@@ -1171,7 +1174,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(337, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(191, 37);
             this.button3.TabIndex = 2;
@@ -1181,7 +1184,7 @@
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(168, 0);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(163, 37);
             this.button11.TabIndex = 1;
@@ -1191,7 +1194,7 @@
             // button12
             // 
             this.button12.Location = new System.Drawing.Point(0, 0);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(163, 37);
             this.button12.TabIndex = 0;
@@ -1203,7 +1206,7 @@
             this.panel17.Controls.Add(this.dataGridView5);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(2, 182);
-            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(1182, 564);
             this.panel17.TabIndex = 1;
@@ -1215,7 +1218,7 @@
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.RowTemplate.Height = 28;
@@ -1227,7 +1230,7 @@
             this.panel18.Controls.Add(this.label13);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(2, 142);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(1182, 36);
             this.panel18.TabIndex = 1;
@@ -1254,7 +1257,7 @@
             this.panel19.Controls.Add(this.pictureBox5);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(2, 2);
-            this.panel19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel19.Margin = new System.Windows.Forms.Padding(2);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(1182, 118);
             this.panel19.TabIndex = 1;
@@ -1264,7 +1267,7 @@
             this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox13.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox13.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(122, 118);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1311,7 +1314,7 @@
             // 
             this.pictureBox5.Image = global::IEEECUSB.Properties.Resources.Docs_icon1;
             this.pictureBox5.Location = new System.Drawing.Point(2, 6);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(87, 107);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1322,7 +1325,7 @@
             // 
             this.myTasksTab.Controls.Add(this.tableLayoutPanel4);
             this.myTasksTab.Location = new System.Drawing.Point(4, 25);
-            this.myTasksTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.myTasksTab.Margin = new System.Windows.Forms.Padding(2);
             this.myTasksTab.Name = "myTasksTab";
             this.myTasksTab.Size = new System.Drawing.Size(1186, 790);
             this.myTasksTab.TabIndex = 3;
@@ -1339,7 +1342,7 @@
             this.tableLayoutPanel4.Controls.Add(this.panel15, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -1358,7 +1361,7 @@
             this.panel3.Controls.Add(this.button24);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 750);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1182, 38);
             this.panel3.TabIndex = 6;
@@ -1366,7 +1369,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(532, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(212, 37);
             this.button4.TabIndex = 3;
@@ -1376,7 +1379,7 @@
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(337, 0);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(191, 37);
             this.button9.TabIndex = 2;
@@ -1386,7 +1389,7 @@
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(168, 0);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(163, 37);
             this.button10.TabIndex = 1;
@@ -1396,7 +1399,7 @@
             // button24
             // 
             this.button24.Location = new System.Drawing.Point(0, 0);
-            this.button24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button24.Margin = new System.Windows.Forms.Padding(2);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(163, 37);
             this.button24.TabIndex = 0;
@@ -1408,7 +1411,7 @@
             this.panel10.Controls.Add(this.dataGridView3);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(2, 182);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1182, 564);
             this.panel10.TabIndex = 1;
@@ -1420,7 +1423,7 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowTemplate.Height = 28;
@@ -1432,7 +1435,7 @@
             this.panel11.Controls.Add(this.label5);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(2, 142);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1182, 36);
             this.panel11.TabIndex = 1;
@@ -1459,7 +1462,7 @@
             this.panel15.Controls.Add(this.label12);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(2, 2);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1182, 118);
             this.panel15.TabIndex = 1;
@@ -1468,7 +1471,7 @@
             // 
             this.pictureBox4.Image = global::IEEECUSB.Properties.Resources.Tasks;
             this.pictureBox4.Location = new System.Drawing.Point(2, 14);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(87, 92);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1480,7 +1483,7 @@
             this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox12.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox12.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(122, 118);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1527,7 +1530,7 @@
             // 
             this.tasksTab.Controls.Add(this.tableLayoutPanel3);
             this.tasksTab.Location = new System.Drawing.Point(4, 25);
-            this.tasksTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tasksTab.Margin = new System.Windows.Forms.Padding(2);
             this.tasksTab.Name = "tasksTab";
             this.tasksTab.Size = new System.Drawing.Size(1186, 790);
             this.tasksTab.TabIndex = 2;
@@ -1544,7 +1547,7 @@
             this.tableLayoutPanel3.Controls.Add(this.panel14, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -1564,7 +1567,7 @@
             this.panel6.Controls.Add(this.button7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(2, 750);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1182, 38);
             this.panel6.TabIndex = 5;
@@ -1572,7 +1575,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(749, 0);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(212, 37);
             this.button8.TabIndex = 4;
@@ -1582,7 +1585,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(532, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(212, 37);
             this.button1.TabIndex = 3;
@@ -1592,7 +1595,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(337, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(191, 37);
             this.button5.TabIndex = 2;
@@ -1602,7 +1605,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(168, 0);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(163, 37);
             this.button6.TabIndex = 1;
@@ -1612,7 +1615,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(163, 37);
             this.button7.TabIndex = 0;
@@ -1624,7 +1627,7 @@
             this.panel12.Controls.Add(this.dataGridView4);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(2, 182);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1182, 564);
             this.panel12.TabIndex = 1;
@@ -1636,7 +1639,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowTemplate.Height = 28;
@@ -1648,7 +1651,7 @@
             this.panel13.Controls.Add(this.label6);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(2, 142);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1182, 36);
             this.panel13.TabIndex = 1;
@@ -1675,17 +1678,18 @@
             this.panel14.Controls.Add(this.pictureBox3);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(2, 2);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1182, 118);
             this.panel14.TabIndex = 1;
+            this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel14_Paint);
             // 
             // pictureBox10
             // 
             this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox10.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox10.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(122, 118);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1732,7 +1736,7 @@
             // 
             this.pictureBox3.Image = global::IEEECUSB.Properties.Resources.CommitteeTask;
             this.pictureBox3.Location = new System.Drawing.Point(2, 13);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(87, 92);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1759,12 +1763,13 @@
             this.headTabControl.SelectedIndex = 0;
             this.headTabControl.Size = new System.Drawing.Size(1194, 819);
             this.headTabControl.TabIndex = 0;
+            this.headTabControl.Click += new System.EventHandler(this.headTabControl_Click);
             // 
             // homeTab
             // 
             this.homeTab.Controls.Add(this.homeLayout_Pnl);
             this.homeTab.Location = new System.Drawing.Point(4, 25);
-            this.homeTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homeTab.Margin = new System.Windows.Forms.Padding(2);
             this.homeTab.Name = "homeTab";
             this.homeTab.Size = new System.Drawing.Size(1186, 790);
             this.homeTab.TabIndex = 11;
@@ -1783,7 +1788,7 @@
             this.homeLayout_Pnl.Controls.Add(this.homeHeader_Pnl, 0, 0);
             this.homeLayout_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeLayout_Pnl.Location = new System.Drawing.Point(0, 0);
-            this.homeLayout_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homeLayout_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.homeLayout_Pnl.Name = "homeLayout_Pnl";
             this.homeLayout_Pnl.RowCount = 8;
             this.homeLayout_Pnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
@@ -1807,7 +1812,7 @@
             this.footerLayout_Pnl.Controls.Add(this.button29);
             this.footerLayout_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.footerLayout_Pnl.Location = new System.Drawing.Point(2, 749);
-            this.footerLayout_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.footerLayout_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.footerLayout_Pnl.Name = "footerLayout_Pnl";
             this.footerLayout_Pnl.Size = new System.Drawing.Size(1182, 39);
             this.footerLayout_Pnl.TabIndex = 1;
@@ -1815,7 +1820,7 @@
             // button33
             // 
             this.button33.Location = new System.Drawing.Point(978, 0);
-            this.button33.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button33.Margin = new System.Windows.Forms.Padding(2);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(163, 37);
             this.button33.TabIndex = 7;
@@ -1825,7 +1830,7 @@
             // button35
             // 
             this.button35.Location = new System.Drawing.Point(749, 0);
-            this.button35.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button35.Margin = new System.Windows.Forms.Padding(2);
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(224, 37);
             this.button35.TabIndex = 6;
@@ -1835,7 +1840,7 @@
             // button32
             // 
             this.button32.Location = new System.Drawing.Point(532, 0);
-            this.button32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button32.Margin = new System.Windows.Forms.Padding(2);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(212, 37);
             this.button32.TabIndex = 3;
@@ -1845,7 +1850,7 @@
             // button31
             // 
             this.button31.Location = new System.Drawing.Point(337, 0);
-            this.button31.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button31.Margin = new System.Windows.Forms.Padding(2);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(191, 37);
             this.button31.TabIndex = 2;
@@ -1855,7 +1860,7 @@
             // button30
             // 
             this.button30.Location = new System.Drawing.Point(168, 0);
-            this.button30.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button30.Margin = new System.Windows.Forms.Padding(2);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(163, 37);
             this.button30.TabIndex = 1;
@@ -1865,7 +1870,7 @@
             // button29
             // 
             this.button29.Location = new System.Drawing.Point(0, 0);
-            this.button29.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button29.Margin = new System.Windows.Forms.Padding(2);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(163, 37);
             this.button29.TabIndex = 0;
@@ -1878,7 +1883,7 @@
             this.notificationsContent_Pnl.Controls.Add(this.notificationsData_GridView);
             this.notificationsContent_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notificationsContent_Pnl.Location = new System.Drawing.Point(2, 442);
-            this.notificationsContent_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.notificationsContent_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.notificationsContent_Pnl.Name = "notificationsContent_Pnl";
             this.notificationsContent_Pnl.Size = new System.Drawing.Size(1182, 303);
             this.notificationsContent_Pnl.TabIndex = 1;
@@ -1890,7 +1895,7 @@
             this.notificationsData_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notificationsData_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notificationsData_GridView.Location = new System.Drawing.Point(0, 0);
-            this.notificationsData_GridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.notificationsData_GridView.Margin = new System.Windows.Forms.Padding(2);
             this.notificationsData_GridView.Name = "notificationsData_GridView";
             this.notificationsData_GridView.ReadOnly = true;
             this.notificationsData_GridView.RowTemplate.Height = 28;
@@ -1902,7 +1907,7 @@
             this.panel1.Controls.Add(this.notificationsTitle_Lbl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 403);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 35);
             this.panel1.TabIndex = 2;
@@ -1925,7 +1930,7 @@
             this.updatesContent_Pnl.Controls.Add(this.updatesData_GridView);
             this.updatesContent_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updatesContent_Pnl.Location = new System.Drawing.Point(2, 182);
-            this.updatesContent_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updatesContent_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.updatesContent_Pnl.Name = "updatesContent_Pnl";
             this.updatesContent_Pnl.Size = new System.Drawing.Size(1182, 200);
             this.updatesContent_Pnl.TabIndex = 1;
@@ -1937,7 +1942,7 @@
             this.updatesData_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.updatesData_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updatesData_GridView.Location = new System.Drawing.Point(0, 0);
-            this.updatesData_GridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updatesData_GridView.Margin = new System.Windows.Forms.Padding(2);
             this.updatesData_GridView.Name = "updatesData_GridView";
             this.updatesData_GridView.ReadOnly = true;
             this.updatesData_GridView.RowTemplate.Height = 28;
@@ -1949,7 +1954,7 @@
             this.updatesTitle_Pnl.Controls.Add(this.updatesTitle_Lbl);
             this.updatesTitle_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updatesTitle_Pnl.Location = new System.Drawing.Point(2, 142);
-            this.updatesTitle_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updatesTitle_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.updatesTitle_Pnl.Name = "updatesTitle_Pnl";
             this.updatesTitle_Pnl.Size = new System.Drawing.Size(1182, 36);
             this.updatesTitle_Pnl.TabIndex = 1;
@@ -1976,7 +1981,7 @@
             this.homeHeader_Pnl.Controls.Add(this.logoPictureBox);
             this.homeHeader_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeHeader_Pnl.Location = new System.Drawing.Point(2, 2);
-            this.homeHeader_Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homeHeader_Pnl.Margin = new System.Windows.Forms.Padding(2);
             this.homeHeader_Pnl.Name = "homeHeader_Pnl";
             this.homeHeader_Pnl.Size = new System.Drawing.Size(1182, 118);
             this.homeHeader_Pnl.TabIndex = 1;
@@ -1987,7 +1992,7 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox2.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox2.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(122, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2034,7 +2039,7 @@
             // 
             this.logoPictureBox.Image = global::IEEECUSB.Properties.Resources.logo_Recovered21;
             this.logoPictureBox.Location = new System.Drawing.Point(2, 2);
-            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(83, 112);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2045,7 +2050,7 @@
             // 
             this.requestsTab.Controls.Add(this.tableLayoutPanel10);
             this.requestsTab.Location = new System.Drawing.Point(4, 25);
-            this.requestsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.requestsTab.Margin = new System.Windows.Forms.Padding(2);
             this.requestsTab.Name = "requestsTab";
             this.requestsTab.Size = new System.Drawing.Size(1186, 790);
             this.requestsTab.TabIndex = 10;
@@ -2088,7 +2093,7 @@
             this.panel4.Controls.Add(this.button36);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(2, 750);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1182, 38);
             this.panel4.TabIndex = 3;
@@ -2096,7 +2101,7 @@
             // button20
             // 
             this.button20.Location = new System.Drawing.Point(532, 0);
-            this.button20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button20.Margin = new System.Windows.Forms.Padding(2);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(212, 37);
             this.button20.TabIndex = 3;
@@ -2107,7 +2112,7 @@
             // button21
             // 
             this.button21.Location = new System.Drawing.Point(337, 0);
-            this.button21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button21.Margin = new System.Windows.Forms.Padding(2);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(191, 37);
             this.button21.TabIndex = 2;
@@ -2117,18 +2122,18 @@
             // button34
             // 
             this.button34.Location = new System.Drawing.Point(168, 0);
-            this.button34.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button34.Margin = new System.Windows.Forms.Padding(2);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(163, 37);
             this.button34.TabIndex = 1;
             this.button34.Text = "Delete Request";
             this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
+            this.button34.Click += new System.EventHandler(this.DeleteRequest);
             // 
             // button36
             // 
             this.button36.Location = new System.Drawing.Point(0, 0);
-            this.button36.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button36.Margin = new System.Windows.Forms.Padding(2);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(163, 37);
             this.button36.TabIndex = 0;
@@ -2141,7 +2146,7 @@
             this.panel32.Controls.Add(this.panel5);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel32.Location = new System.Drawing.Point(2, 424);
-            this.panel32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel32.Margin = new System.Windows.Forms.Padding(2);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(1182, 38);
             this.panel32.TabIndex = 1;
@@ -2154,7 +2159,7 @@
             this.panel5.Controls.Add(this.button23);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1182, 38);
             this.panel5.TabIndex = 4;
@@ -2162,17 +2167,18 @@
             // button18
             // 
             this.button18.Location = new System.Drawing.Point(532, 0);
-            this.button18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button18.Margin = new System.Windows.Forms.Padding(2);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(212, 37);
             this.button18.TabIndex = 3;
             this.button18.Text = "Update / Submit Request";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.SubmitRequest);
             // 
             // button19
             // 
             this.button19.Location = new System.Drawing.Point(337, 0);
-            this.button19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button19.Margin = new System.Windows.Forms.Padding(2);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(191, 37);
             this.button19.TabIndex = 2;
@@ -2182,53 +2188,58 @@
             // button22
             // 
             this.button22.Location = new System.Drawing.Point(168, 0);
-            this.button22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button22.Margin = new System.Windows.Forms.Padding(2);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(163, 37);
             this.button22.TabIndex = 1;
             this.button22.Text = "Reject Request";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.RejectRequest);
             // 
             // button23
             // 
             this.button23.Location = new System.Drawing.Point(0, 0);
-            this.button23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button23.Margin = new System.Windows.Forms.Padding(2);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(163, 37);
             this.button23.TabIndex = 0;
             this.button23.Text = "Accept Request";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.AcceptRequest);
             // 
             // panel33
             // 
-            this.panel33.Controls.Add(this.dataGridView8);
+            this.panel33.Controls.Add(this.SentReqList);
             this.panel33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel33.Location = new System.Drawing.Point(2, 508);
-            this.panel33.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel33.Margin = new System.Windows.Forms.Padding(2);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(1182, 238);
             this.panel33.TabIndex = 1;
             // 
-            // dataGridView8
+            // SentReqList
             // 
-            this.dataGridView8.AllowUserToAddRows = false;
-            this.dataGridView8.AllowUserToDeleteRows = false;
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView8.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.ReadOnly = true;
-            this.dataGridView8.RowTemplate.Height = 28;
-            this.dataGridView8.Size = new System.Drawing.Size(1182, 238);
-            this.dataGridView8.TabIndex = 1;
+            this.SentReqList.AllowUserToAddRows = false;
+            this.SentReqList.AllowUserToDeleteRows = false;
+            this.SentReqList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SentReqList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SentReqList.Location = new System.Drawing.Point(0, 0);
+            this.SentReqList.Margin = new System.Windows.Forms.Padding(2);
+            this.SentReqList.MultiSelect = false;
+            this.SentReqList.Name = "SentReqList";
+            this.SentReqList.ReadOnly = true;
+            this.SentReqList.RowTemplate.Height = 28;
+            this.SentReqList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SentReqList.Size = new System.Drawing.Size(1182, 238);
+            this.SentReqList.TabIndex = 1;
+            this.SentReqList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SentReqList_CellContentClick);
             // 
             // panel34
             // 
             this.panel34.Controls.Add(this.label27);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel34.Location = new System.Drawing.Point(2, 466);
-            this.panel34.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel34.Margin = new System.Windows.Forms.Padding(2);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(1182, 38);
             this.panel34.TabIndex = 2;
@@ -2248,37 +2259,41 @@
             // 
             // panel35
             // 
-            this.panel35.Controls.Add(this.dataGridView9);
+            this.panel35.Controls.Add(this.ReceivedReqList);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel35.Location = new System.Drawing.Point(2, 182);
-            this.panel35.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel35.Margin = new System.Windows.Forms.Padding(2);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(1182, 238);
             this.panel35.TabIndex = 1;
             // 
-            // dataGridView9
+            // ReceivedReqList
             // 
-            this.dataGridView9.AllowUserToAddRows = false;
-            this.dataGridView9.AllowUserToDeleteRows = false;
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView9.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.ReadOnly = true;
-            this.dataGridView9.RowTemplate.Height = 28;
-            this.dataGridView9.Size = new System.Drawing.Size(1182, 238);
-            this.dataGridView9.TabIndex = 0;
+            this.ReceivedReqList.AllowUserToAddRows = false;
+            this.ReceivedReqList.AllowUserToDeleteRows = false;
+            this.ReceivedReqList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReceivedReqList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReceivedReqList.Location = new System.Drawing.Point(0, 0);
+            this.ReceivedReqList.Margin = new System.Windows.Forms.Padding(2);
+            this.ReceivedReqList.MultiSelect = false;
+            this.ReceivedReqList.Name = "ReceivedReqList";
+            this.ReceivedReqList.ReadOnly = true;
+            this.ReceivedReqList.RowTemplate.Height = 28;
+            this.ReceivedReqList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ReceivedReqList.Size = new System.Drawing.Size(1182, 238);
+            this.ReceivedReqList.TabIndex = 0;
+            this.ReceivedReqList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellContentClick);
             // 
             // panel36
             // 
             this.panel36.Controls.Add(this.label31);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel36.Location = new System.Drawing.Point(2, 142);
-            this.panel36.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel36.Margin = new System.Windows.Forms.Padding(2);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(1182, 36);
             this.panel36.TabIndex = 1;
+            this.panel36.Paint += new System.Windows.Forms.PaintEventHandler(this.panel36_Paint);
             // 
             // label31
             // 
@@ -2302,17 +2317,18 @@
             this.panel37.Controls.Add(this.pictureBox20);
             this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel37.Location = new System.Drawing.Point(2, 2);
-            this.panel37.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel37.Margin = new System.Windows.Forms.Padding(2);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(1182, 118);
             this.panel37.TabIndex = 1;
+            this.panel37.Paint += new System.Windows.Forms.PaintEventHandler(this.panel37_Paint);
             // 
             // pictureBox19
             // 
             this.pictureBox19.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox19.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
             this.pictureBox19.Location = new System.Drawing.Point(1060, 0);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(122, 118);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2359,7 +2375,7 @@
             // 
             this.pictureBox20.Image = global::IEEECUSB.Properties.Resources.Requests_2;
             this.pictureBox20.Location = new System.Drawing.Point(2, 15);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(92, 92);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2372,7 +2388,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1194, 819);
             this.Controls.Add(this.headTabControl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HeadForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IEEE CUSB Portal";
@@ -2477,11 +2493,11 @@
             this.panel32.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SentReqList)).EndInit();
             this.panel34.ResumeLayout(false);
             this.panel34.PerformLayout();
             this.panel35.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceivedReqList)).EndInit();
             this.panel36.ResumeLayout(false);
             this.panel36.PerformLayout();
             this.panel37.ResumeLayout(false);
@@ -2589,11 +2605,11 @@
         private System.Windows.Forms.TabPage requestsTab;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Panel panel33;
-        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView SentReqList;
         private System.Windows.Forms.Panel panel34;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.DataGridView dataGridView9;
+        private System.Windows.Forms.DataGridView ReceivedReqList;
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel panel37;

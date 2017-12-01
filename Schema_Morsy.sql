@@ -1,6 +1,6 @@
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Volunteer` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `Gender` CHAR NOT NULL,
   `National_ID` VARCHAR(14) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Volunteer` (
     
     CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Committee` (
   `Season` YEAR NOT NULL,
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `Start_Date` DATE NULL,
   `End_Date` DATE NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Volunteer` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Request` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Title` VARCHAR(45) NOT NULL,
   `Description` VARCHAR(45) NULL,
   `Priority` INT NULL,
@@ -65,8 +65,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Request` (
   `Deadline_Date` DATE NULL,
   `Sender_Comm_ID` INT NOT NULL,
   `Reciever_Comm_ID` INT NOT NULL,
-  `Status` ENUM('Accepted','Rejected'),
-  `Progress_Description` VARCHAR(100) NULL,
+   `Progress_Description` VARCHAR(100) NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
   FOREIGN KEY (`Sender_Comm_ID`)
@@ -91,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Request` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Participant` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `National_ID` VARCHAR(14) NOT NULL,
   `Name` VARCHAR(45) NULL,
   `Gender` CHAR NOT NULL,
@@ -120,13 +119,15 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Session` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Task` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Title` VARCHAR(45) NOT NULL,
   `Start_Date` DATE NULL,
   `End_Date` DATE NULL,
   `Creation_Date` DATE NULL,
   `Deadline_Date` DATE NULL,
+  `Submission_Date` DATE NULL,
   `Progress` INT NULL,
+  `Status` enum ('Accepted','Rejected'),
   `Committee_ID` INT NOT NULL,
   `Assigner_ID` INT NOT NULL,
   `Reciever_ID` INT NOT NULL,
@@ -144,9 +145,22 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Task` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Event` (
+  `ID` INT auto_increment NOT NULL,
+  `Title` VARCHAR(45) NOT NULL,
+  `Description` VARCHAR(125) NULL,
+  `Start_Date` DATE NULL,
+  `End_Date` DATE NULL,
+  `Committee_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`Committee_ID`)
+    REFERENCES `MahmoudMorsy`.`Committee` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Workshop` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Committee_ID` INT NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `Outline` VARCHAR(45) NULL,
@@ -161,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Workshop` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Message` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Sender_ID` INT NOT NULL,
   `Reciever_ID` INT NOT NULL,
   `Text` VARCHAR(255) NOT NULL,
@@ -179,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Message` (
 
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Complaint` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Sender_ID` INT NOT NULL,
   `Title` VARCHAR(45) NOT NULL,
   `Description` VARCHAR(255) NULL,
@@ -210,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Timetable` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`File` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Title` VARCHAR(45) NOT NULL,
   `Description` VARCHAR(255) NULL,
   `Version` INT NOT NULL,
@@ -230,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`File` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Notification` (
-  `ID` INT NOT NULL,
+  `ID` INT auto_increment NOT NULL,
   `Description` VARCHAR(255) NOT NULL,
   `Type` VARCHAR(45) NOT NULL,
   `Vol_ID` INT NOT NULL,
@@ -280,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Volunteer_Session_Attend` (
     ON UPDATE NO ACTION,
     FOREIGN KEY (`Attender_ID`)
     REFERENCES `MahmoudMorsy`.`Volunteer` (`ID`)
-    ON DELETE NO ACTION
+    OEventN DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Participant_Session_Attend` (
@@ -299,5 +313,6 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Participant_Session_Attend` (
     REFERENCES `MahmoudMorsy`.`Volunteer` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);   
+
 
 

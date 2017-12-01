@@ -33,5 +33,15 @@ namespace IEEECUSB.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=160.153.16.55;user id=TestDB1;password=12345678;database=MahmoudMorsy")]
+        public string MahmoudMorsyConnectionString {
+            get {
+                return ((string)(this["MahmoudMorsyConnectionString"]));
+            }
+        }
     }
 }
