@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace IEEECUSB
 {
-    public partial class MemberForm : Form
+    public partial class AddTask : Form
     {
-        public MemberForm()
+        public AddTask()
         {
             InitializeComponent();
         }

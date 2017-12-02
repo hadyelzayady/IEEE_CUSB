@@ -11,13 +11,12 @@ namespace IEEECUSB
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        
         static void Main()
         {
-   
-            seeding s=new seeding();
+           // if (Environment.OSVersion.Version.Major == 6)
+                // SetProcessDPIAware();
+                //seeding s = new seeding();
             Application.EnableVisualStyles();
-
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
         }

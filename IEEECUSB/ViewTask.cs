@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace IEEECUSB
 {
-    public partial class MemberForm : Form
+    public partial class ViewTask : Form
     {
-        public MemberForm()
+        public ViewTask()
         {
             InitializeComponent();
+        }
+
+        private void ViewTask_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

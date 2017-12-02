@@ -25,13 +25,13 @@ namespace IEEECUSB
             HashAlgorithm algorithm = new SHA256Managed();
             string passwordandsalt = password + salt;
             string hashed = Convert.ToBase64String(algorithm.ComputeHash(Encoding.UTF8.GetBytes(passwordandsalt)));
-            return hashed == "w+0fHMgNFl7jSDJ7WpvRfIQLzfflSi9pPNdiQg+v4/E="; 
+            return hashed == "w+0fHMgNFl7jSDJ7WpvRfIQLzfflSi9pPNdiQg+v4/E=";
         }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             new HeadForm().ShowDialog();
-            
+
             this.Close();
         }
 

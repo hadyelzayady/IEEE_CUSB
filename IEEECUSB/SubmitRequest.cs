@@ -15,13 +15,13 @@ namespace IEEECUSB
         private int requestID;
         public SubmitRequest(DataGridViewSelectedRowCollection request)
         {
-            InitializeComponent();
-            controllerObj = new Controller();
-            requestID = (int)request[0].Cells[0].Value;
-            RequestTitle.Text = request[0].Cells[1].Value.ToString();
-            RequestingComm.Text = request[0].Cells[2].Value.ToString();
-            RequestStartDate.Text = request[0].Cells[4].Value.ToString();
-            RequestEndDate.Text = request[0].Cells[5].Value.ToString();
+            //InitializeComponent();
+            //controllerObj = new Controller();
+            //requestID = (int)request[0].Cells[0].Value;
+            //RequestTitle.Text = request[0].Cells[1].Value.ToString();
+            //RequestingComm.Text = request[0].Cells[2].Value.ToString();
+            //RequestStartDate.Text = request[0].Cells[4].Value.ToString();
+            //RequestEndDate.Text = request[0].Cells[5].Value.ToString();
 
         }
 
@@ -31,24 +31,24 @@ namespace IEEECUSB
 
         private void UpdateRequest(object sender, EventArgs e)
         {
-            string progressDesc = progressTextBox.Text;
-            int progressPerc;
-            int.TryParse(ProgressPerc.Text, out progressPerc);
-            if (int.TryParse(ProgressPerc.Text, out progressPerc))
-            {
+            //string progressDesc = progressTextBox.Text;
+            //int progressPerc;
+            //int.TryParse(ProgressPerc.Text, out progressPerc);
+            //if (int.TryParse(ProgressPerc.Text, out progressPerc))
+            //{
 
-                if (controllerObj.MemeberSubmitRequest(requestID, progressDesc, progressPerc) == 1)
-                {
-                    //show success
+            //    if (controllerObj.MemeberSubmitRequest(requestID, progressDesc, progressPerc) == 1)
+            //    {
+            //        //show success
 
-                    return;
-                }
-                //error
-                return;
-            }
+            //        return;
+            //    }
+            //    //error
+            //    return;
+            //}
 
-            MessageBox.Show("enter integer value");
-            return;
+            //MessageBox.Show("enter integer value");
+            //return;
         }
 
         private void progressTextBox_TextChanged(object sender, EventArgs e)
