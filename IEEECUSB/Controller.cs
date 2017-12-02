@@ -54,14 +54,14 @@ namespace IEEECUSB
         public DataTable SelectReceivedRequests()
         {
 
-            string query = $"SELECT Request.ID,Title , Committee.Name as 'Sender Committee' , Description , DATE_FORMAT(Request.Start_date,'%y%m%d') ,DATE_FORMAT(Request.End_date,'%y%m%d') ,Priority,Status FROM Request join Committee on Committee.ID = Sender_Comm_ID  where Reciever_Comm_ID = {CommitteeID};";
+            string query = $"SELECT Request.ID,Title , Committee.Name as 'Sender Committee' , Description , DATE_FORMAT(Request.Start_date,'%Y-%m-%d') ,DATE_FORMAT(Request.End_date,'%Y-%m-%d') ,Priority,Status FROM Request join Committee on Committee.ID = Sender_Comm_ID  where Reciever_Comm_ID = {CommitteeID};";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable SelectSentRequests()
         {
 
-            string query = $"SELECT Request.ID,Title , Committee.Name as 'Received Committee' , Description ,DATE_FORMAT(Request.Start_date,'%y%m%d') ,DATE_FORMAT(Request.End_date,'%y%m%d') ,Priority,Status FROM Request join Committee on Committee.ID = Reciever_Comm_ID  where Sender_Comm_ID = {CommitteeID};";
+            string query = $"SELECT Request.ID,Title , Committee.Name as 'Received Committee' , Description ,DATE_FORMAT(Request.Start_date,'%Y-%m-%d') ,DATE_FORMAT(Request.End_date,'%Y-%m-%d') ,Priority,Status FROM Request join Committee on Committee.ID = Reciever_Comm_ID  where Sender_Comm_ID = {CommitteeID};";
             return dbMan.ExecuteReader(query);
         }
         public int InsertRequest(string Title,string Desc,string Start_Date,string End_Date, int Reciever_Comm_ID)
