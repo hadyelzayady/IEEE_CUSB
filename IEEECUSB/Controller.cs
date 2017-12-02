@@ -69,7 +69,11 @@ namespace IEEECUSB
             string query = $"INSERT INTO Request (Title, Reciever_Comm_ID,Description,Start_Date,End_Date, Sender_Comm_ID) Values ('{Title}',{Reciever_Comm_ID},'{Desc}','{Start_Date}','{End_Date}',{CommitteeID})";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        internal int EditRequest(int requestID, string Title, string Description, string Start_Date, string End_Date, int Reciever_Comm_ID)
+        {
+            string query = $"UPDATE Request SET Status =NULL,Title={Title},Description={Description},Start_Date={Start_Date},End_Date={End_Date},Creation_Date={DateTime.Today},Reciever_Comm_ID=(select ID From Committee where Name={Reciever_Comm_ID}),Sender_Comm_ID={CommitteeID} where ID={requestID}";
+            return dbMan.ExecuteNonQuery(query);
+        }
         internal DataTable SelectEvents(DateTime date)
         {
             string query = $"SELECT Title FROM Event join Committee on Event.ID =Committee.ID where Committee.ID={CommitteeID} AND '{date.ToString("yyyy-MM-dd")}' between Event.Start_Date and Event.End_Date ;";
@@ -134,11 +138,7 @@ namespace IEEECUSB
             string query = $"DELETE FROM Request WHERE ID={Request_ID};";
             return dbMan.ExecuteNonQuery(query);
         }
-        internal int EditRequest(int requestID, string Title, string Description,DateTime Start_Date,DateTime End_Date,string Recieving_Comm_Name)
-        {
-            string query = $"UPDATE Request SET Status =NULL,Title={Title},Description={Description},Start_Date={Start_Date},End_Date={End_Date},Creation_Date={DateTime.Today},Reciever_Comm_ID=(select ID From Committee where Name={Recieving_Comm_Name}),Sender_Comm_ID={CommitteeID} where ID={requestID}";
-            return dbMan.ExecuteNonQuery(query);
-        }
+
         public DataTable Committee_File(int Committee_ID)
         {
             string query = "SELECT Title , Description , Version, Opened , Type FROM File Where Committee_ID =" + Committee_ID + "; ";

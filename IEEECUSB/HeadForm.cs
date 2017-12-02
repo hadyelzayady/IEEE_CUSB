@@ -210,16 +210,21 @@ namespace IEEECUSB
 
         private void EditRequest(object sender, EventArgs e)
         {
-            //DataGridViewSelectedRowCollection selected = SentReqList.SelectedRows;
-            //if (selected.Count != 0)
-            //{
-            //    new 
-            //}
+            DataGridViewSelectedRowCollection selected = SentReqList.SelectedRows;
+            if (selected.Count != 0)
+            {
+                new EditRequest(selected).ShowDialog();
+            }
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
         {
             Refresh(1, 1);
+        }
+
+        private void ReceivedReqList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

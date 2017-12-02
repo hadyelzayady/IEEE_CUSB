@@ -91,9 +91,9 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(9, 398);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(742, 55);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
@@ -101,7 +101,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(9, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 36);
             this.button1.TabIndex = 19;
@@ -111,7 +111,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(523, 13);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(105, 36);
             this.button6.TabIndex = 18;
@@ -122,7 +122,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(413, 13);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(105, 36);
             this.button5.TabIndex = 17;
@@ -132,7 +132,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(632, 13);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 36);
             this.button2.TabIndex = 14;
@@ -154,9 +154,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(9, 75);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(742, 99);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
@@ -165,7 +165,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(518, 16);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(220, 24);
@@ -174,7 +174,7 @@
             // RequestTitle
             // 
             this.RequestTitle.Location = new System.Drawing.Point(144, 67);
-            this.RequestTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestTitle.Margin = new System.Windows.Forms.Padding(2);
             this.RequestTitle.Name = "RequestTitle";
             this.RequestTitle.ReadOnly = true;
             this.RequestTitle.Size = new System.Drawing.Size(204, 24);
@@ -203,7 +203,7 @@
             // RequestingComm
             // 
             this.RequestingComm.Location = new System.Drawing.Point(144, 16);
-            this.RequestingComm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestingComm.Margin = new System.Windows.Forms.Padding(2);
             this.RequestingComm.Name = "RequestingComm";
             this.RequestingComm.ReadOnly = true;
             this.RequestingComm.Size = new System.Drawing.Size(204, 24);
@@ -223,7 +223,7 @@
             // 
             this.RequestEndDate.ForeColor = System.Drawing.Color.Red;
             this.RequestEndDate.Location = new System.Drawing.Point(518, 67);
-            this.RequestEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.RequestEndDate.Name = "RequestEndDate";
             this.RequestEndDate.ReadOnly = true;
             this.RequestEndDate.Size = new System.Drawing.Size(220, 24);
@@ -233,7 +233,7 @@
             // RequestStartDate
             // 
             this.RequestStartDate.Location = new System.Drawing.Point(519, 42);
-            this.RequestStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.RequestStartDate.Name = "RequestStartDate";
             this.RequestStartDate.ReadOnly = true;
             this.RequestStartDate.Size = new System.Drawing.Size(220, 24);
@@ -252,7 +252,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(144, 42);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(204, 24);
@@ -285,18 +285,19 @@
             this.groupBox1.Controls.Add(this.ProgressDesc);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(9, 179);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(742, 219);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Submission Details";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // ProgressPerc
             // 
             this.ProgressPerc.Location = new System.Drawing.Point(144, 20);
-            this.ProgressPerc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProgressPerc.Margin = new System.Windows.Forms.Padding(2);
             this.ProgressPerc.Name = "ProgressPerc";
             this.ProgressPerc.Size = new System.Drawing.Size(204, 24);
             this.ProgressPerc.TabIndex = 15;
@@ -314,7 +315,7 @@
             // ProgressDesc
             // 
             this.ProgressDesc.Location = new System.Drawing.Point(9, 70);
-            this.ProgressDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProgressDesc.Margin = new System.Windows.Forms.Padding(2);
             this.ProgressDesc.Multiline = true;
             this.ProgressDesc.Name = "ProgressDesc";
             this.ProgressDesc.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -335,7 +336,7 @@
             // 
             this.pictureBox20.Image = global::IEEECUSB.Properties.Resources.Requests_2;
             this.pictureBox20.Location = new System.Drawing.Point(9, 10);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(62, 61);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,7 +354,7 @@
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.pictureBox20);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "SubmitRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

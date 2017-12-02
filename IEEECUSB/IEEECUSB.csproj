@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="EditRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRequest.Designer.cs">
+      <DependentUpon>EditRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddTask.resx">
       <DependentUpon>AddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRequest.resx">
+      <DependentUpon>EditRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeadForm.resx">
       <DependentUpon>HeadForm.cs</DependentUpon>

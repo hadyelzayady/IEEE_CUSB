@@ -60,5 +60,10 @@ namespace IEEECUSB
             int RecCommID = (int)RecComm.SelectedValue;
             controllerObj.InsertRequest(Title, Desc,StartDate,EndDate, RecCommID);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
