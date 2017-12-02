@@ -1,0 +1,17 @@
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='1', `Vice_ID`='2' WHERE `Season`=2017 and`ID`='1';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='3', `Vice_ID`='5' WHERE `Season`=2017 and`ID`='2';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='7', `Vice_ID`='8' WHERE `Season`=2017 and`ID`='3';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='10', `Vice_ID`='11' WHERE `Season`=2017 and`ID`='4';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='13', `Vice_ID`='14' WHERE `Season`=2017 and`ID`='5';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='16', `Vice_ID`='17' WHERE `Season`=2017 and`ID`='6';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='19', `Vice_ID`='20' WHERE `Season`=2017 and`ID`='7';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='22', `Vice_ID`='23' WHERE `Season`=2017 and`ID`='8';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='25', `Vice_ID`='26' WHERE `Season`=2017 and`ID`='9';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='28', `Vice_ID`='29' WHERE `Season`=2017 and`ID`='10';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='31', `Vice_ID`='32' WHERE `Season`=2017 and`ID`='11';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='34', `Vice_ID`='35' WHERE `Season`=2017 and`ID`='12';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='37', `Vice_ID`='38' WHERE `Season`=2017 and`ID`='13';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='40', `Vice_ID`='41' WHERE `Season`=2017 and`ID`='14';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='43', `Vice_ID`='44' WHERE `Season`=2017 and`ID`='15';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='46', `Vice_ID`='47' WHERE `Season`=2017 and`ID`='16';
+UPDATE `MahmoudMorsy`.`Committee` SET `Head_ID`='49', `Vice_ID`='50' WHERE `Season`=2017 and`ID`='17';

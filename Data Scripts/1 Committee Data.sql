@@ -1,0 +1,17 @@
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '1','Human Resources' , '1');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '2','Quality Control' , '1');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '3','Innovation' , '1');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '4','Magazine' , '1');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '5','Coaching' , '1');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '6','Public Relation' , '2');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '7','Fundraising' , '2');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '8','Organizing' , '2');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '9','IT' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '10','Computer' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '11','Embedded' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '12','Electronics' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '13','Power' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '14','Youth Development' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '15','RAS' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '16','Multimedia' , '3');
+INSERT INTO `MahmoudMorsy`.`Committee` (`Season`, `ID`, `Name` , `Section_ID`) VALUES (2017, '17','Marketing' , '3');
