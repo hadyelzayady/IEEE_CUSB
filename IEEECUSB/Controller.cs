@@ -12,7 +12,7 @@ namespace IEEECUSB
     {
         private DBManager dbMan; // A Reference of type DBManager 
                                  // (Initially NULL; NO DBManager Object is created yet)
-        public int UserID;
+        public int UserID=3;
         public int CommitteeID=1;
         public Controller()
         {
@@ -180,9 +180,9 @@ namespace IEEECUSB
             return dbMan.ExecuteNonQuery(query);
         }
 
-         public DataTable Member_Tasks(int Member_ID)
+         public DataTable Member_Tasks()
         {
-            string query = "SELECT Volunteer.Name , Task.ID , Task.Title ,  TaskReciever.Progress , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer,TaskReciever Where TaskRecievers.Reciever_ID =" + Member_ID + " AND Task.Assigner_ID = Volunteer.ID AND  TaskRecievers.Task_ID = Task.ID ; ";
+            string query = "SELECT Volunteer.Name , Task.ID , Task.Title ,  TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer,TaskRecievers Where TaskRecievers.Reciever_ID =" + UserID + " AND Task.Assigner_ID = Volunteer.ID AND  TaskRecievers.Task_ID = Task.ID ; ";
             return dbMan.ExecuteReader(query);
         }
 

@@ -126,7 +126,7 @@ namespace IEEECUSB
 
             else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
             {
-                dataGridView3.DataSource = var.controllerObj.Member_Tasks(3);
+                dataGridView3.DataSource = var.controllerObj.Member_Tasks();
                 dataGridView3.Refresh();
 
 
@@ -266,6 +266,11 @@ namespace IEEECUSB
         }
 
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
