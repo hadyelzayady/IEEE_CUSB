@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
 namespace IEEECUSB
 {
+    class var
+    {
+        public static Controller controllerObj = new Controller();
+    }
     static class Program
     {
         /// <summary>
@@ -13,11 +16,14 @@ namespace IEEECUSB
         [STAThread]
         static void Main()
         {
+
            // if (Environment.OSVersion.Version.Major == 6)
                 // SetProcessDPIAware();
-                //seeding s = new seeding();
+           // seeding s = new seeding();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+              
             Application.Run(new Login());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]

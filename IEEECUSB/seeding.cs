@@ -26,12 +26,12 @@ namespace IEEECUSB
 
             //        }
             //        //create requests
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    string Title = "Request" + i.ToString();
-            //    cont.InsertRequest(Title, i, 9 - i);
+            for (int i = 0; i < 10; i++)
+            {
+                string Title = "Request" + i.ToString();
+                cont.InsertRequest(Title,"dalsdjls;dasd",DateTime.Today.ToString("yyyy-mm-dd"), DateTime.Today.ToString("yyyy-mm-dd"), i);
 
-            //}
+            }
             //        //create tasks
             //        for (int i = 0; i < 10; i++)
             //        {

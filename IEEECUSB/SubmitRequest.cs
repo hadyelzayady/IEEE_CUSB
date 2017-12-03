@@ -11,12 +11,10 @@ namespace IEEECUSB
 {
     public partial class SubmitRequest : Form
     {
-        private Controller controllerObj;
         private int requestID;
         public SubmitRequest(DataGridViewSelectedRowCollection request)
         {
             InitializeComponent();
-            controllerObj = new Controller();
             requestID = (int)request[0].Cells[0].Value;
             RequestTitle.Text = request[0].Cells[1].Value.ToString();
             RequestingComm.Text = request[0].Cells[2].Value.ToString();
@@ -36,7 +34,7 @@ namespace IEEECUSB
             if (int.TryParse(ProgressPerc.Text, out progressPerc))
             {
 
-                if (controllerObj.MemeberSubmitRequest(requestID, progressDesc, progressPerc) == 1)
+                if (var.controllerObj.MemeberSubmitRequest(requestID, progressDesc, progressPerc) == 1)
                 {
                     //show success
                     MessageBox.Show("Request Submitted Successfully");

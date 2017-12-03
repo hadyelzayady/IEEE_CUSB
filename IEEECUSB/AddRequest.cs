@@ -11,12 +11,10 @@ namespace IEEECUSB
 {
     public partial class AddRequest : Form
     {
-        private Controller controllerObj;
         public AddRequest()
         {
             InitializeComponent();
-            controllerObj = new Controller();
-            RecComm.DataSource = controllerObj.SelectCommittees();
+            RecComm.DataSource = var.controllerObj.SelectCommittees();
             RecComm.ValueMember = "ID";
             RecComm.DisplayMember = "Name";
         }
@@ -58,7 +56,7 @@ namespace IEEECUSB
             string StartDate = startDate.Value.ToString("yyyy-MM-dd");
             string EndDate = endDate.Value.ToString("yyyy-MM-dd");
             int RecCommID = (int)RecComm.SelectedValue;
-            controllerObj.InsertRequest(Title, Desc,StartDate,EndDate, RecCommID);
+            var.controllerObj.InsertRequest(Title, Desc,StartDate,EndDate, RecCommID);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

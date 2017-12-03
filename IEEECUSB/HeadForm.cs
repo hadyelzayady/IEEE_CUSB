@@ -11,12 +11,11 @@ namespace IEEECUSB
 {
     public partial class HeadForm : Form
     {
-        private Controller controllerObj;
+        string Task_ID = "";
         public HeadForm()
         {
             InitializeComponent();
             
-            controllerObj = new Controller();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -80,7 +79,7 @@ namespace IEEECUSB
 
         private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
-            eventDetails_GridView.DataSource= controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.DataSource= var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
             eventDetails_GridView.Refresh();
         }
 
@@ -104,10 +103,10 @@ namespace IEEECUSB
 
             if (headTabControl.SelectedTab == headTabControl.TabPages["requestsTab"])
             {
-                ReceivedReqList.DataSource = controllerObj.SelectReceivedRequests();
+                ReceivedReqList.DataSource = var.controllerObj.SelectReceivedRequests();
                 if (ReceivedReqList.RowCount != 0)
                     ReceivedReqList.Columns[0].Visible = false;
-                SentReqList.DataSource = controllerObj.SelectSentRequests();
+                SentReqList.DataSource = var.controllerObj.SelectSentRequests();
                 if (SentReqList.RowCount != 0)
                     SentReqList.Columns[0].Visible = false;
                 ReceivedReqList.Refresh();
@@ -115,8 +114,22 @@ namespace IEEECUSB
             }
             else if (headTabControl.SelectedTab == headTabControl.TabPages["calendarTab"])
             {
-                eventDetails_GridView.DataSource = controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+                eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
                 eventDetails_GridView.Refresh();
+            }
+
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["tasksTab"])
+            {
+                dataGridView4.DataSource = var.controllerObj.Committee_Tasks(1);
+                dataGridView4.Refresh();
+            }
+
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
+            {
+                dataGridView3.DataSource = var.controllerObj.Member_Tasks(3);
+                dataGridView3.Refresh();
+
+
             }
         }
 
@@ -151,7 +164,7 @@ namespace IEEECUSB
             if (selected.Count != 0)
             {
                 int id = (int)selected[0].Cells[0].Value;
-                if (controllerObj.UpdateRequestStatus(id, Controller.Status.Accepted) == 1)
+                if (var.controllerObj.UpdateRequestStatus(id, Status.Accepted) == 1)
                 {
                     Refresh(1);
                 }
@@ -164,7 +177,7 @@ namespace IEEECUSB
             if (selected != null)
             {
                 int id = (int)selected[0].Cells[0].Value;
-                if (controllerObj.UpdateRequestStatus(id, Controller.Status.Rejected) == 1)
+                if (var.controllerObj.UpdateRequestStatus(id, Status.Rejected) == 1)
                 {
                     Refresh(1);
                 }
@@ -174,14 +187,14 @@ namespace IEEECUSB
         {
             if(rec==1)
             {
-                ReceivedReqList.DataSource = controllerObj.SelectReceivedRequests();
+                ReceivedReqList.DataSource = var.controllerObj.SelectReceivedRequests();
                 if (ReceivedReqList.RowCount != 0)
                     ReceivedReqList.Columns[0].Visible = false;
                 ReceivedReqList.Refresh();
             }
             if(sen==1)
             {
-                SentReqList.DataSource = controllerObj.SelectSentRequests();
+                SentReqList.DataSource = var.controllerObj.SelectSentRequests();
                 if (SentReqList.RowCount != 0)
                     SentReqList.Columns[0].Visible = false;
                 SentReqList.Refresh();
@@ -203,7 +216,7 @@ namespace IEEECUSB
             DataGridViewSelectedRowCollection selected = SentReqList.SelectedRows;
             if (selected.Count != 0)
             {
-                controllerObj.DeleteRequest((int)selected[0].Cells[0].Value);
+                var.controllerObj.DeleteRequest((int)selected[0].Cells[0].Value);
                 Refresh(0, 1);
             }
         }
@@ -226,5 +239,25 @@ namespace IEEECUSB
         {
 
         }
+
+         private void button7_Click(object sender, EventArgs e)
+        {
+            AddTask T = new AddTask();
+        }
+
+         private void button4_Click(object sender, EventArgs e)
+         {
+             int x = Convert.ToInt32(Task_ID);
+             SubmitTask T = new SubmitTask(x);
+             T.Show();
+             Task_ID = "";
+
+         }
+
+         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+         {
+             int rowIndex = e.RowIndex;
+             Task_ID = dataGridView3.Rows[rowIndex].Cells[1].Value.ToString();
+         }
     }
 }

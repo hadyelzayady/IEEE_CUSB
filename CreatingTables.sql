@@ -65,15 +65,15 @@ CREATE TABLE IF NOT EXISTS `MahmoudMorsy`.`Request` (
   `Deadline_Date` DATE NULL,
   `Sender_Comm_ID` INT NOT NULL,
   `Reciever_Comm_ID` INT NOT NULL,
-  `Status` ENUM('Accepted','Rejected'),
-  `Progress_Description` VARCHAR(100) NULL,
+  `Status` ENUM('Accepted','Rejected','Submitted'),
+ 
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
   FOREIGN KEY (`Sender_Comm_ID`)
     REFERENCES `MahmoudMorsy`.`Committee` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  FOREIGN KEY (`Sender_Comm_ID`)
+  FOREIGN KEY (`Reciever_Comm_ID`)
     REFERENCES `MahmoudMorsy`.`Committee` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);

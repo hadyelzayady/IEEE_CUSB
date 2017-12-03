@@ -13,11 +13,9 @@ namespace IEEECUSB
     public partial class Login : Form
     {
         public int IDOfCurrentUser;
-        private Controller controllerObj;
         public Login()
         {
             InitializeComponent();
-            controllerObj = new Controller(); // Create the Controler Object
         }
         private bool CheckPassword_Hash(string password)
         {

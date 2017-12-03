@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace IEEECUSB
 {
+    public enum Status { Accepted, Rejected, Submitted };
     public class Controller
     {
         private DBManager dbMan; // A Reference of type DBManager 
                                  // (Initially NULL; NO DBManager Object is created yet)
-        public enum Status {Accepted,Rejected,Submitted };
         public int UserID;
         public int CommitteeID=1;
         public Controller()
@@ -71,7 +71,8 @@ namespace IEEECUSB
         }
         internal int EditRequest(int requestID, string Title, string Description, string Start_Date, string End_Date, int Reciever_Comm_ID)
         {
-            string query = $"UPDATE Request SET Status =NULL,Title={Title},Description={Description},Start_Date={Start_Date},End_Date={End_Date},Creation_Date={DateTime.Today},Reciever_Comm_ID=(select ID From Committee where Name={Reciever_Comm_ID}),Sender_Comm_ID={CommitteeID} where ID={requestID}";
+            string today = DateTime.Today.ToString("yyyy-mm-dd");
+            string query = $"UPDATE Request SET Status =NULL,Title='{Title}',Description='{Description}',Start_Date='{Start_Date}',End_Date='{End_Date}',Creation_Date='{today}',Reciever_Comm_ID={Reciever_Comm_ID},Sender_Comm_ID={CommitteeID} where ID={requestID}";
             return dbMan.ExecuteNonQuery(query);
         }
         internal DataTable SelectEvents(DateTime date)
@@ -80,11 +81,6 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
-        public int InsertTask(string Title, int Reciever_ID, int Sender_ID,int Committee_ID)
-        {
-            string query = $"INSERT INTO Task (Title, Reciever_ID, Assigner_ID,Committee_ID) Values ({Title},{Reciever_ID},{Sender_ID},{Committee_ID})";
-            return dbMan.ExecuteNonQuery(query);
-        }
         public int InsertVolunteer(string Name,int Committee_ID )
         {
             string query = $"INSERT INTO Volunteer (Name,Committee_ID) Values ('{Name}',{Committee_ID})";
@@ -101,8 +97,6 @@ namespace IEEECUSB
             return dbMan.ExecuteNonQuery(query);
         }
 
-
-
         public DataTable Reciever_Request()
         {
             string query = "SELECT Committee.Name , Request.Title  FROM Request join Committee on Request.Sender_Comm_ID=Committee.ID  Where Request.Reciever_Comm_ID=" + CommitteeID +";";
@@ -112,12 +106,6 @@ namespace IEEECUSB
         public DataTable Sender_Request(int Committee_ID)
         {
             string query = "SELECT Committee.Name , Request.Title , Request.Description , Request.Priority , Request.Start_Date, Request.Deadline_Date FROM Request, Committee  Where Request.Sender_Comm_ID=" + Committee_ID + " , Committee.ID = Request.Reciever_Comm_ID; ";
-            return dbMan.ExecuteReader(query);
-        }
-
-        public DataTable Member_Tasks(int Member_ID)
-        {
-            string query = "SELECT Volunteer.Name , Task.Title , Task.Progress , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer Where Reciever_ID =" + Member_ID + " , Task.Assigner_ID = Volunteer.ID ; ";
             return dbMan.ExecuteReader(query);
         }
 
@@ -142,6 +130,62 @@ namespace IEEECUSB
         public DataTable Committee_File(int Committee_ID)
         {
             string query = "SELECT Title , Description , Version, Opened , Type FROM File Where Committee_ID =" + Committee_ID + "; ";
+            return dbMan.ExecuteReader(query);
+        }
+        //
+        public DataTable GetTask(int Task_ID)
+        {
+            string query = "SELECT * FROM Task Where ID =" + Task_ID + "; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+         public DataTable GetTaskRecievers(int Task_ID)
+        {
+            string query = "SELECT Volunteer.Name FROM TaskRecievers join Volunteer on Volunteer.ID = TaskRecievers.Reciever_ID Where TaskRecievers.Task_ID =" + Task_ID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+         public int InsertTask(string Title, int Sender_ID,int Committee_ID)
+        {
+            string query = $"INSERT INTO Task (Title, Assigner_ID,Committee_ID) Values ({Title},{Sender_ID},{Committee_ID})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertTaskReciever(int Task_ID , int Member_ID)
+        {
+            string query = $"INSERT INTO TaskRecievers (Task_ID, Reciever_ID,Season) Values ({Task_ID},{Member_ID},2017)";
+            return dbMan.ExecuteNonQuery(query); 
+        }
+
+        public int UpdateTask(int Task_ID,int Progress_Percentage, string Progress_Description , int Volunteer_ID)
+        {
+            string query = $"UPDATE TaskRecievers SET  Progress_Percentage='{Progress_Percentage}' AND Progress_Description='{Progress_Description}'  where Task_ID={Task_ID} AND Reciever_ID='{Volunteer_ID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateTaskStatus(int Task_ID, int Volunteer_ID ,Status status)
+        {
+            string query = $"UPDATE TaskRecievers SET Status ='{status}' where Task_ID={Task_ID} AND Reciever_ID='{Volunteer_ID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int SubmitTask(int Task_ID, int Volunteer_ID)
+        {
+            DateTime dateTimeVariable = DateTime.Now;
+            string date = dateTimeVariable.ToString("yyyy-MM-dd H:mm:ss");
+            string query = $"UPDATE TaskRecievers SET Status ='{Status.Submitted}' where Task_ID={Task_ID} AND Reciever_ID='{Volunteer_ID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+         public DataTable Member_Tasks(int Member_ID)
+        {
+            string query = "SELECT Volunteer.Name , Task.ID , Task.Title ,  TaskReciever.Progress , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer,TaskReciever Where TaskRecievers.Reciever_ID =" + Member_ID + " AND Task.Assigner_ID = Volunteer.ID AND  TaskRecievers.Task_ID = Task.ID ; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+         public DataTable Committee_Members()
+        {
+            string query = "SELECT Name FROM Volunteer Where Committee_ID =" + CommitteeID + "; ";
             return dbMan.ExecuteReader(query);
         }
 

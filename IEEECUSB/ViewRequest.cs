@@ -11,19 +11,17 @@ namespace IEEECUSB
 {
     public partial class ViewRequest : Form
     {
-        private Controller controllerObj;
         int requestID;
         public ViewRequest(DataGridViewSelectedRowCollection request)
         {
             InitializeComponent();
-            //controllerObj = new Controller();
             //requestID = (int)request[0].Cells[0].Value;
             //RequestTitle.Text = request[0].Cells[1].Value.ToString();
             //RequestingComm.Text = request[0].Cells[2].Value.ToString();
             //RequestStartDate.Text = request[0].Cells[4].Value.ToString();
             //RequestEndDate.Text = request[0].Cells[5].Value.ToString();
 
-            //Committees.DataSource = controllerObj.SelectCommittees();
+            //Committees.DataSource = var.controllerObj.SelectCommittees();
             //Committees.al = "CountryCode";
             //Committees.DisplayMember = "CountryName";
             //Committees.DataBind();
@@ -70,7 +68,7 @@ namespace IEEECUSB
 
         private void EditRequest_Click(object sender, EventArgs e)
         {
-            //controllerObj.EditRequest(requestID, RequestTitle.Text, RequestDesc.Text, RequestStartDate.Value, RequestEndDate.Value, RequestingComm.Text);
+            //var.controllerObj.EditRequest(requestID, RequestTitle.Text, RequestDesc.Text, RequestStartDate.Value, RequestEndDate.Value, RequestingComm.Text);
         }
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
