@@ -15,5 +15,32 @@ namespace IEEECUSB
         {
             InitializeComponent();
         }
+
+        private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.Refresh();
+        }
+        private void headTabControl_Click(object sender, EventArgs e)
+        {
+
+           if (headTabControl.SelectedTab == headTabControl.TabPages["calendarTab"])
+            {
+                eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+                eventDetails_GridView.Refresh();
+            }
+
+            //else if (headTabControl.SelectedTab == headTabControl.TabPages["tasksTab"])
+            //{
+            //    dataGridView4.DataSource = var.controllerObj.Committee_Tasks();
+            //    dataGridView4.Refresh();
+            //}
+
+            //else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
+            //{
+            //    dataGridView3.DataSource = var.controllerObj.Member_Tasks();
+            //    dataGridView3.Refresh();
+            //}
+        }
     }
 }

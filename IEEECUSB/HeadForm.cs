@@ -128,8 +128,6 @@ namespace IEEECUSB
             {
                 dataGridView3.DataSource = var.controllerObj.Member_Tasks();
                 dataGridView3.Refresh();
-
-
             }
         }
 

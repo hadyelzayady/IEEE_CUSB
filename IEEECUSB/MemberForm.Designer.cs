@@ -89,9 +89,6 @@
             this.calendarTab = new System.Windows.Forms.TabPage();
             this.calendarLayout_Pnl = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
             this.calendarData_Pnl = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -170,7 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.calendarTab.SuspendLayout();
             this.calendarLayout_Pnl.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.calendarData_Pnl.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -940,45 +936,12 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.button28);
-            this.panel8.Controls.Add(this.button37);
-            this.panel8.Controls.Add(this.button38);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(2, 639);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1078, 36);
             this.panel8.TabIndex = 7;
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(314, 0);
-            this.button28.Margin = new System.Windows.Forms.Padding(2);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(178, 36);
-            this.button28.TabIndex = 2;
-            this.button28.Text = "Delete Event";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // button37
-            // 
-            this.button37.Location = new System.Drawing.Point(157, 0);
-            this.button37.Margin = new System.Windows.Forms.Padding(2);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(152, 36);
-            this.button37.TabIndex = 1;
-            this.button37.Text = "Edit Event";
-            this.button37.UseVisualStyleBackColor = true;
-            // 
-            // button38
-            // 
-            this.button38.Location = new System.Drawing.Point(0, 0);
-            this.button38.Margin = new System.Windows.Forms.Padding(2);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(152, 36);
-            this.button38.TabIndex = 0;
-            this.button38.Text = "Add Event / Meeting";
-            this.button38.UseVisualStyleBackColor = true;
             // 
             // calendarData_Pnl
             // 
@@ -1035,6 +998,7 @@
             this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
+            this.ieeeCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateSelected);
             // 
             // calendarHeader_Pnl
             // 
@@ -1569,7 +1533,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.calendarTab.ResumeLayout(false);
             this.calendarLayout_Pnl.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.calendarData_Pnl.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1668,9 +1631,6 @@
         private System.Windows.Forms.TabPage calendarTab;
         private System.Windows.Forms.TableLayoutPanel calendarLayout_Pnl;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Panel calendarData_Pnl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
