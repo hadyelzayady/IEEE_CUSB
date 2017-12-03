@@ -145,6 +145,14 @@
     <Compile Include="ViewTask.Designer.cs">
       <DependentUpon>ViewTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="VolunteersManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VolunteersManagement.Designer.cs" />
+    <Compile Include="WorkshopsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkshopsManagement.Designer.cs" />
     <EmbeddedResource Include="AddRequest.resx">
       <DependentUpon>AddRequest.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +202,8 @@
     <EmbeddedResource Include="ViewTask.resx">
       <DependentUpon>ViewTask.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VolunteersManagement.resx" />
+    <EmbeddedResource Include="WorkshopsManagement.resx" />
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

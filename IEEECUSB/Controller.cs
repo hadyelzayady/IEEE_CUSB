@@ -111,13 +111,16 @@ namespace IEEECUSB
 
         public DataTable Member_Notification(int Member_ID)
         {
-            string query = "SELECT Descriptoin, Type FROM Notification Where Vol_ID =" + Member_ID + " , Task.Assigner_ID = Volunteer.ID ; ";
+            string query = "SELECT Descriptoin, Type FROM Notification Where Vol_ID =" + Member_ID + " and Task.Assigner_ID = Volunteer.ID ; ";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable Committee_Tasks(int Committee_ID)
+        public DataTable Committee_Tasks()
         {
-            string query = "SELECT Volunteer.Name, Task.Title , Task.Progress , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer Where Committee_ID =" + Committee_ID + ", Task.Reciever_ID = Volunteer.ID ; ";
+            string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+                "FROM Task join TaskRecievers on Task_ID=Task.ID " +
+                "join Volunteer on Volunteer.ID=Reciever_ID " +
+                $"where Volunteer.Committee_ID = {CommitteeID};";
             return dbMan.ExecuteReader(query);
         }
 

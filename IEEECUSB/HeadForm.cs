@@ -120,7 +120,7 @@ namespace IEEECUSB
 
             else if (headTabControl.SelectedTab == headTabControl.TabPages["tasksTab"])
             {
-                dataGridView4.DataSource = var.controllerObj.Committee_Tasks(1);
+                dataGridView4.DataSource = var.controllerObj.Committee_Tasks();
                 dataGridView4.Refresh();
             }
 
@@ -259,5 +259,15 @@ namespace IEEECUSB
              int rowIndex = e.RowIndex;
              Task_ID = dataGridView3.Rows[rowIndex].Cells[1].Value.ToString();
          }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

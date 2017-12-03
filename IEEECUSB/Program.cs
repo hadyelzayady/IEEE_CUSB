@@ -6,7 +6,7 @@ namespace IEEECUSB
 {
     class var
     {
-        public static Controller controllerObj = new Controller();
+        public static Controller controllerObj;
     }
     static class Program
     {
@@ -17,14 +17,14 @@ namespace IEEECUSB
         static void Main()
         {
 
-           // if (Environment.OSVersion.Version.Major == 6)
-                // SetProcessDPIAware();
-           // seeding s = new seeding();
-            
+            // if (Environment.OSVersion.Version.Major == 6)
+            // SetProcessDPIAware();
+            // seeding s = new seeding();
+            var.controllerObj = new Controller();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
               
-            Application.Run(new Login());
+            Application.Run(new HeadForm());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
