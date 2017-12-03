@@ -41,6 +41,7 @@ namespace IEEECUSB
                     return;
                 }
                 //error
+                MessageBox.Show("error in submitting request");
                 return;
             }
 

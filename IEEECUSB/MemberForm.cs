@@ -29,18 +29,22 @@ namespace IEEECUSB
                 eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
                 eventDetails_GridView.Refresh();
             }
+        
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
+            {
+                dataGridView3.DataSource = var.controllerObj.Member_Tasks();
+                dataGridView3.Refresh();
+            }
+           else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
+            {
+                updatesData_GridView.DataSource = var.controllerObj.SelectMemberNotif();
+                updatesData_GridView.Refresh();
+            }
+        }
 
-            //else if (headTabControl.SelectedTab == headTabControl.TabPages["tasksTab"])
-            //{
-            //    dataGridView4.DataSource = var.controllerObj.Committee_Tasks();
-            //    dataGridView4.Refresh();
-            //}
+        private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-            //else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
-            //{
-            //    dataGridView3.DataSource = var.controllerObj.Member_Tasks();
-            //    dataGridView3.Refresh();
-            //}
         }
     }
 }

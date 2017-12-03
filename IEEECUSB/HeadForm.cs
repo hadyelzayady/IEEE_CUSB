@@ -15,7 +15,10 @@ namespace IEEECUSB
         public HeadForm()
         {
             InitializeComponent();
-            
+            updatesData_GridView.DataSource = var.controllerObj.SelectHeadUpdates();
+            updatesData_GridView.Refresh();
+            //notificationsData_GridView.DataSource = var.controllerObj.SelectHeadNotif();
+            //notificationsData_GridView.Refresh();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -128,6 +131,11 @@ namespace IEEECUSB
             {
                 dataGridView3.DataSource = var.controllerObj.Member_Tasks();
                 dataGridView3.Refresh();
+            }
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
+            {
+                updatesData_GridView.DataSource = var.controllerObj.SelectHeadNotif();
+                updatesData_GridView.Refresh();
             }
         }
 
@@ -269,6 +277,28 @@ namespace IEEECUSB
         }
 
         private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ReceivedReqList_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = ReceivedReqList.SelectedRows;
+            if (selected.Count != 0)
+            {
+                string status = selected[0].Cells["Status"].Value.ToString();
+                if (status == "Submitted")
+                {
+                    acceptButton.Enabled = false;
+                    rejectButton.Enabled = false;
+                    return;
+                }
+                acceptButton.Enabled = true;
+                acceptButton.Enabled = true;
+            }
+        }
+
+        private void homeHeader_Pnl_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

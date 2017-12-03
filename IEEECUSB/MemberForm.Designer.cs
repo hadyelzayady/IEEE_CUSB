@@ -396,6 +396,7 @@
             this.updatesData_GridView.RowTemplate.Height = 28;
             this.updatesData_GridView.Size = new System.Drawing.Size(1078, 159);
             this.updatesData_GridView.TabIndex = 0;
+            this.updatesData_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.updatesData_GridView_CellContentClick);
             // 
             // updatesTitle_Pnl
             // 

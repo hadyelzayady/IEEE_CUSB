@@ -213,8 +213,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
+            this.rejectButton = new System.Windows.Forms.Button();
+            this.acceptButton = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
             this.SentReqList = new System.Windows.Forms.DataGridView();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -2207,6 +2207,7 @@
             this.homeHeader_Pnl.Name = "homeHeader_Pnl";
             this.homeHeader_Pnl.Size = new System.Drawing.Size(1182, 118);
             this.homeHeader_Pnl.TabIndex = 1;
+            this.homeHeader_Pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.homeHeader_Pnl_Paint_1);
             // 
             // pictureBox2
             // 
@@ -2377,8 +2378,8 @@
             // 
             this.panel5.Controls.Add(this.button18);
             this.panel5.Controls.Add(this.button19);
-            this.panel5.Controls.Add(this.button22);
-            this.panel5.Controls.Add(this.button23);
+            this.panel5.Controls.Add(this.rejectButton);
+            this.panel5.Controls.Add(this.acceptButton);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
@@ -2407,27 +2408,27 @@
             this.button19.Text = "View Request";
             this.button19.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // rejectButton
             // 
-            this.button22.Location = new System.Drawing.Point(168, 0);
-            this.button22.Margin = new System.Windows.Forms.Padding(2);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(162, 38);
-            this.button22.TabIndex = 1;
-            this.button22.Text = "Reject Request";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.RejectRequest);
+            this.rejectButton.Location = new System.Drawing.Point(168, 0);
+            this.rejectButton.Margin = new System.Windows.Forms.Padding(2);
+            this.rejectButton.Name = "rejectButton";
+            this.rejectButton.Size = new System.Drawing.Size(162, 38);
+            this.rejectButton.TabIndex = 1;
+            this.rejectButton.Text = "Reject Request";
+            this.rejectButton.UseVisualStyleBackColor = true;
+            this.rejectButton.Click += new System.EventHandler(this.RejectRequest);
             // 
-            // button23
+            // acceptButton
             // 
-            this.button23.Location = new System.Drawing.Point(0, 0);
-            this.button23.Margin = new System.Windows.Forms.Padding(2);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(162, 38);
-            this.button23.TabIndex = 0;
-            this.button23.Text = "Accept Request";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.AcceptRequest);
+            this.acceptButton.Location = new System.Drawing.Point(0, 0);
+            this.acceptButton.Margin = new System.Windows.Forms.Padding(2);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(162, 38);
+            this.acceptButton.TabIndex = 0;
+            this.acceptButton.Text = "Accept Request";
+            this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.AcceptRequest);
             // 
             // panel33
             // 
@@ -2550,6 +2551,7 @@
             this.ReceivedReqList.Size = new System.Drawing.Size(1182, 194);
             this.ReceivedReqList.TabIndex = 0;
             this.ReceivedReqList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReceivedReqList_CellContentClick);
+            this.ReceivedReqList.SelectionChanged += new System.EventHandler(this.ReceivedReqList_SelectionChanged);
             // 
             // panel36
             // 
@@ -2915,8 +2917,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button rejectButton;
+        private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;

@@ -12,8 +12,20 @@ namespace IEEECUSB
     {
         private DBManager dbMan; // A Reference of type DBManager 
                                  // (Initially NULL; NO DBManager Object is created yet)
-        public int UserID=3;
-        public int CommitteeID=1;
+        public int UserID=2;
+
+        internal object SelectHeadUpdates()
+        {
+            string query = "SELECT Volunteer.Name ,Task.Title , Task.Start_Date,Task.End_Date ,Task.Description  from" +
+            " Task join TaskRecievers on Task.ID=Task_ID join Volunteer on Assigner_ID=Volunteer.ID" +
+            " where Task.Status IS NULL and Reciever_ID=" + UserID + " UNION " +
+            "select Committee.Name,Request.Title,Request.Start_Date,Request.End_Date,Request.Description FROM " +
+            "Request join Committee on Request.ID = Sender_Comm_ID " +
+            "where Reciever_Comm_ID= " + CommitteeID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int CommitteeID=2;
         public Controller()
         {
             dbMan = new DBManager(); // Create the DBManager Object
@@ -33,6 +45,14 @@ namespace IEEECUSB
             return p;
         }
 
+        internal object SelectMemberNotif()
+        {
+            string query = "SELECT Volunteer.Name ,Task.Title , Task.Start_Date,Task.End_Date Task.Description  from" +
+                " Task join TaskRecievers on Task.ID=Task_ID join Volunteer on Assigner_ID=Volunteer.ID" +
+                " where Task where Status IS NULL and Reciever_ID="+UserID+";";
+            return dbMan.ExecuteReader(query);
+        }
+
         internal DataTable SelectCommittees()
         {
             string query = $"SELECT ID, Name From Committee;";
@@ -47,7 +67,7 @@ namespace IEEECUSB
 
         internal int MemeberSubmitRequest(int requestID, string progressDesc, int progressPerc)
         {
-            string query = $"UPDATE Request SET Status ='"+Status.Submitted+"',Progress_Description ='"+progressDesc+"' , Progress_Percent="+progressPerc+" where ID="+requestID+"";
+            string query = $"UPDATE Request SET Status ='"+Status.Submitted+"',Progress_Description ='"+progressDesc+"' , Progress_Percentage="+progressPerc+" where ID="+requestID+"";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -75,6 +95,18 @@ namespace IEEECUSB
             string query = $"UPDATE Request SET Status =NULL,Title='"+Title+"',Description='"+Description+"',Start_Date='"+Start_Date+"',End_Date='"+End_Date+"',Creation_Date='"+today+"',Reciever_Comm_ID="+Reciever_Comm_ID+",Sender_Comm_ID="+CommitteeID+" where ID="+requestID+"";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        internal object SelectHeadNotif()
+        {
+            string query = "SELECT Volunteer.Name ,Task.Title , Task.Start_Date,Task.End_Date ,Task.Description  from" +
+                 " Task join TaskRecievers on Task.ID=Task_ID join Volunteer on Assigner_ID=Volunteer.ID" +
+                " where Task.Status IS NULL and Reciever_ID=" + UserID + " UNION " +
+                "select Committee.Name,Request.Title,Request.Start_Date,Request.End_Date,Request.Description FROM " +
+                "Request join Committee on Request.ID = Sender_Comm_ID " +
+                "where Reciever_Comm_ID= "+CommitteeID+";";
+            return dbMan.ExecuteReader(query);
+        }
+
         internal DataTable SelectEvents(DateTime date)
         {
             string query = $"SELECT Title FROM Event join Committee on Event.ID =Committee.ID where Committee.ID="+CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
@@ -93,7 +125,7 @@ namespace IEEECUSB
         }
         public int UpdateRequestStatus(int Request_ID,Status status)
         {
-            string query = $"UPDATE Request SET Status ='"+status+"' where ID="+Request_ID+"";
+            string query = $"UPDATE Request SET Status ='"+status+"' where ID="+Request_ID+";";
             return dbMan.ExecuteNonQuery(query);
         }
 
