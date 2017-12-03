@@ -14,6 +14,8 @@ namespace IEEECUSB
         public HeadsHRSystem()
         {
             InitializeComponent();
+            committeeMembers.DataSource = var.controllerObj.SelectCommMember();
+            committeeMembers.Refresh();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -23,28 +25,42 @@ namespace IEEECUSB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Add(8);
-            dataGridView2.Rows[0].Cells[0].Value = "Number of Assigned Tasks";
-            dataGridView2.Rows[0].Cells[1].Value = "12";
-            dataGridView2.Rows[1].Cells[0].Value = "Number of Missed Tasks";
-            dataGridView2.Rows[1].Cells[1].Value = "1";
-            dataGridView2.Rows[2].Cells[0].Value = "Number of Submitted Tasks";
-            dataGridView2.Rows[2].Cells[1].Value = "11";
+            string searchFor = SearchBox.Text;
+            int ID;
+            if(int.TryParse(searchFor,out ID))
+            {
+                committeeMembers.DataSource = var.controllerObj.SearchInCommByID(ID);
+            }
+            else
+                committeeMembers.DataSource = var.controllerObj.SearchInCommByName(searchFor);
+            committeeMembers.Refresh();
+            //memberDetails.Rows.Add(8);
+            //memberDetails.Rows[0].Cells[0].Value = "Number of Assigned Tasks";
+            //memberDetails.Rows[0].Cells[1].Value = "12";
+            //memberDetails.Rows[1].Cells[0].Value = "Number of Missed Tasks";
+            //memberDetails.Rows[1].Cells[1].Value = "1";
+            //memberDetails.Rows[2].Cells[0].Value = "Number of Submitted Tasks";
+            //memberDetails.Rows[2].Cells[1].Value = "11";
 
-            dataGridView2.Rows[3].Cells[0].Value = "Number of Submitted Tasks After Deadline";
-            dataGridView2.Rows[3].Cells[1].Value = "5";
-            dataGridView2.Rows[4].Cells[0].Value = "Number of Trainings Attended";
-            dataGridView2.Rows[4].Cells[1].Value = "11";
-            dataGridView2.Rows[5].Cells[0].Value = "Number of Meetings Attended";
-            dataGridView2.Rows[5].Cells[1].Value = "11";
+            //memberDetails.Rows[3].Cells[0].Value = "Number of Submitted Tasks After Deadline";
+            //memberDetails.Rows[3].Cells[1].Value = "5";
+            //memberDetails.Rows[4].Cells[0].Value = "Number of Trainings Attended";
+            //memberDetails.Rows[4].Cells[1].Value = "11";
+            //memberDetails.Rows[5].Cells[0].Value = "Number of Meetings Attended";
+            //memberDetails.Rows[5].Cells[1].Value = "11";
 
-            dataGridView2.Rows[6].Cells[0].Value = "Number of GMs Attended";
-            dataGridView2.Rows[6].Cells[1].Value = "11";
-            dataGridView2.Rows[7].Cells[0].Value = "Number of Warnings";
-            dataGridView2.Rows[7].Cells[1].Value = "11";
+            //memberDetails.Rows[6].Cells[0].Value = "Number of GMs Attended";
+            //memberDetails.Rows[6].Cells[1].Value = "11";
+            //memberDetails.Rows[7].Cells[0].Value = "Number of Warnings";
+            //memberDetails.Rows[7].Cells[1].Value = "11";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

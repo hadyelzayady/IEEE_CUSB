@@ -302,5 +302,11 @@ namespace IEEECUSB
         {
 
         }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            HeadsHRSystem headsHRSystem = new HeadsHRSystem();
+            headsHRSystem.ShowDialog();
+        }
     }
 }

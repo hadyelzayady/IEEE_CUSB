@@ -11,7 +11,14 @@ namespace IEEECUSB
     public class Controller
     {
         private DBManager dbMan; // A Reference of type DBManager 
-                                 // (Initially NULL; NO DBManager Object is created yet)
+
+        internal DataTable SelectCommMember()
+        {
+            string query = $"SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID="+CommitteeID+";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        // (Initially NULL; NO DBManager Object is created yet)
         public int UserID=2;
 
         internal object SelectHeadUpdates()
@@ -22,6 +29,18 @@ namespace IEEECUSB
             "select Committee.Name,Request.Title,Request.Start_Date,Request.End_Date,Request.Description FROM " +
             "Request join Committee on Request.ID = Sender_Comm_ID " +
             "where Reciever_Comm_ID= " + CommitteeID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal object SearchInCommByName(string searchFor)
+        {
+            string query = "SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID=" + CommitteeID + " and Name like '%" + searchFor + "%';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal DataTable SearchInCommByID(int iD)
+        {
+            string query = "SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID=" + CommitteeID + " and ID like '%"+iD+"%';";
             return dbMan.ExecuteReader(query);
         }
 
