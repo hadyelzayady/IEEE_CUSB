@@ -32,6 +32,18 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal DataTable SearchVoluntHistByName(string name)
+        {
+            string query = "SELECT * From Volunteer where Name Like '%" + name + "%';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal DataTable SearchVoluntHistByID(int id)
+        {
+            string query = "SELECT * From Volunteer where ID="+id+";";
+            return dbMan.ExecuteReader(query);
+        }
+
         internal object SearchInCommByName(string searchFor)
         {
             string query = "SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID=" + CommitteeID + " and Name like '%" + searchFor + "%';";
