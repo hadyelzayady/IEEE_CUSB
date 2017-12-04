@@ -49,7 +49,7 @@
   <ItemGroup>
     <Reference Include="mysql.data, Version=6.0.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\mysql6.0.7\mysql6.0.7\mysql.data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Users\Mahmoud\Desktop\mysql6.0.7\mysql.data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -148,11 +148,15 @@
     <Compile Include="VolunteersManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VolunteersManagement.Designer.cs" />
+    <Compile Include="VolunteersManagement.Designer.cs">
+      <DependentUpon>VolunteersManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkshopsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkshopsManagement.Designer.cs" />
+    <Compile Include="WorkshopsManagement.Designer.cs">
+      <DependentUpon>WorkshopsManagement.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddRequest.resx">
       <DependentUpon>AddRequest.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,8 +206,12 @@
     <EmbeddedResource Include="ViewTask.resx">
       <DependentUpon>ViewTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VolunteersManagement.resx" />
-    <EmbeddedResource Include="WorkshopsManagement.resx" />
+    <EmbeddedResource Include="VolunteersManagement.resx">
+      <DependentUpon>VolunteersManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkshopsManagement.resx">
+      <DependentUpon>WorkshopsManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -281,6 +289,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Erroricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Volunteers.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
