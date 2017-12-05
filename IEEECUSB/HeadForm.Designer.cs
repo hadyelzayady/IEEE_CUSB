@@ -2190,6 +2190,7 @@
             this.updatesTitle_Pnl.Name = "updatesTitle_Pnl";
             this.updatesTitle_Pnl.Size = new System.Drawing.Size(943, 28);
             this.updatesTitle_Pnl.TabIndex = 1;
+            this.updatesTitle_Pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.updatesTitle_Pnl_Paint);
             // 
             // updatesTitle_Lbl
             // 
