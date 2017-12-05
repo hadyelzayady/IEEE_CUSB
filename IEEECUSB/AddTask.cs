@@ -29,5 +29,26 @@ namespace IEEECUSB
                 checkedListBox1.Items.Insert(i, name);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (checkedListBox1.CheckedItems.Count != 0)
+            {
+                DataTable dt = var.controllerObj.Committee_Members();
+                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, 1, 1);
+                int maxValue = Convert.ToInt32(var.controllerObj.MaxTaskID().ToString());
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    if (checkedListBox1.GetItemChecked(i))
+                    {
+                        string str = checkedListBox1.GetItemText(i);
+                        int Rec_ID = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                        var.controllerObj.InsertTaskReciever(maxValue, Rec_ID);
+                    }
+                }
+            }
+
+        }
+
     }
 }

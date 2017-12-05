@@ -12,6 +12,7 @@ namespace IEEECUSB
     public partial class ViewTask : Form
     {
         int ID;
+        int n;
         public ViewTask(int Task_ID)
         {
             InitializeComponent();
@@ -45,11 +46,23 @@ namespace IEEECUSB
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            SubmitTask V = new SubmitTask(ID);
+            SubmitTask V = new SubmitTask(n);
             V.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SubmitTask V = new SubmitTask(ID);
+            this.Close();
+            V.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

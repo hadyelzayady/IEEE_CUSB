@@ -268,12 +268,14 @@ namespace IEEECUSB
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-
+            AddTask T = new AddTask();
+            T.Show();
         }
 
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int rowIndex = e.RowIndex;
+            Task_ID = dataGridView3.Rows[rowIndex].Cells[1].Value.ToString();
         }
 
         private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -307,6 +309,107 @@ namespace IEEECUSB
         {
             HeadsHRSystem headsHRSystem = new HeadsHRSystem();
             headsHRSystem.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView4.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                new ViewTask(x).ShowDialog();
+            }
+        }
+
+        private void panel14_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView4.SelectedRows;
+            int x = (int)selected[0].Cells[0].Value;
+            if (selected.Count != 0)
+            {
+                new EditTask(x).ShowDialog();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView4.SelectedRows;
+            if (selected.Count != 0)
+            {
+                var.controllerObj.DeleteTask((int)selected[0].Cells[0].Value);
+                dataGridView4.Refresh();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                new ViewTask(x).ShowDialog();
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                new SubmitTask(x).ShowDialog();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                var.controllerObj.UpdateTaskStatus(x, 1, Status.Rejected);
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                var.controllerObj.UpdateTaskStatus(x, 1, Status.Accepted);
+            }
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                new EditTask(x).ShowDialog();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                DataTable dt = var.controllerObj.GetTaskRecieversID(x);
+                int ID;
+                foreach (DataRow row in dt.Rows)
+                {
+                    ID = Convert.ToInt32(row["ID"].ToString());
+                    var.controllerObj.InsertNotification("Reminder to do the task", "Task Reminder", DateTime.Now, ID);
+                }
+            }
         }
     }
 }
