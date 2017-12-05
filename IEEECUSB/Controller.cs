@@ -14,7 +14,13 @@ namespace IEEECUSB
 
         internal DataTable SelectCommMember()
         {
-            string query = $"SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID="+CommitteeID+";";
+            string query = "SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID="+CommitteeID+";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal DataTable SelectSectionCommittees()
+        {
+            string query = "SELECT Committee.ID, Committee.Name From Committee join Section on Section.ID=Section_ID where Supervisor_ID=" + UserID + ";";
             return dbMan.ExecuteReader(query);
         }
 
@@ -29,6 +35,13 @@ namespace IEEECUSB
             "select Committee.Name,Request.Title,Request.Start_Date,Request.End_Date,Request.Description FROM " +
             "Request join Committee on Request.ID = Sender_Comm_ID " +
             "where Reciever_Comm_ID= " + CommitteeID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal DataTable CommRequests(int CommID)
+        {
+            string query = "select Request.Title,Request.Priority,Request.Description,Request.Start_Date,Request.Deadline_Date,SC.Name as 'Sender Committee',RC.Name as 'Reciever Committee' From Request" +
+                " join Committee as SC on Request.Sender_Comm_ID=SC.ID join Committee as RC on Request.Reciever_Comm_ID=RC.ID where Sender_Comm_ID=" + CommID + " or Reciever_Comm_ID=" + CommID + ";";
             return dbMan.ExecuteReader(query);
         }
 
@@ -50,13 +63,22 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal DataTable SupervisorCommsRequests()
+        {
+            string query = "SELECT * from Request join Committee on Committee.ID=Request.Sender_Comm_ID join Section on Section.ID=Section_ID " +
+                "where Section.Supervisor_ID=" + UserID + " union " +
+                "SELECT * from Request join Committee on Committee.ID=Request.Reciever_Comm_ID join Section on Section.ID=Section_ID " +
+                "where Section.Supervisor_ID=" + UserID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
         internal DataTable SearchInCommByID(int iD)
         {
             string query = "SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID=" + CommitteeID + " and ID like '%"+iD+"%';";
             return dbMan.ExecuteReader(query);
         }
 
-        public int CommitteeID=2;
+        public const int CommitteeID=2;
         public Controller()
         {
             dbMan = new DBManager(); // Create the DBManager Object
@@ -178,12 +200,12 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable Committee_Tasks()
+        public DataTable Committee_Tasks(int Committee_ID=CommitteeID)
         {
             string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
                 "FROM Task join TaskRecievers on Task_ID=Task.ID " +
                 "join Volunteer on Volunteer.ID=Reciever_ID " +
-                $"where Volunteer.Committee_ID = "+CommitteeID+";";
+                "where Volunteer.Committee_ID = "+Committee_ID+";";
             return dbMan.ExecuteReader(query);
         }
 

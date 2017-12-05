@@ -308,5 +308,10 @@ namespace IEEECUSB
             HeadsHRSystem headsHRSystem = new HeadsHRSystem();
             headsHRSystem.ShowDialog();
         }
+
+        private void updatesTitle_Pnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

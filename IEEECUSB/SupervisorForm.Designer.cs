@@ -86,35 +86,35 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CommsRequests = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.panel43 = new System.Windows.Forms.Panel();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.IOrequests = new System.Windows.Forms.DataGridView();
             this.panel48 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.TypeBox = new System.Windows.Forms.TextBox();
+            this.RequestTitleBox = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.FromCommitteBox = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.DeadlineDate = new System.Windows.Forms.TextBox();
+            this.StartDateBox = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.PriorityBox = new System.Windows.Forms.TextBox();
+            this.ToCommitteeBox = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.SubmissionDetailsBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.DescriptionBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.CommsTasks = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -134,10 +134,10 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.panel51 = new System.Windows.Forms.Panel();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.CommTasksGrid = new System.Windows.Forms.DataGridView();
             this.panel52 = new System.Windows.Forms.Panel();
             this.label59 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.CommsFiles = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -164,7 +164,7 @@
             this.dataGridView12 = new System.Windows.Forms.DataGridView();
             this.panel60 = new System.Windows.Forms.Panel();
             this.label67 = new System.Windows.Forms.Label();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.MonthlyReport = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.panel66 = new System.Windows.Forms.Panel();
             this.button58 = new System.Windows.Forms.Button();
@@ -176,7 +176,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.panel39 = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CommitteesCombo = new System.Windows.Forms.ComboBox();
             this.panel30 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label38 = new System.Windows.Forms.Label();
@@ -285,10 +285,10 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.CommsRequests.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.panel43.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IOrequests)).BeginInit();
             this.panel48.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -296,7 +296,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.CommsTasks.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -304,9 +304,9 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel51.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommTasksGrid)).BeginInit();
             this.panel52.SuspendLayout();
-            this.tabPage5.SuspendLayout();
+            this.CommsFiles.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -316,7 +316,7 @@
             this.panel59.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).BeginInit();
             this.panel60.SuspendLayout();
-            this.tabPage7.SuspendLayout();
+            this.MonthlyReport.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.panel66.SuspendLayout();
             this.panel67.SuspendLayout();
@@ -395,6 +395,7 @@
             this.headTabControl.SelectedIndex = 0;
             this.headTabControl.Size = new System.Drawing.Size(1114, 757);
             this.headTabControl.TabIndex = 1;
+            this.headTabControl.Click += new System.EventHandler(this.headTabControl_Click);
             // 
             // homeTab
             // 
@@ -773,10 +774,10 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.CommsRequests);
+            this.tabControl1.Controls.Add(this.CommsTasks);
+            this.tabControl1.Controls.Add(this.CommsFiles);
+            this.tabControl1.Controls.Add(this.MonthlyReport);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 122);
@@ -785,17 +786,18 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1106, 488);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
-            // tabPage2
+            // CommsRequests
             // 
-            this.tabPage2.Controls.Add(this.tableLayoutPanel14);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1098, 459);
-            this.tabPage2.TabIndex = 10;
-            this.tabPage2.Text = "Committees Requests";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.CommsRequests.Controls.Add(this.tableLayoutPanel14);
+            this.CommsRequests.Location = new System.Drawing.Point(4, 25);
+            this.CommsRequests.Margin = new System.Windows.Forms.Padding(2);
+            this.CommsRequests.Name = "CommsRequests";
+            this.CommsRequests.Size = new System.Drawing.Size(1098, 459);
+            this.CommsRequests.TabIndex = 10;
+            this.CommsRequests.Text = "Committees Requests";
+            this.CommsRequests.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel14
             // 
@@ -818,7 +820,7 @@
             // 
             // panel43
             // 
-            this.panel43.Controls.Add(this.dataGridView8);
+            this.panel43.Controls.Add(this.IOrequests);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel43.Location = new System.Drawing.Point(2, 40);
             this.panel43.Margin = new System.Windows.Forms.Padding(2);
@@ -826,10 +828,10 @@
             this.panel43.Size = new System.Drawing.Size(1094, 206);
             this.panel43.TabIndex = 1;
             // 
-            // dataGridView8
+            // IOrequests
             // 
-            this.dataGridView8.AllowUserToAddRows = false;
-            this.dataGridView8.AllowUserToDeleteRows = false;
+            this.IOrequests.AllowUserToAddRows = false;
+            this.IOrequests.AllowUserToDeleteRows = false;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -837,8 +839,8 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView8.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.IOrequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.IOrequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -846,12 +848,13 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView8.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView8.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView8.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.ReadOnly = true;
+            this.IOrequests.DefaultCellStyle = dataGridViewCellStyle8;
+            this.IOrequests.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IOrequests.Location = new System.Drawing.Point(0, 0);
+            this.IOrequests.Margin = new System.Windows.Forms.Padding(2);
+            this.IOrequests.MultiSelect = false;
+            this.IOrequests.Name = "IOrequests";
+            this.IOrequests.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -859,10 +862,13 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView8.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView8.RowTemplate.Height = 28;
-            this.dataGridView8.Size = new System.Drawing.Size(1094, 206);
-            this.dataGridView8.TabIndex = 0;
+            this.IOrequests.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.IOrequests.RowTemplate.Height = 28;
+            this.IOrequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.IOrequests.Size = new System.Drawing.Size(1094, 206);
+            this.IOrequests.TabIndex = 0;
+            this.IOrequests.SelectionChanged += new System.EventHandler(this.IOrequests_SelectionChanged);
+            this.IOrequests.Click += new System.EventHandler(this.IOrequests_Click);
             // 
             // panel48
             // 
@@ -893,17 +899,17 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox11);
+            this.groupBox6.Controls.Add(this.TypeBox);
+            this.groupBox6.Controls.Add(this.RequestTitleBox);
             this.groupBox6.Controls.Add(this.label52);
             this.groupBox6.Controls.Add(this.label53);
-            this.groupBox6.Controls.Add(this.textBox12);
+            this.groupBox6.Controls.Add(this.FromCommitteBox);
             this.groupBox6.Controls.Add(this.label54);
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.textBox14);
+            this.groupBox6.Controls.Add(this.DeadlineDate);
+            this.groupBox6.Controls.Add(this.StartDateBox);
             this.groupBox6.Controls.Add(this.label55);
-            this.groupBox6.Controls.Add(this.textBox15);
-            this.groupBox6.Controls.Add(this.textBox16);
+            this.groupBox6.Controls.Add(this.PriorityBox);
+            this.groupBox6.Controls.Add(this.ToCommitteeBox);
             this.groupBox6.Controls.Add(this.label56);
             this.groupBox6.Controls.Add(this.label57);
             this.groupBox6.Controls.Add(this.label58);
@@ -916,21 +922,21 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Request Details";
             // 
-            // textBox10
+            // TypeBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(750, 46);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(137, 24);
-            this.textBox10.TabIndex = 21;
+            this.TypeBox.Location = new System.Drawing.Point(750, 46);
+            this.TypeBox.Margin = new System.Windows.Forms.Padding(2);
+            this.TypeBox.Name = "TypeBox";
+            this.TypeBox.Size = new System.Drawing.Size(137, 24);
+            this.TypeBox.TabIndex = 21;
             // 
-            // textBox11
+            // RequestTitleBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(662, 21);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(225, 24);
-            this.textBox11.TabIndex = 11;
+            this.RequestTitleBox.Location = new System.Drawing.Point(662, 21);
+            this.RequestTitleBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RequestTitleBox.Name = "RequestTitleBox";
+            this.RequestTitleBox.Size = new System.Drawing.Size(225, 24);
+            this.RequestTitleBox.TabIndex = 11;
             // 
             // label52
             // 
@@ -952,13 +958,13 @@
             this.label53.TabIndex = 6;
             this.label53.Text = "Request Title";
             // 
-            // textBox12
+            // FromCommitteBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(75, 21);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(204, 24);
-            this.textBox12.TabIndex = 19;
+            this.FromCommitteBox.Location = new System.Drawing.Point(75, 21);
+            this.FromCommitteBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FromCommitteBox.Name = "FromCommitteBox";
+            this.FromCommitteBox.Size = new System.Drawing.Size(204, 24);
+            this.FromCommitteBox.TabIndex = 19;
             // 
             // label54
             // 
@@ -970,23 +976,23 @@
             this.label54.TabIndex = 18;
             this.label54.Text = "From";
             // 
-            // textBox13
+            // DeadlineDate
             // 
-            this.textBox13.ForeColor = System.Drawing.Color.Red;
-            this.textBox13.Location = new System.Drawing.Point(354, 46);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(204, 24);
-            this.textBox13.TabIndex = 17;
-            this.textBox13.Text = "Monday 12/12/2012";
+            this.DeadlineDate.ForeColor = System.Drawing.Color.Red;
+            this.DeadlineDate.Location = new System.Drawing.Point(354, 46);
+            this.DeadlineDate.Margin = new System.Windows.Forms.Padding(2);
+            this.DeadlineDate.Name = "DeadlineDate";
+            this.DeadlineDate.Size = new System.Drawing.Size(204, 24);
+            this.DeadlineDate.TabIndex = 17;
+            this.DeadlineDate.Text = "Monday 12/12/2012";
             // 
-            // textBox14
+            // StartDateBox
             // 
-            this.textBox14.Location = new System.Drawing.Point(75, 46);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(204, 24);
-            this.textBox14.TabIndex = 16;
+            this.StartDateBox.Location = new System.Drawing.Point(75, 46);
+            this.StartDateBox.Margin = new System.Windows.Forms.Padding(2);
+            this.StartDateBox.Name = "StartDateBox";
+            this.StartDateBox.Size = new System.Drawing.Size(204, 24);
+            this.StartDateBox.TabIndex = 16;
             // 
             // label55
             // 
@@ -998,21 +1004,21 @@
             this.label55.TabIndex = 15;
             this.label55.Text = "Deadline";
             // 
-            // textBox15
+            // PriorityBox
             // 
-            this.textBox15.Location = new System.Drawing.Point(625, 46);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(83, 24);
-            this.textBox15.TabIndex = 12;
+            this.PriorityBox.Location = new System.Drawing.Point(625, 46);
+            this.PriorityBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PriorityBox.Name = "PriorityBox";
+            this.PriorityBox.Size = new System.Drawing.Size(83, 24);
+            this.PriorityBox.TabIndex = 12;
             // 
-            // textBox16
+            // ToCommitteeBox
             // 
-            this.textBox16.Location = new System.Drawing.Point(354, 21);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(204, 24);
-            this.textBox16.TabIndex = 12;
+            this.ToCommitteeBox.Location = new System.Drawing.Point(354, 21);
+            this.ToCommitteeBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ToCommitteeBox.Name = "ToCommitteeBox";
+            this.ToCommitteeBox.Size = new System.Drawing.Size(204, 24);
+            this.ToCommitteeBox.TabIndex = 12;
             // 
             // label56
             // 
@@ -1063,7 +1069,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox17);
+            this.groupBox5.Controls.Add(this.SubmissionDetailsBox);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(547, 2);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
@@ -1074,19 +1080,19 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Submission Details and Notes";
             // 
-            // textBox17
+            // SubmissionDetailsBox
             // 
-            this.textBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox17.Location = new System.Drawing.Point(2, 19);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(537, 94);
-            this.textBox17.TabIndex = 1;
+            this.SubmissionDetailsBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubmissionDetailsBox.Location = new System.Drawing.Point(2, 19);
+            this.SubmissionDetailsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SubmissionDetailsBox.Multiline = true;
+            this.SubmissionDetailsBox.Name = "SubmissionDetailsBox";
+            this.SubmissionDetailsBox.Size = new System.Drawing.Size(537, 94);
+            this.SubmissionDetailsBox.TabIndex = 1;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox9);
+            this.groupBox4.Controls.Add(this.DescriptionBox);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(2, 2);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
@@ -1097,15 +1103,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Request Description";
             // 
-            // textBox9
+            // DescriptionBox
             // 
-            this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox9.Location = new System.Drawing.Point(2, 19);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(537, 94);
-            this.textBox9.TabIndex = 0;
+            this.DescriptionBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DescriptionBox.Location = new System.Drawing.Point(2, 19);
+            this.DescriptionBox.Margin = new System.Windows.Forms.Padding(2);
+            this.DescriptionBox.Multiline = true;
+            this.DescriptionBox.Name = "DescriptionBox";
+            this.DescriptionBox.Size = new System.Drawing.Size(537, 94);
+            this.DescriptionBox.TabIndex = 0;
             // 
             // panel4
             // 
@@ -1130,16 +1136,16 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Incoming and Outgoing Requests";
             // 
-            // tabPage3
+            // CommsTasks
             // 
-            this.tabPage3.Controls.Add(this.tableLayoutPanel16);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1098, 459);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Committee Tasks";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.CommsTasks.Controls.Add(this.tableLayoutPanel16);
+            this.CommsTasks.Location = new System.Drawing.Point(4, 25);
+            this.CommsTasks.Margin = new System.Windows.Forms.Padding(2);
+            this.CommsTasks.Name = "CommsTasks";
+            this.CommsTasks.Size = new System.Drawing.Size(1098, 459);
+            this.CommsTasks.TabIndex = 2;
+            this.CommsTasks.Text = "Committee Tasks";
+            this.CommsTasks.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel16
             // 
@@ -1355,7 +1361,7 @@
             // 
             // panel51
             // 
-            this.panel51.Controls.Add(this.dataGridView10);
+            this.panel51.Controls.Add(this.CommTasksGrid);
             this.panel51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel51.Location = new System.Drawing.Point(2, 40);
             this.panel51.Margin = new System.Windows.Forms.Padding(2);
@@ -1363,10 +1369,10 @@
             this.panel51.Size = new System.Drawing.Size(1094, 206);
             this.panel51.TabIndex = 1;
             // 
-            // dataGridView10
+            // CommTasksGrid
             // 
-            this.dataGridView10.AllowUserToAddRows = false;
-            this.dataGridView10.AllowUserToDeleteRows = false;
+            this.CommTasksGrid.AllowUserToAddRows = false;
+            this.CommTasksGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1374,8 +1380,8 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView10.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CommTasksGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.CommTasksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1383,12 +1389,12 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView10.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView10.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView10.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.ReadOnly = true;
+            this.CommTasksGrid.DefaultCellStyle = dataGridViewCellStyle11;
+            this.CommTasksGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CommTasksGrid.Location = new System.Drawing.Point(0, 0);
+            this.CommTasksGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.CommTasksGrid.Name = "CommTasksGrid";
+            this.CommTasksGrid.ReadOnly = true;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1396,10 +1402,11 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView10.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView10.RowTemplate.Height = 28;
-            this.dataGridView10.Size = new System.Drawing.Size(1094, 206);
-            this.dataGridView10.TabIndex = 0;
+            this.CommTasksGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.CommTasksGrid.RowTemplate.Height = 28;
+            this.CommTasksGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CommTasksGrid.Size = new System.Drawing.Size(1094, 206);
+            this.CommTasksGrid.TabIndex = 0;
             // 
             // panel52
             // 
@@ -1423,16 +1430,16 @@
             this.label59.TabIndex = 2;
             this.label59.Text = "Available Tasks";
             // 
-            // tabPage5
+            // CommsFiles
             // 
-            this.tabPage5.Controls.Add(this.tableLayoutPanel18);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1098, 459);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Committee Files";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.CommsFiles.Controls.Add(this.tableLayoutPanel18);
+            this.CommsFiles.Location = new System.Drawing.Point(4, 25);
+            this.CommsFiles.Margin = new System.Windows.Forms.Padding(2);
+            this.CommsFiles.Name = "CommsFiles";
+            this.CommsFiles.Size = new System.Drawing.Size(1098, 459);
+            this.CommsFiles.TabIndex = 4;
+            this.CommsFiles.Text = "Committee Files";
+            this.CommsFiles.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel18
             // 
@@ -1754,16 +1761,16 @@
             this.label67.TabIndex = 2;
             this.label67.Text = "Available Files";
             // 
-            // tabPage7
+            // MonthlyReport
             // 
-            this.tabPage7.Controls.Add(this.tableLayoutPanel21);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1098, 459);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Monthly Report";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.MonthlyReport.Controls.Add(this.tableLayoutPanel21);
+            this.MonthlyReport.Location = new System.Drawing.Point(4, 25);
+            this.MonthlyReport.Margin = new System.Windows.Forms.Padding(2);
+            this.MonthlyReport.Name = "MonthlyReport";
+            this.MonthlyReport.Size = new System.Drawing.Size(1098, 459);
+            this.MonthlyReport.TabIndex = 6;
+            this.MonthlyReport.Text = "Monthly Report";
+            this.MonthlyReport.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel21
             // 
@@ -1885,6 +1892,7 @@
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(1102, 34);
             this.panel38.TabIndex = 2;
+            this.panel38.Paint += new System.Windows.Forms.PaintEventHandler(this.panel38_Paint);
             // 
             // label45
             // 
@@ -1902,7 +1910,7 @@
             // panel39
             // 
             this.panel39.Controls.Add(this.button18);
-            this.panel39.Controls.Add(this.comboBox2);
+            this.panel39.Controls.Add(this.CommitteesCombo);
             this.panel39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel39.Location = new System.Drawing.Point(2, 58);
             this.panel39.Margin = new System.Windows.Forms.Padding(2);
@@ -1919,15 +1927,16 @@
             this.button18.TabIndex = 5;
             this.button18.Text = "Select";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
-            // comboBox2
+            // CommitteesCombo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(5, 9);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(315, 24);
-            this.comboBox2.TabIndex = 4;
+            this.CommitteesCombo.FormattingEnabled = true;
+            this.CommitteesCombo.Location = new System.Drawing.Point(5, 9);
+            this.CommitteesCombo.Margin = new System.Windows.Forms.Padding(2);
+            this.CommitteesCombo.Name = "CommitteesCombo";
+            this.CommitteesCombo.Size = new System.Drawing.Size(315, 24);
+            this.CommitteesCombo.TabIndex = 4;
             // 
             // panel30
             // 
@@ -1978,6 +1987,7 @@
             this.label39.Size = new System.Drawing.Size(537, 29);
             this.label39.TabIndex = 2;
             this.label39.Text = "Here you can view all supervised committees affairs";
+            this.label39.Click += new System.EventHandler(this.label39_Click);
             // 
             // label40
             // 
@@ -3151,10 +3161,10 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.CommsRequests.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.panel43.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IOrequests)).EndInit();
             this.panel48.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -3166,7 +3176,7 @@
             this.groupBox4.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.CommsTasks.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -3177,10 +3187,10 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel51.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommTasksGrid)).EndInit();
             this.panel52.ResumeLayout(false);
             this.panel52.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
+            this.CommsFiles.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
@@ -3194,7 +3204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).EndInit();
             this.panel60.ResumeLayout(false);
             this.panel60.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
+            this.MonthlyReport.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
             this.panel66.ResumeLayout(false);
             this.panel67.ResumeLayout(false);
@@ -3386,7 +3396,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CommitteesCombo;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label38;
@@ -3394,43 +3404,42 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage CommsRequests;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Panel panel43;
-        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView IOrequests;
         private System.Windows.Forms.Panel panel48;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox DescriptionBox;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox TypeBox;
+        private System.Windows.Forms.TextBox RequestTitleBox;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox FromCommitteBox;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox DeadlineDate;
+        private System.Windows.Forms.TextBox StartDateBox;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox PriorityBox;
+        private System.Windows.Forms.TextBox ToCommitteeBox;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage CommsTasks;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Panel panel51;
-        private System.Windows.Forms.DataGridView dataGridView10;
+        private System.Windows.Forms.DataGridView CommTasksGrid;
         private System.Windows.Forms.Panel panel52;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.Panel panel59;
         private System.Windows.Forms.DataGridView dataGridView12;
         private System.Windows.Forms.Panel panel60;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage MonthlyReport;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.Panel panel66;
         private System.Windows.Forms.Button button58;
@@ -3439,7 +3448,7 @@
         private System.Windows.Forms.Panel panel68;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox SubmissionDetailsBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -3480,5 +3489,6 @@
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage CommsFiles;
     }
 }
