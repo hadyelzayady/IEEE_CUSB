@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEvent.Designer.cs">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="EditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEvent.Designer.cs">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,18 @@
     </Compile>
     <Compile Include="MemberForm.Designer.cs">
       <DependentUpon>MemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficersForm.Designer.cs">
+      <DependentUpon>OfficersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipantsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParticipantsManagement.Designer.cs">
+      <DependentUpon>ParticipantsManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,11 +187,17 @@
     <Compile Include="WorkshopsManagement.Designer.cs">
       <DependentUpon>WorkshopsManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEvent.resx">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddRequest.resx">
       <DependentUpon>AddRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTask.resx">
       <DependentUpon>AddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEvent.resx">
+      <DependentUpon>EditEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditRequest.resx">
       <DependentUpon>EditRequest.cs</DependentUpon>
@@ -186,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemberForm.resx">
       <DependentUpon>MemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficersForm.resx">
+      <DependentUpon>OfficersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticipantsManagement.resx">
+      <DependentUpon>ParticipantsManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -301,6 +337,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Volunteers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SubmitAchievment3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SubmitAchievment3_CenterTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SubmitAchievment3_Side.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
