@@ -77,7 +77,7 @@ namespace IEEECUSB
                     CommitteesCombo.ValueMember = "ID";
                     CommitteesCombo.DisplayMember = "Name";
                 }
-                if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"])
+                if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"] && CommitteesCombo.Items.Count!=0)
                 {
                     int CommID = (int)CommitteesCombo.SelectedValue;
                     IOrequests.DataSource = var.controllerObj.CommRequests(CommID);
@@ -129,6 +129,11 @@ namespace IEEECUSB
                 CommTasksGrid.DataSource = var.controllerObj.Committee_Tasks(CommID);
                 CommTasksGrid.Refresh();
             }
+        }
+
+        private void panel20_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

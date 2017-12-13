@@ -2538,7 +2538,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox22.Image = global::IEEECUSB.Properties.Resources.SubmitAchievment3_CenterTile;
+            //this.pictureBox22.Image = global::IEEECUSB.Properties.Resources.SubmitAchievment3_CenterTile;
             this.pictureBox22.Location = new System.Drawing.Point(300, 0);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(1108, 46);
@@ -2550,7 +2550,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox11.Image = global::IEEECUSB.Properties.Resources.SubmitAchievment3;
+            //this.pictureBox11.Image = global::IEEECUSB.Properties.Resources.SubmitAchievment3;
             this.pictureBox11.Location = new System.Drawing.Point(0, 0);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(300, 46);
@@ -2561,7 +2561,7 @@
             // pictureBox21
             // 
             this.pictureBox21.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox21.Image = global::IEEECUSB.Properties.Resources.SubmitAchievment3_Side;
+            //this.pictureBox21.Image = global::IEEECUSB.Properties.Resources.SubmitAchievment3_Side;
             this.pictureBox21.Location = new System.Drawing.Point(1408, 0);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(10, 46);

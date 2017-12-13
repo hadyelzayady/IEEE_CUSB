@@ -200,14 +200,28 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable Committee_Tasks(int Committee_ID=CommitteeID)
+        public int InsertNotification(string Description, string Type, DateTime Date, int Vol_ID)
+        {
+            string query = $"INSERT INTO Notification (Description, Type, Creation_Date, Vol_ID) Values (" + Description + "," + Type + "," + Date + "," + Vol_ID + ")";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable Committee_Tasks(int Committee_ID = CommitteeID)
         {
             string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
                 "FROM Task join TaskRecievers on Task_ID=Task.ID " +
                 "join Volunteer on Volunteer.ID=Reciever_ID " +
-                "where Volunteer.Committee_ID = "+Committee_ID+";";
+                "where Volunteer.Committee_ID = " + Committee_ID + ";";
             return dbMan.ExecuteReader(query);
         }
+
+
+        internal int DeleteTask(int Task_ID)
+        {
+            string query = $"DELETE FROM Task WHERE ID=" + Task_ID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
         internal int DeleteRequest(int Request_ID)
         {
@@ -227,27 +241,31 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
-         public DataTable GetTaskRecievers(int Task_ID)
+
+        public DataTable GetTaskRecievers(int Task_ID)
         {
             string query = "SELECT Volunteer.Name FROM TaskRecievers join Volunteer on Volunteer.ID = TaskRecievers.Reciever_ID Where TaskRecievers.Task_ID =" + Task_ID + ";";
             return dbMan.ExecuteReader(query);
         }
 
-         public int InsertTask(string Title, int Sender_ID,int Committee_ID)
+
+        public int InsertTask(string Title,string description , int Sender_ID, int Committee_ID)
         {
-            string query = $"INSERT INTO Task (Title, Assigner_ID,Committee_ID) Values ("+Title+","+Sender_ID+","+Committee_ID+")";
+            string query = $"INSERT INTO Task (Title,Description , Assigner_ID,Committee_ID) Values (" + Title + "," + description + "," + Sender_ID + "," + Committee_ID + ")";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertTaskReciever(int Task_ID , int Member_ID)
+
+        public int InsertTaskReciever(int Task_ID, int Member_ID)
         {
-            string query = $"INSERT INTO TaskRecievers (Task_ID, Reciever_ID,Season) Values ("+Task_ID+","+Member_ID+",2017)";
-            return dbMan.ExecuteNonQuery(query); 
+            string query = $"INSERT INTO TaskRecievers (Task_ID, Reciever_ID,Season) Values (" + Task_ID + "," + Member_ID + ",2017)";
+            return dbMan.ExecuteNonQuery(query);
         }
 
-        public int UpdateTask(int Task_ID,int Progress_Percentage, string Progress_Description , int Volunteer_ID)
+
+        public int UpdateTask(int Task_ID, int Progress_Percentage, string Progress_Description, int Volunteer_ID)
         {
-            string query = $"UPDATE TaskRecievers SET  Progress_Percentage='"+Progress_Percentage+"' AND Progress_Description='"+Progress_Description+"'  where Task_ID="+Task_ID+" AND Reciever_ID='"+Volunteer_ID+"'";
+            string query = $"UPDATE TaskRecievers SET  Progress_Percentage='" + Progress_Percentage + "' AND Progress_Description='" + Progress_Description + "'  where Task_ID=" + Task_ID + " AND Reciever_ID='" + Volunteer_ID + "'";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -261,21 +279,118 @@ namespace IEEECUSB
         {
             DateTime dateTimeVariable = DateTime.Now;
             string date = dateTimeVariable.ToString("yyyy-MM-dd H:mm:ss");
-            string query = $"UPDATE TaskRecievers SET Status ='"+Status.Submitted+"' where Task_ID="+Task_ID+" AND Reciever_ID='"+Volunteer_ID+"'";
+            string query = $"UPDATE TaskRecievers SET Status ='" + Status.Submitted + "' where Task_ID=" + Task_ID + " AND Reciever_ID='" + Volunteer_ID + "'";
             return dbMan.ExecuteNonQuery(query);
         }
 
-         public DataTable Member_Tasks()
+
+        public DataTable Member_Tasks()
         {
             string query = "SELECT Volunteer.Name , Task.ID , Task.Title ,  TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer,TaskRecievers Where TaskRecievers.Reciever_ID =" + UserID + " AND Task.Assigner_ID = Volunteer.ID AND  TaskRecievers.Task_ID = Task.ID ; ";
             return dbMan.ExecuteReader(query);
         }
 
-         public DataTable Committee_Members()
+
+        public int Edit_Task(int Task_ID, string Title, string Description, int Sender_ID, int Committee_ID)
+        {
+            string query = $"UPDATE Task SET  Title='" + Title + "' AND Description ='" + Description + "' AND Assigner_ID='" + UserID + "' AND Committee_ID='" + CommitteeID + "'  where Task_ID=" + Task_ID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable GetTaskRecieversID(int Task_ID)
+        {
+
+            string query = "SELECT Reciever_ID FROM TaskRecievers Where TaskRecievers.Task_ID =" + Task_ID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+        public int DeleteTaskRec(int Task_ID)
+        {
+            string query = $"DELETE FROM TaskRecievers WHERE Task_ID=" + Task_ID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+        public DataTable Committee_Members()
         {
             string query = "SELECT Name FROM Volunteer Where Committee_ID =" + CommitteeID + "; ";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable MaxTaskID()
+        {
+
+            string query = "SELECT MAX(ID) FROM Task;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Committee_Workshop()
+        {
+            string query = "SELECT * FROM Workshop Where Committee_ID =" + CommitteeID + "; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetWorkshop(int ID)
+        {
+            string query = "SELECT * FROM Workshop Where ID =" + ID + "; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetWorkshopIns(int Workshop_ID)
+        {
+            string query = "SELECT Volunteer.Name FROM SessionInstructor join Volunteer on Volunteer.ID = SessionInstructor.Vol_ID Where SessionInstructor.Workshop_ID =" + Workshop_ID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetWorkshopSessions(int Workshop_ID)
+        {
+            string query = "SELECT * FROM Session Where Session.Workshop_ID =" + Workshop_ID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetSession(int Workshop_ID, int no)
+        {
+            string query = "SELECT * FROM Session Where Session.Workshop_ID =" + Workshop_ID + " AND Session.Number =" + no + " ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SessionCount(int Workshop_ID)
+        {
+            string query = "SELECT Count(*) FROM Session Where Session.Workshop_ID =" + Workshop_ID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Vol_Session_Count(int Workshop_ID, int no)
+        {
+            string query = "SELECT COUNT(*) FROM Volunteer_Session_Attend Where Workshop_ID =" + Workshop_ID + " AND Session_Number =" + no + " ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Part_Session_SessionCount(int Workshop_ID, int no)
+        {
+            string query = "SELECT COUNT(*) FROM Participant_Session_Attend Where Workshop_ID =" + Workshop_ID + " AND Session_Number =" + no + " ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertWorkshop(string Name, string Outline, int Type, DateTime Start_Date, DateTime End_Date, int Session_No)
+        {
+            string query = $"INSERT INTO Workshop (Name , Outline , Type , Start_Date , End_Date , Expected_Sessions , Committee_ID , Committee_Season) Values (" + Name + "," + Outline + "," + Type + "," + Start_Date + "," + End_Date + "," + Session_No + "," + CommitteeID + ",2017)";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable MaxWorkshopID()
+        {
+            string query = "SELECT MAX(ID) FROM Workshop;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertSessionIns(int Workshop_ID, int Member_ID)
+        {
+            string query = $"INSERT INTO SessionInstructor (Workshop_ID, Vol_ID) Values (" + Workshop_ID + "," + Member_ID + ")";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
     }
 }

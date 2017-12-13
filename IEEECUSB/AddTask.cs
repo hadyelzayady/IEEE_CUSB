@@ -35,7 +35,7 @@ namespace IEEECUSB
             if (checkedListBox1.CheckedItems.Count != 0)
             {
                 DataTable dt = var.controllerObj.Committee_Members();
-                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, 1, 1);
+                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, 1 , 1);
                 int maxValue = Convert.ToInt32(var.controllerObj.MaxTaskID().ToString());
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
