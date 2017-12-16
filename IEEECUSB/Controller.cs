@@ -18,6 +18,12 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal DataTable SelectAllWorkshops()
+        {
+            string query = "SELECT Workshop.ID, Workshop.Name From Workshop ";
+            return dbMan.ExecuteReader(query);
+        }
+
         internal DataTable SelectAllCommittees()
         {
             string query = "SELECT Committee.ID, Committee.Name From Committee ";

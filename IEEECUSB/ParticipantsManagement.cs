@@ -14,7 +14,7 @@ namespace IEEECUSB
         public ParticipantsManagement()
         {
             InitializeComponent();
-            WorkshopsComb.DataSource = var.controllerObj.SelectAllCommittees();
+            WorkshopsComb.DataSource = var.controllerObj.SelectAllWorkshops();
             WorkshopsComb.ValueMember = "ID";
             WorkshopsComb.DisplayMember = "Name";
             WorkshopsComb2.DataSource = WorkshopsComb.DataSource;
@@ -83,6 +83,16 @@ namespace IEEECUSB
             FirstNameBox2.Text = NameL.Text.Split(delimiterChars)[0];
             MiddleNameBox2.Text = NameL.Text.Split(delimiterChars)[1];
             LastNameBox2.Text = NameL.Text.Split(delimiterChars)[2];
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            WorkshopsComb.DataSource = var.controllerObj.SelectAllWorkshops();
+            WorkshopsComb.ValueMember = "ID";
+            WorkshopsComb.DisplayMember = "Name";
+            WorkshopsComb2.DataSource = WorkshopsComb.DataSource;
+            WorkshopsComb2.ValueMember = "ID";
+            WorkshopsComb2.DisplayMember = "Name";
         }
     }
 }
