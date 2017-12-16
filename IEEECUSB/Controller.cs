@@ -18,6 +18,12 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal DataTable SelectAllCommittees()
+        {
+            string query = "SELECT Committee.ID, Committee.Name From Committee ";
+            return dbMan.ExecuteReader(query);
+        }
+
         internal DataTable SelectSectionCommittees()
         {
             string query = "SELECT Committee.ID, Committee.Name From Committee join Section on Section.ID=Section_ID where Supervisor_ID=" + UserID + ";";
@@ -26,6 +32,18 @@ namespace IEEECUSB
 
         // (Initially NULL; NO DBManager Object is created yet)
         public int UserID=2;
+
+        internal DataTable SearchParticHistByID(int id)
+        {
+            string query = $"SELECT * From Participant left outer join Participant_Workshop_Enrolled on ID=Participant_ID where ID ={id}";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal DataTable SearchParticHistByName(string name)
+        {
+            string query = "SELECT * From Volunteer where Name Like '%" + name + "%';";
+            return dbMan.ExecuteReader(query);
+        }
 
         internal object SelectHeadUpdates()
         {
@@ -98,6 +116,12 @@ namespace IEEECUSB
             return p;
         }
 
+        internal int UpdateVolunteer(int Volunteer_ID,string Name,int? Committee_ID,string phone = null,string mail = null,string college = null,string depart = null,string university = null,string gradyear = null)
+        {
+            string query = $"update  Volunteer set Name='{Name}',Committee_ID={Committee_ID},Mobile='{phone}',Mail='{mail}',College='{college}',University='{university}',Department='{depart}',Graduation_Year='{gradyear}' where ID={Volunteer_ID}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         internal object SelectMemberNotif()
         {
             string query = "SELECT Volunteer.Name ,Task.Title , Task.Start_Date,Task.End_Date Task.Description  from" +
@@ -166,9 +190,13 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
-        public int InsertVolunteer(string Name,int Committee_ID )
+        public int InsertVolunteer(string Name,int? Committee_ID,string phone=null,string mail=null,string college=null,string depart=null,string university=null,string gradyear=null)
         {
-            string query = $"INSERT INTO Volunteer (Name,Committee_ID) Values ('"+Name+"',"+Committee_ID+")";
+            string comm = (Committee_ID != null) ? ",Committee_ID" : "";
+            string query = $"INSERT INTO Volunteer (Name" + comm + $",Mobile,Mail,College,University,Department,Graduation_Year) Values ('{Name}'";
+            if (Committee_ID != null)
+                query += "," + Committee_ID;
+            query+=$",'{phone}','{mail}','{college}','{university}','{depart}','{gradyear}')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int InsertCommittee(int Season,string Name)

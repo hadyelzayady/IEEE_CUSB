@@ -135,5 +135,10 @@ namespace IEEECUSB
         {
 
         }
+
+        private void CommitteesCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
