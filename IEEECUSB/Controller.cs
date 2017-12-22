@@ -47,7 +47,7 @@ namespace IEEECUSB
 
         internal DataTable SearchParticHistByName(string name)
         {
-            string query = "SELECT * From Volunteer where Name Like '%" + name + "%';";
+            string query = "SELECT * From Participant left outer join Participant_Workshop_Enrolled on ID=Participant_ID where Name Like '%" + name + "%';";
             return dbMan.ExecuteReader(query);
         }
 
@@ -107,6 +107,12 @@ namespace IEEECUSB
         {
             dbMan = new DBManager(); // Create the DBManager Object
         }
+        internal int UpdateParticipant(int ID, string name, string Phone, string Mail, string College, string Depart, string University, string GradYear)
+        {
+            string query = $"update  Participant set Name='{name}',Mobile='{Phone}',Mail='{Mail}',College='{College}',University='{University}',Department='{Depart}',Graduation_Year='{GradYear}' where ID={ID}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

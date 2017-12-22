@@ -94,5 +94,25 @@ namespace IEEECUSB
             WorkshopsComb2.ValueMember = "ID";
             WorkshopsComb2.DisplayMember = "Name";
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string name = FirstNameBox2.Text.Replace(" ", string.Empty) + " " + MiddleNameBox2.Text.Replace(" ", string.Empty) + " " + LastNameBox2.Text.Replace(" ", string.Empty);
+            int NID;
+            int temp;
+            if (NIDBox2.Text != "" && !int.TryParse(NIDBox2.Text, out NID) && NIDBox2.Text.Length != 14 || PhoneBox2.Text != "" && !int.TryParse(PhoneBox2.Text, out temp) && PhoneBox2.Text.Length != 11)
+            {
+                MessageBox.Show("please enter valid phone and national id");
+                return;
+            }
+            int? commid = (int?)WorkshopsComb2.SelectedValue;
+            if (var.controllerObj.UpdateParticipant(int.Parse(ParticIDBox2.Text), name, PhoneBox2.Text, MailBox2.Text, CollegeBox2.Text, DepartBox2.Text, UniversityBox2.Text, GradYearPicker2.Value.Year.ToString()) == 1)
+                MessageBox.Show("vulnteer updated");
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

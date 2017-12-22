@@ -112,7 +112,7 @@
             this.label56 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.NIDBox2 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -130,7 +130,6 @@
             this.DepartBox2 = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.UniversityBox2 = new System.Windows.Forms.TextBox();
@@ -209,6 +208,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.GradYearPicker2 = new System.Windows.Forms.DateTimePicker();
             this.homeLayout_Pnl.SuspendLayout();
             this.homeHeader_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -1266,7 +1266,7 @@
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.textBox3);
+            this.panel21.Controls.Add(this.NIDBox2);
             this.panel21.Controls.Add(this.label39);
             this.panel21.Location = new System.Drawing.Point(2, 2);
             this.panel21.Margin = new System.Windows.Forms.Padding(2);
@@ -1274,13 +1274,13 @@
             this.panel21.Size = new System.Drawing.Size(149, 64);
             this.panel21.TabIndex = 10;
             // 
-            // textBox3
+            // NIDBox2
             // 
-            this.textBox3.Location = new System.Drawing.Point(20, 34);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 24);
-            this.textBox3.TabIndex = 1;
+            this.NIDBox2.Location = new System.Drawing.Point(20, 34);
+            this.NIDBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.NIDBox2.Name = "NIDBox2";
+            this.NIDBox2.Size = new System.Drawing.Size(128, 24);
+            this.NIDBox2.TabIndex = 1;
             // 
             // label39
             // 
@@ -1309,6 +1309,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(128, 24);
             this.textBox4.TabIndex = 2;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label41
             // 
@@ -1435,21 +1436,13 @@
             // 
             // panel28
             // 
-            this.panel28.Controls.Add(this.textBox8);
+            this.panel28.Controls.Add(this.GradYearPicker2);
             this.panel28.Controls.Add(this.label53);
             this.panel28.Location = new System.Drawing.Point(224, 70);
             this.panel28.Margin = new System.Windows.Forms.Padding(2);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(149, 64);
             this.panel28.TabIndex = 9;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(20, 34);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(128, 24);
-            this.textBox8.TabIndex = 2;
             // 
             // label53
             // 
@@ -1587,6 +1580,7 @@
             this.button8.TabIndex = 21;
             this.button8.Text = "Save Changes";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label76
             // 
@@ -2255,6 +2249,14 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // GradYearPicker2
+            // 
+            this.GradYearPicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.GradYearPicker2.Location = new System.Drawing.Point(20, 31);
+            this.GradYearPicker2.Name = "GradYearPicker2";
+            this.GradYearPicker2.Size = new System.Drawing.Size(122, 24);
+            this.GradYearPicker2.TabIndex = 4;
+            // 
             // ParticipantsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2477,7 +2479,7 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox NIDBox2;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.TextBox textBox4;
@@ -2495,7 +2497,6 @@
         private System.Windows.Forms.TextBox DepartBox2;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.TextBox UniversityBox2;
@@ -2574,5 +2575,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker GradYearPicker2;
     }
 }
