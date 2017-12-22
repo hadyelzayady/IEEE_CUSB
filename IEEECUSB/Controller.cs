@@ -148,9 +148,9 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
-        internal int InsertEvent(string title, int CommitteeID)
+        internal int InsertEvent(string title,string description,string sdate,string edate)
         {
-            string query = $"INSERT INTO Event (Title,Committee_ID) Values ('"+title+"',{CommitteeID})";
+            string query = $"INSERT INTO Event (Title,Description,Committee_ID,Start_Date,End_Date) Values ('{title}','{description}',{CommitteeID},'{sdate}','{edate}')";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -163,14 +163,14 @@ namespace IEEECUSB
         public DataTable SelectReceivedRequests()
         {
 
-            string query = $"SELECT Request.ID,Title , Committee.Name as 'Sender Committee' , Description , DATE_FORMAT(Request.Start_date,'%Y-%m-%d') ,DATE_FORMAT(Request.End_date,'%Y-%m-%d') ,Priority,Status FROM Request join Committee on Committee.ID = Sender_Comm_ID  where Reciever_Comm_ID = "+CommitteeID+";";
+            string query = $"SELECT Request.ID,Title , Committee.Name as 'Sender Committee' , Description ,Request.Start_date ,Request.End_date ,Priority,Status FROM Request join Committee on Committee.ID = Sender_Comm_ID  where Reciever_Comm_ID = "+CommitteeID+";";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable SelectSentRequests()
         {
 
-            string query = $"SELECT Request.ID,Title , Committee.Name as 'Received Committee' , Description ,DATE_FORMAT(Request.Start_date,'%Y-%m-%d') ,DATE_FORMAT(Request.End_date,'%Y-%m-%d') ,Priority,Status FROM Request join Committee on Committee.ID = Reciever_Comm_ID  where Sender_Comm_ID = "+CommitteeID+";";
+            string query = $"SELECT Request.ID,Title , Committee.Name as 'Received Committee' , Description ,Request.Start_date ,Request.End_date ,Priority,Status FROM Request join Committee on Committee.ID = Reciever_Comm_ID  where Sender_Comm_ID = "+CommitteeID+";";
             return dbMan.ExecuteReader(query);
         }
         public int InsertRequest(string Title,string Desc,string Start_Date,string End_Date, int Reciever_Comm_ID)
@@ -198,7 +198,7 @@ namespace IEEECUSB
 
         internal DataTable SelectEvents(DateTime date)
         {
-            string query = $"SELECT Title FROM Event join Committee on Event.ID =Committee.ID where Committee.ID="+CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
+            string query = $"SELECT Event.Title,Event.Description,Event.Start_Date,Event.End_Date,Committee.Name FROM Event join Committee on Event.Committee_ID =Committee.ID where Committee.ID=" +CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
             return dbMan.ExecuteReader(query);
         }
 

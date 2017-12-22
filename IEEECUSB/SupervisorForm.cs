@@ -140,5 +140,15 @@ namespace IEEECUSB
         {
 
         }
+
+        private void IOrequests_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ieeeCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }

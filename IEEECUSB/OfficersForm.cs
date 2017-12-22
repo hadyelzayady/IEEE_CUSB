@@ -15,5 +15,10 @@ namespace IEEECUSB
         {
             InitializeComponent();
         }
+
+        private void ieeeCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }

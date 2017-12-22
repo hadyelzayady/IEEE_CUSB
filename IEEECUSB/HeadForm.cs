@@ -416,5 +416,33 @@ namespace IEEECUSB
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button38_Click_1(object sender, EventArgs e)
+        {
+            new AddEvent().ShowDialog();
+        }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void eventDetails_GridView_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+            {
+                DescL.Text = selected[0].Cells["Description"].Value.ToString();
+                TitleL.Text = selected[0].Cells["Title"].Value.ToString();
+                DateL.Text = selected[0].Cells["Start_Date"].Value.ToString() + " To " + selected[0].Cells["End_Date"].Value.ToString();
+               // DescL.Text = selected[0].Cells["DressCode"].Value.ToString();
+
+            }
+        }
     }
 }

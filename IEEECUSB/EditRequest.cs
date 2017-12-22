@@ -54,5 +54,10 @@ namespace IEEECUSB
             int RecCommID = (int)RecComm.SelectedValue;
             var.controllerObj.EditRequest(requestID, Title, Desc, StartDate, EndDate, RecCommID);
         }
+
+        private void RequestStartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

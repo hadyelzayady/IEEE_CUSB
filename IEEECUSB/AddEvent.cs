@@ -15,5 +15,25 @@ namespace IEEECUSB
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string desc = DescBox.Text;
+            string title = TitleBox.Text;
+            string Sdate=dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string Edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+            var.controllerObj.InsertEvent(title,desc,Sdate,Edate);
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

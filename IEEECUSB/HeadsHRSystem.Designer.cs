@@ -65,9 +65,9 @@
             this.groupBox1.Controls.Add(this.committeeMembers);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(2, 78);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(775, 227);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -78,7 +78,7 @@
             this.committeeMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.committeeMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.committeeMembers.Location = new System.Drawing.Point(2, 19);
-            this.committeeMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.committeeMembers.Margin = new System.Windows.Forms.Padding(2);
             this.committeeMembers.Name = "committeeMembers";
             this.committeeMembers.RowTemplate.Height = 28;
             this.committeeMembers.Size = new System.Drawing.Size(771, 206);
@@ -88,7 +88,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(197, 13);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 36);
             this.button2.TabIndex = 6;
@@ -99,7 +99,7 @@
             // SearchBox
             // 
             this.SearchBox.Location = new System.Drawing.Point(5, 25);
-            this.SearchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SearchBox.Margin = new System.Windows.Forms.Padding(2);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(188, 24);
             this.SearchBox.TabIndex = 5;
@@ -117,12 +117,13 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(199, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 36);
             this.button1.TabIndex = 3;
             this.button1.Text = "Sort";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -132,7 +133,7 @@
             "ID",
             "Evaluation"});
             this.comboBox1.Location = new System.Drawing.Point(5, 23);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 24);
             this.comboBox1.TabIndex = 2;
@@ -151,7 +152,7 @@
             // 
             this.pictureBox20.Image = global::IEEECUSB.Properties.Resources.Tasks;
             this.pictureBox20.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(62, 61);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -187,9 +188,9 @@
             this.groupBox2.Controls.Add(this.memberDetails);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(2, 365);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(775, 227);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
@@ -203,7 +204,7 @@
             this.Value});
             this.memberDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memberDetails.Location = new System.Drawing.Point(2, 19);
-            this.memberDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.memberDetails.Margin = new System.Windows.Forms.Padding(2);
             this.memberDetails.Name = "memberDetails";
             this.memberDetails.RowTemplate.Height = 28;
             this.memberDetails.Size = new System.Drawing.Size(771, 206);
@@ -234,7 +235,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
@@ -253,7 +254,7 @@
             this.panel1.Controls.Add(this.label33);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(775, 68);
             this.panel1.TabIndex = 22;
@@ -265,7 +266,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(2, 309);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(775, 52);
             this.panel2.TabIndex = 23;
@@ -277,7 +278,7 @@
             this.panel4.Controls.Add(this.button1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(469, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 52);
             this.panel4.TabIndex = 9;
@@ -289,7 +290,7 @@
             this.panel3.Controls.Add(this.button2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(307, 52);
             this.panel3.TabIndex = 8;
@@ -300,7 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 595);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HeadsHRSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HR System | IEEE CUSB Portal";
