@@ -30,6 +30,12 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal int UpdateEvent(int id,string title, string desc, string sdate, string edate)
+        {
+            string query = $"update  Participant set Title='{title}',Description='{desc}',Start_Date='{sdate}',End_Date='{edate}' where ID={id}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         internal DataTable SelectSectionCommittees()
         {
             string query = "SELECT Committee.ID, Committee.Name From Committee join Section on Section.ID=Section_ID where Supervisor_ID=" + UserID + ";";
@@ -198,7 +204,7 @@ namespace IEEECUSB
 
         internal DataTable SelectEvents(DateTime date)
         {
-            string query = $"SELECT Event.Title,Event.Description,Event.Start_Date,Event.End_Date,Committee.Name FROM Event join Committee on Event.Committee_ID =Committee.ID where Committee.ID=" +CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
+            string query = $"SELECT Event.ID,Event.Title,Event.Description,Event.Start_Date,Event.End_Date,Committee.Name FROM Event join Committee on Event.Committee_ID =Committee.ID where Committee.ID=" +CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
             return dbMan.ExecuteReader(query);
         }
 
