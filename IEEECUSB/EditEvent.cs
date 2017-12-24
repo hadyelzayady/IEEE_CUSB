@@ -20,7 +20,6 @@ namespace IEEECUSB
             DescBox.Text = selectedEvent.Cells["Description"].Value.ToString();
             dateTimePicker1.Text = selectedEvent.Cells["Start_Date"].Value.ToString();
             dateTimePicker2.Text = selectedEvent.Cells["End_Date"].Value.ToString();
-
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1000,6 +1000,7 @@
             this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
+            this.ieeeCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateChanged);
             this.ieeeCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateSelected);
             // 
             // calendarHeader_Pnl

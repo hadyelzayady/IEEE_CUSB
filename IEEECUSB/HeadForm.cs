@@ -295,6 +295,7 @@ namespace IEEECUSB
                 {
                     acceptButton.Enabled = false;
                     rejectButton.Enabled = false;
+                    UpdateSubmitButton.Enabled = false;
                     return;
                 }
                 acceptButton.Enabled = true;
@@ -452,6 +453,32 @@ namespace IEEECUSB
             DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
             if (selected.Count != 0)
                 new EditEvent(selected[0]).ShowDialog();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                var.controllerObj.DeleteEvent((int)selected[0].Cells["ID"].Value);
+        }
+
+        private void eventDetails_GridView_AllowUserToAddRowsChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SentReqList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = ReceivedReqList.SelectedRows;
+            if (selected != null)
+            {
+                new ViewRequest(selected).ShowDialog();
+            }
         }
     }
 }

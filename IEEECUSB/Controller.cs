@@ -57,6 +57,12 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal int MemeberUpdateRequest(int requestID, object progressDesc, object progressPerc)
+        {
+            string query = $"UPDATE Request SET Progress_Description ='{ progressDesc}' , Progress_Percentage={ progressPerc }where ID={ requestID }";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         internal object SelectHeadUpdates()
         {
             string query = "SELECT Volunteer.Name ,Task.Title , Task.Start_Date,Task.End_Date ,Task.Description  from" +
@@ -169,14 +175,16 @@ namespace IEEECUSB
         public DataTable SelectReceivedRequests()
         {
 
-            string query = $"SELECT Request.ID,Title , Committee.Name as 'Sender Committee' , Description ,Request.Start_date ,Request.End_date ,Priority,Status FROM Request join Committee on Committee.ID = Sender_Comm_ID  where Reciever_Comm_ID = "+CommitteeID+";";
+            string query = $"SELECT Request.ID,Title,CommitteeR.Name as 'Recieved Committee' , CommitteeS.Name as 'Sender Committee' , Description ,Request.Start_date ,Request.End_date ,Priority,Status FROM Request join Committee as CommitteeS on CommitteeS.ID = Sender_Comm_ID " +
+                $"join Committee as CommitteeR  on  CommitteeR.ID = Reciever_Comm_ID where Reciever_Comm_ID = " +CommitteeID+";";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable SelectSentRequests()
         {
 
-            string query = $"SELECT Request.ID,Title , Committee.Name as 'Received Committee' , Description ,Request.Start_date ,Request.End_date ,Priority,Status FROM Request join Committee on Committee.ID = Reciever_Comm_ID  where Sender_Comm_ID = "+CommitteeID+";";
+            string query = $"SELECT Request.ID,Title,CommitteeR.Name as 'Recieved Committee' , CommitteeS.Name as 'Sender Committee' , Description ,Request.Start_date ,Request.End_date ,Priority,Status FROM Request join Committee as CommitteeR on CommitteeR.ID = Reciever_Comm_ID " +
+                $"join Committee as CommitteeS  on  CommitteeS.ID = Sender_Comm_ID where Sender_Comm_ID = " + CommitteeID + ";";
             return dbMan.ExecuteReader(query);
         }
         public int InsertRequest(string Title,string Desc,string Start_Date,string End_Date, int Reciever_Comm_ID)
@@ -294,6 +302,11 @@ namespace IEEECUSB
             return dbMan.ExecuteReader(query);
         }
 
+        internal int DeleteEvent(int EventID)
+        {
+            string query = $"DELETE FROM Event WHERE ID={EventID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public int InsertTask(string Title,string description , int Sender_ID, int Committee_ID)
         {
