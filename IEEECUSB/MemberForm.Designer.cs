@@ -640,6 +640,7 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1078, 114);
             this.panel15.TabIndex = 1;
+            this.panel15.Paint += new System.Windows.Forms.PaintEventHandler(this.panel15_Paint);
             // 
             // pictureBox4
             // 
@@ -699,6 +700,7 @@
             this.label12.Size = new System.Drawing.Size(283, 41);
             this.label12.TabIndex = 1;
             this.label12.Text = "My Personal Tasks";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // filesTab
             // 
@@ -983,14 +985,18 @@
             // 
             // eventDetails_GridView
             // 
+            this.eventDetails_GridView.AllowUserToAddRows = false;
+            this.eventDetails_GridView.AllowUserToDeleteRows = false;
             this.eventDetails_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDetails_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventDetails_GridView.Location = new System.Drawing.Point(0, 0);
             this.eventDetails_GridView.Margin = new System.Windows.Forms.Padding(2);
             this.eventDetails_GridView.Name = "eventDetails_GridView";
+            this.eventDetails_GridView.ReadOnly = true;
             this.eventDetails_GridView.RowTemplate.Height = 28;
             this.eventDetails_GridView.Size = new System.Drawing.Size(802, 500);
             this.eventDetails_GridView.TabIndex = 0;
+            this.eventDetails_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventDetails_GridView_CellContentClick);
             // 
             // ieeeCalendar
             // 

@@ -22,7 +22,11 @@ namespace IEEECUSB
             string title = TitleBox.Text;
             string Sdate=dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string Edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-            var.controllerObj.InsertEvent(title,desc,Sdate,Edate);
+            if(var.controllerObj.InsertEvent(title,desc,Sdate,Edate)==1)
+            {
+                MessageBox.Show("Event added successfully");
+                this.Close();
+            }
 
         }
 

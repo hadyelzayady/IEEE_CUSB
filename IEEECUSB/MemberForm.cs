@@ -58,5 +58,20 @@ namespace IEEECUSB
         {
 
         }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

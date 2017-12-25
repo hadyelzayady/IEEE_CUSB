@@ -12,9 +12,9 @@ namespace IEEECUSB
     {
         private DBManager dbMan; // A Reference of type DBManager 
 
-        internal DataTable SelectCommMember()
+        internal DataTable SelectCommMembers()
         {
-            string query = "SELECT ID, Name, Responsibility_Description From Volunteer where Committee_ID="+CommitteeID+";";
+            string query = "SELECT * From Volunteer where Committee_ID="+CommitteeID+";";
             return dbMan.ExecuteReader(query);
         }
 
@@ -32,7 +32,7 @@ namespace IEEECUSB
 
         internal int UpdateEvent(int id,string title, string desc, string sdate, string edate)
         {
-            string query = $"update  Participant set Title='{title}',Description='{desc}',Start_Date='{sdate}',End_Date='{edate}' where ID={id}";
+            string query = $"update  Event set Title='{title}',Description='{desc}',Start_Date='{sdate}',End_Date='{edate}' where ID={id}";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -47,13 +47,15 @@ namespace IEEECUSB
 
         internal DataTable SearchParticHistByID(int id)
         {
-            string query = $"SELECT * From Participant left outer join Participant_Workshop_Enrolled on ID=Participant_ID where ID ={id}";
+            string query = $"SELECT * From Participant left outer join Participant_Workshop_Enrolled on ID=Participant_ID " +
+                $"left outer join Workshop on Workshop.ID=Workshop_ID  where Participant.ID={id} order by Workshop.Committee_Season";
             return dbMan.ExecuteReader(query);
         }
 
         internal DataTable SearchParticHistByName(string name)
         {
-            string query = "SELECT * From Participant left outer join Participant_Workshop_Enrolled on ID=Participant_ID where Name Like '%" + name + "%';";
+            string query =$"SELECT * From Participant left outer join Participant_Workshop_Enrolled on ID=Participant_ID " +
+                $"left outer join Workshop on Workshop.ID=Workshop_ID  where Name Like %{name}% order by Workshop.Committee_Season";
             return dbMan.ExecuteReader(query);
         }
 
@@ -71,6 +73,12 @@ namespace IEEECUSB
             "select Committee.Name,Request.Title,Request.Start_Date,Request.End_Date,Request.Description FROM " +
             "Request join Committee on Request.ID = Sender_Comm_ID " +
             "where Reciever_Comm_ID= " + CommitteeID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal DataTable SelectMemberDetails(int ID)
+        {
+            string query = $"SELECT * From Volunteer where ID={ID};";
             return dbMan.ExecuteReader(query);
         }
 
@@ -140,6 +148,16 @@ namespace IEEECUSB
             return p;
         }
 
+        internal int InsertParticipant(string Name,string NID, int? workshopid, string phone = null, string mail = null, string college = null, string depart = null, string university = null, string gradyear = null)
+        {
+                        string workshop = (workshopid != null) ? ",Workshop_ID" : "";
+            string query = $"INSERT INTO Participant (Name,National_ID,Mobile,Mail,College,University,Department,Graduation_Year) Values ('{Name}','{NID}'" +
+                $",'{phone}','{mail}','{college}','{university}','{depart}','{gradyear}');";
+            //if (workshopid != null)
+            //    query += $"insert into Participant_Workshop_Enrolled (Workshop_ID,Participant_ID) values ({workshopid},SELECT LAST_INSERT_ID());";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         internal int UpdateVolunteer(int Volunteer_ID,string Name,int? Committee_ID,string phone = null,string mail = null,string college = null,string depart = null,string university = null,string gradyear = null)
         {
             string query = $"update  Volunteer set Name='{Name}',Committee_ID={Committee_ID},Mobile='{phone}',Mail='{mail}',College='{college}',University='{university}',Department='{depart}',Graduation_Year='{gradyear}' where ID={Volunteer_ID}";
@@ -156,7 +174,7 @@ namespace IEEECUSB
 
         internal DataTable SelectCommittees()
         {
-            string query = $"SELECT ID, Name From Committee;";
+            string query = $"SELECT ID, Name From Committee where ID !={CommitteeID};";
             return dbMan.ExecuteReader(query);
         }
 
@@ -212,17 +230,17 @@ namespace IEEECUSB
 
         internal DataTable SelectEvents(DateTime date)
         {
-            string query = $"SELECT Event.ID,Event.Title,Event.Description,Event.Start_Date,Event.End_Date,Committee.Name FROM Event join Committee on Event.Committee_ID =Committee.ID where Committee.ID=" +CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
+            string query = $"SELECT Event.ID,Event.Title,Event.Description,Event.Start_Date,Event.End_Date,Committee.Name as 'Committee Name' FROM Event join Committee on Event.Committee_ID =Committee.ID where Committee.ID=" +CommitteeID+" AND '"+date.ToString("yyyy-MM-dd")+"' between Event.Start_Date and Event.End_Date ;";
             return dbMan.ExecuteReader(query);
         }
 
-        public int InsertVolunteer(string Name,int? Committee_ID,string phone=null,string mail=null,string college=null,string depart=null,string university=null,string gradyear=null)
+        public int InsertVolunteer(string Name,string NID,int? Committee_ID,string phone=null,string mail=null,string college=null,string depart=null,string university=null,string gradyear=null)
         {
             string comm = (Committee_ID != null) ? ",Committee_ID" : "";
-            string query = $"INSERT INTO Volunteer (Name" + comm + $",Mobile,Mail,College,University,Department,Graduation_Year) Values ('{Name}'";
+            string query = $"INSERT INTO Volunteer (Name" + comm + $",Mobile,National_ID,Mail,College,University,Department,Graduation_Year) Values ('{Name}'";
             if (Committee_ID != null)
                 query += "," + Committee_ID;
-            query+=$",'{phone}','{mail}','{college}','{university}','{depart}','{gradyear}')";
+            query+=$",'{phone}','{NID}','{mail}','{college}','{university}','{depart}','{gradyear}')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int InsertCommittee(int Season,string Name)
@@ -262,10 +280,10 @@ namespace IEEECUSB
 
         public DataTable Committee_Tasks(int Committee_ID = CommitteeID)
         {
-            string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+            string query = $"SELECT Reciever.Name as 'Reciever',Assigner.Name as 'Assigner', Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
                 "FROM Task join TaskRecievers on Task_ID=Task.ID " +
-                "join Volunteer on Volunteer.ID=Reciever_ID " +
-                "where Volunteer.Committee_ID = " + Committee_ID + ";";
+                "join Volunteer as Reciever on Reciever.ID=Reciever_ID join Volunteer as Assigner on Assigner.ID =Task.Assigner_ID " +
+                "where Reciever.Committee_ID = " + Committee_ID + " order by Assigner.ID;";
             return dbMan.ExecuteReader(query);
         }
 

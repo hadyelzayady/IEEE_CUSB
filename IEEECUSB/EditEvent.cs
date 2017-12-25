@@ -26,7 +26,18 @@ namespace IEEECUSB
         {
             string sdate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-            var.controllerObj.UpdateEvent(EventID, TitleBox.Text, DescBox.Text, sdate, edate);
+            if(var.controllerObj.UpdateEvent(EventID, TitleBox.Text, DescBox.Text, sdate, edate)==1)
+            {
+                MessageBox.Show("Even edited successfully");
+                this.Close();
+                return;
+            }
+            MessageBox.Show("sorry error happened ,try again later");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -61,9 +61,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Location = new System.Drawing.Point(9, 78);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(727, 86);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
@@ -73,7 +73,7 @@
             // 
             this.RecComm.FormattingEnabled = true;
             this.RecComm.Location = new System.Drawing.Point(93, 22);
-            this.RecComm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RecComm.Margin = new System.Windows.Forms.Padding(2);
             this.RecComm.Name = "RecComm";
             this.RecComm.Size = new System.Drawing.Size(630, 24);
             this.RecComm.TabIndex = 3;
@@ -103,7 +103,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(93, 50);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(630, 24);
             this.comboBox2.TabIndex = 4;
@@ -112,7 +112,7 @@
             // 
             this.pictureBox20.Image = global::IEEECUSB.Properties.Resources.Requests_2;
             this.pictureBox20.Location = new System.Drawing.Point(9, 10);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(62, 61);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,12 +122,13 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(618, 179);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 36);
             this.button2.TabIndex = 16;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label7
             // 
@@ -164,9 +165,9 @@
             this.groupBox1.Controls.Add(this.RequestStartDate);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(9, 170);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(727, 220);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
@@ -176,7 +177,7 @@
             // RequestDesc
             // 
             this.RequestDesc.Location = new System.Drawing.Point(8, 41);
-            this.RequestDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestDesc.Margin = new System.Windows.Forms.Padding(2);
             this.RequestDesc.Multiline = true;
             this.RequestDesc.Name = "RequestDesc";
             this.RequestDesc.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -187,7 +188,7 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(540, 144);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(184, 24);
             this.comboBox3.TabIndex = 14;
@@ -205,7 +206,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(508, 179);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 36);
             this.button1.TabIndex = 7;
@@ -216,7 +217,7 @@
             // RequestTitle
             // 
             this.RequestTitle.Location = new System.Drawing.Point(454, 41);
-            this.RequestTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestTitle.Margin = new System.Windows.Forms.Padding(2);
             this.RequestTitle.Name = "RequestTitle";
             this.RequestTitle.Size = new System.Drawing.Size(269, 24);
             this.RequestTitle.TabIndex = 0;
@@ -224,7 +225,7 @@
             // RequestEndDate
             // 
             this.RequestEndDate.Location = new System.Drawing.Point(540, 110);
-            this.RequestEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.RequestEndDate.Name = "RequestEndDate";
             this.RequestEndDate.Size = new System.Drawing.Size(184, 24);
             this.RequestEndDate.TabIndex = 13;
@@ -242,7 +243,7 @@
             // RequestStartDate
             // 
             this.RequestStartDate.Location = new System.Drawing.Point(540, 78);
-            this.RequestStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RequestStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.RequestStartDate.Name = "RequestStartDate";
             this.RequestStartDate.Size = new System.Drawing.Size(184, 24);
             this.RequestStartDate.TabIndex = 11;

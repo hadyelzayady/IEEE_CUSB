@@ -150,5 +150,93 @@ namespace IEEECUSB
         {
 
         }
+
+        private void CommTasksGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                if (var.controllerObj.DeleteEvent((int)selected[0].Cells["ID"].Value) == 1)
+                {
+                    MessageBox.Show("Event deleted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error ,event not deleted");
+                }
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                new EditEvent(selected[0]).ShowDialog();
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            new AddEvent().ShowDialog();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.Refresh();
+            DescL.Text = "";
+            DateL.Text = "";
+            TitleL.Text = "";
+        }
+
+        private void panel30_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CommTasksGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if(CommTasksGrid.SelectedRows.Count!=0)
+            {
+                DataGridViewRow selectedRow = CommTasksGrid.SelectedRows[0];
+                FromBox.Text = selectedRow.Cells["Assigner"].Value.ToString();
+                foreach (DataGridViewRow row in CommTasksGrid.Rows)
+                {
+                    if (row.Cells["Assigner"].Value.ToString() == selectedRow.Cells["Assigner"].Value.ToString())
+                        ToBox.Text += row.Cells["Reciever"];
+                }
+                start_dateBox.Text = selectedRow.Cells["Start_Date"].Value.ToString();
+                TitleBox.Text = selectedRow.Cells["Title"].Value.ToString();
+                DescriptionBox.Text = selectedRow.Cells["Description"].Value.ToString();
+            }
+        }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void eventDetails_GridView_SelectionChanged(object sender, EventArgs e)
+        {
+
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+            {
+                DescL.Text = selected[0].Cells["Description"].Value.ToString();
+                TitleL.Text = selected[0].Cells["Title"].Value.ToString();
+                DateL.Text = selected[0].Cells["Start_Date"].Value.ToString() + " To " + selected[0].Cells["End_Date"].Value.ToString();
+                // DescL.Text = selected[0].Cells["DressCode"].Value.ToString();
+            }
+        }
+
+        private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            if (eventDetails_GridView.RowCount != 0)
+                eventDetails_GridView.Columns[0].Visible = false;
+            eventDetails_GridView.Refresh();
+        }
     }
 }

@@ -40,6 +40,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.DescBox = new System.Windows.Forms.TextBox();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
@@ -48,26 +50,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(463, 272);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(687, 272);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 36);
             this.button2.TabIndex = 21;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(572, 272);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(532, 272);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 36);
             this.button1.TabIndex = 20;
@@ -98,7 +99,7 @@
             // TitleBox
             // 
             this.TitleBox.Location = new System.Drawing.Point(151, 46);
-            this.TitleBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TitleBox.Margin = new System.Windows.Forms.Padding(2);
             this.TitleBox.Name = "TitleBox";
             this.TitleBox.Size = new System.Drawing.Size(190, 24);
             this.TitleBox.TabIndex = 10;
@@ -117,7 +118,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(251, 22);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(65, 21);
             this.radioButton2.TabIndex = 8;
@@ -129,7 +130,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(121, 22);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(76, 21);
             this.radioButton1.TabIndex = 7;
@@ -152,7 +153,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(151, 76);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 24);
             this.dateTimePicker1.TabIndex = 15;
@@ -161,7 +162,7 @@
             // 
             this.pictureBox20.Image = global::IEEECUSB.Properties.Resources.Requests_2;
             this.pictureBox20.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(62, 61);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -187,18 +188,36 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 72);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(754, 196);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Meeting / Event Details";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-3, 102);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Meeting End Date/Time";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(151, 104);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(236, 24);
+            this.dateTimePicker2.TabIndex = 22;
+            // 
             // DescBox
             // 
             this.DescBox.Location = new System.Drawing.Point(409, 41);
-            this.DescBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DescBox.Margin = new System.Windows.Forms.Padding(2);
             this.DescBox.Multiline = true;
             this.DescBox.Name = "DescBox";
             this.DescBox.Size = new System.Drawing.Size(325, 96);
@@ -208,7 +227,7 @@
             // 
             this.radioButton6.AutoSize = true;
             this.radioButton6.Location = new System.Drawing.Point(214, 171);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(102, 21);
             this.radioButton6.TabIndex = 20;
@@ -220,7 +239,7 @@
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(121, 171);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(70, 21);
             this.radioButton5.TabIndex = 19;
@@ -232,7 +251,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(214, 149);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(104, 21);
             this.radioButton4.TabIndex = 18;
@@ -244,7 +263,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(121, 147);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(68, 21);
             this.radioButton3.TabIndex = 17;
@@ -284,24 +303,6 @@
             this.label33.TabIndex = 18;
             this.label33.Text = "Here you can edit a meeting or an event";
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(151, 104);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(236, 24);
-            this.dateTimePicker2.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-3, 102);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 17);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Meeting End Date/Time";
-            // 
             // EditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -313,7 +314,7 @@
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label33);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Event | IEEE CUSB Portal";

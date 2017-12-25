@@ -39,25 +39,23 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.memberDetails = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.memberDetails = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.committeeMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memberDetails)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,15 +73,21 @@
             // 
             // committeeMembers
             // 
+            this.committeeMembers.AllowUserToAddRows = false;
+            this.committeeMembers.AllowUserToDeleteRows = false;
             this.committeeMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.committeeMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.committeeMembers.Location = new System.Drawing.Point(2, 19);
             this.committeeMembers.Margin = new System.Windows.Forms.Padding(2);
+            this.committeeMembers.MultiSelect = false;
             this.committeeMembers.Name = "committeeMembers";
+            this.committeeMembers.ReadOnly = true;
             this.committeeMembers.RowTemplate.Height = 28;
+            this.committeeMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.committeeMembers.Size = new System.Drawing.Size(771, 206);
             this.committeeMembers.TabIndex = 7;
             this.committeeMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.committeeMembers.SelectionChanged += new System.EventHandler(this.committeeMembers_SelectionChanged);
             // 
             // button2
             // 
@@ -183,48 +187,6 @@
             this.label34.TabIndex = 18;
             this.label34.Text = "Committee HR System ";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.memberDetails);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(2, 365);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(775, 227);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Member Details";
-            // 
-            // memberDetails
-            // 
-            this.memberDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.memberDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Item,
-            this.Value});
-            this.memberDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberDetails.Location = new System.Drawing.Point(2, 19);
-            this.memberDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.memberDetails.Name = "memberDetails";
-            this.memberDetails.RowTemplate.Height = 28;
-            this.memberDetails.Size = new System.Drawing.Size(771, 206);
-            this.memberDetails.TabIndex = 8;
-            this.memberDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            this.Item.Width = 500;
-            // 
-            // Value
-            // 
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
-            this.Value.ReadOnly = true;
-            this.Value.Width = 500;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -295,6 +257,36 @@
             this.panel3.Size = new System.Drawing.Size(307, 52);
             this.panel3.TabIndex = 8;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.memberDetails);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(2, 365);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(775, 227);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Member Details";
+            // 
+            // memberDetails
+            // 
+            this.memberDetails.AllowUserToAddRows = false;
+            this.memberDetails.AllowUserToDeleteRows = false;
+            this.memberDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.memberDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memberDetails.Location = new System.Drawing.Point(2, 19);
+            this.memberDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.memberDetails.MultiSelect = false;
+            this.memberDetails.Name = "memberDetails";
+            this.memberDetails.ReadOnly = true;
+            this.memberDetails.RowTemplate.Height = 28;
+            this.memberDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.memberDetails.Size = new System.Drawing.Size(771, 206);
+            this.memberDetails.TabIndex = 8;
+            this.memberDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
             // HeadsHRSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -308,8 +300,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.committeeMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.memberDetails)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -318,6 +308,8 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memberDetails)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,14 +326,12 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DataGridView committeeMembers;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView memberDetails;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView memberDetails;
     }
 }

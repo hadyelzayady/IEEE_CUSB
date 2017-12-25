@@ -14,7 +14,11 @@ namespace IEEECUSB
         public HeadsHRSystem()
         {
             InitializeComponent();
-            committeeMembers.DataSource = var.controllerObj.SelectCommMember();
+            committeeMembers.DataSource = var.controllerObj.SelectCommMembers();
+            if (committeeMembers.RowCount != 0)
+            {
+                committeeMembers.Columns["ID"].Visible = false;
+            }
             committeeMembers.Refresh();
         }
 
@@ -62,10 +66,25 @@ namespace IEEECUSB
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void committeeMembers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (committeeMembers.SelectedRows.Count != 0)
+            {
+                //DataGridViewRow row = (DataGridViewRow)committeeMembers.SelectedRows[0].Clone();
+                //if(memberDetails.Rows.Count!=0)
+                //    memberDetails.Rows.Clear();
+                //memberDetails.DataSource = committeeMembers.DataSource;
+            }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

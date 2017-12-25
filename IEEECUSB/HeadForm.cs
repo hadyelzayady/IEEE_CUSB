@@ -459,7 +459,14 @@ namespace IEEECUSB
         {
             DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
             if (selected.Count != 0)
-                var.controllerObj.DeleteEvent((int)selected[0].Cells["ID"].Value);
+                if (var.controllerObj.DeleteEvent((int)selected[0].Cells["ID"].Value) == 1)
+                {
+                    MessageBox.Show("Event deleted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error ,event not deleted");
+                }
         }
 
         private void eventDetails_GridView_AllowUserToAddRowsChanged(object sender, EventArgs e)
@@ -475,10 +482,16 @@ namespace IEEECUSB
         private void button19_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = ReceivedReqList.SelectedRows;
-            if (selected != null)
+            if (selected.Count != 0)
             {
                 new ViewRequest(selected).ShowDialog();
             }
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.Refresh();
         }
     }
 }

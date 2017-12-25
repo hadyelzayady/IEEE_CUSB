@@ -20,6 +20,12 @@ namespace IEEECUSB
             CommsComb2.DataSource =CommsComb.DataSource;
             CommsComb2.ValueMember = "ID";
             CommsComb2.DisplayMember = "Name";
+            JobTitleCombo.Items.Add("Head");
+            JobTitleCombo.Items.Add("Member");
+            JobTitleCombo.Items.Add("Vice");
+            JobTitleCombo2.Items.Add("Head");
+            JobTitleCombo2.Items.Add("Member");
+            JobTitleCombo2.Items.Add("Vice");
         }
 
         private void logoPictureBox_Click(object sender, EventArgs e)
@@ -45,11 +51,17 @@ namespace IEEECUSB
                 if (Volunteer != null)
                 {
                     NameL.Text = Volunteer.Rows[0]["Name"].ToString();
-                    IDL.Text = Volunteer.Rows[0]["ID"].ToString();
                     SSNL.Text = Volunteer.Rows[0]["National_ID"].ToString();
                     PhoneL.Text = Volunteer.Rows[0]["Mobile"].ToString();
                     EmailL.Text = Volunteer.Rows[0]["Mail"].ToString();
                     IDLabel.Text = Volunteer.Rows[0]["ID"].ToString();
+                    if(Volunteer.Rows[0]["Birthdate"].ToString()!="")
+                        BirthdateL.Text = Convert.ToDateTime(Volunteer.Rows[0]["Birthdate"].ToString()).ToShortDateString();
+                    GraduationL.Text = Volunteer.Rows[0]["Graduation_Year"].ToString();
+                    CollegeL.Text = Volunteer.Rows[0]["College"].ToString();
+                    DepL.Text = Volunteer.Rows[0]["Department"].ToString();
+                    statusL.Text = Volunteer.Rows[0]["Activity_Status"].ToString();
+                    UniversityL.Text = Volunteer.Rows[0]["University"].ToString();
                     int CommID = (int)Volunteer.Rows[0]["Committee_ID"];
                     CommsComb2.SelectedValue = CommID;
                     CommL.Text = CommsComb2.GetItemText(CommsComb2.SelectedItem);
@@ -91,7 +103,7 @@ namespace IEEECUSB
                 return;
             }
             int? commid = (int?)CommsComb.SelectedValue;
-            if (var.controllerObj.InsertVolunteer(name,commid, MobileBox.Text, EmailBox.Text, CollegeBox.Text, DepartBox.Text, UniversityBox.Text, GradYearPicker.Value.Year.ToString()) == 1)
+            if (var.controllerObj.InsertVolunteer(name, NIDBox.Text, commid, MobileBox.Text, EmailBox.Text, CollegeBox.Text, DepartBox.Text, UniversityBox.Text, GradYearPicker.Value.Year.ToString()) == 1)
                 MessageBox.Show("vulnteer added");
             else
                 MessageBox.Show("Sorry Error happend try again");
@@ -113,6 +125,14 @@ namespace IEEECUSB
             PhoneBox2.Text = PhoneL.Text;
             MailBox2.Text = EmailL.Text;
             IDLabel2.Text = IDLabel.Text;
+            CollegeBox2.Text = CollegeL.Text;
+            DepartBox2.Text = DepL.Text;
+            BirthdatePicker2.Text = BirthdateL.Text;
+            UniversityBox2.Text = UniversityL.Text;
+            NIDBox2.Text = SSNL.Text;
+            string[] jobs= JobL.Text.ToString().Split('/');
+            if (jobs.Length != 0)
+                JobTitleCombo2.SelectedItem = jobs[jobs.Length-2];
             char[] delimiterChars = { ' '};
             string[] nameparts = NameL.Text.Split(delimiterChars);
             FirstNameBox2.Text = NameL.Text.Split(delimiterChars)[0];
@@ -138,6 +158,26 @@ namespace IEEECUSB
             int? commid = (int?)CommsComb2.SelectedValue;
             if (var.controllerObj.UpdateVolunteer(int.Parse(IDLabel2.Text),name, commid, MobileBox.Text, EmailBox.Text, CollegeBox.Text, DepartBox.Text, UniversityBox.Text, GradYearPicker.Value.Year.ToString()) == 1)
                 MessageBox.Show("vulnteer updated");
+        }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel17_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel55_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

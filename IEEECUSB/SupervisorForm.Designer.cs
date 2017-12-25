@@ -126,13 +126,13 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ToBox = new System.Windows.Forms.ListBox();
+            this.TitleBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.FromBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.deadlineBox = new System.Windows.Forms.TextBox();
+            this.start_dateBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -238,19 +238,19 @@
             this.eventDetails_GridView = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.SSNL = new System.Windows.Forms.Label();
+            this.typeL = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
+            this.TitleL = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.panel40 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
+            this.DateL = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.panel41 = new System.Windows.Forms.Panel();
-            this.label36 = new System.Windows.Forms.Label();
+            this.DressL = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.panel42 = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
+            this.DescL = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.ieeeCalendar = new System.Windows.Forms.MonthCalendar();
             this.calendarHeader_Pnl = new System.Windows.Forms.Panel();
@@ -1344,13 +1344,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.ToBox);
+            this.groupBox1.Controls.Add(this.TitleBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.FromBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.deadlineBox);
+            this.groupBox1.Controls.Add(this.start_dateBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
@@ -1363,23 +1363,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Task Details";
             // 
-            // listBox1
+            // ToBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(320, 17);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(254, 52);
-            this.listBox1.TabIndex = 20;
+            this.ToBox.FormattingEnabled = true;
+            this.ToBox.ItemHeight = 16;
+            this.ToBox.Location = new System.Drawing.Point(320, 17);
+            this.ToBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.ToBox.Name = "ToBox";
+            this.ToBox.Size = new System.Drawing.Size(254, 52);
+            this.ToBox.TabIndex = 20;
             // 
-            // textBox2
+            // TitleBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(661, 21);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 24);
-            this.textBox2.TabIndex = 11;
+            this.TitleBox.Location = new System.Drawing.Point(661, 21);
+            this.TitleBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.TitleBox.Name = "TitleBox";
+            this.TitleBox.Size = new System.Drawing.Size(224, 24);
+            this.TitleBox.TabIndex = 11;
             // 
             // label2
             // 
@@ -1391,13 +1391,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Task Title";
             // 
-            // textBox3
+            // FromBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 21);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 24);
-            this.textBox3.TabIndex = 19;
+            this.FromBox.Location = new System.Drawing.Point(75, 21);
+            this.FromBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.FromBox.Name = "FromBox";
+            this.FromBox.Size = new System.Drawing.Size(203, 24);
+            this.FromBox.TabIndex = 19;
             // 
             // label3
             // 
@@ -1409,23 +1409,23 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "From";
             // 
-            // textBox4
+            // deadlineBox
             // 
-            this.textBox4.ForeColor = System.Drawing.Color.Red;
-            this.textBox4.Location = new System.Drawing.Point(661, 47);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 24);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.Text = "Monday 12/12/2012";
+            this.deadlineBox.ForeColor = System.Drawing.Color.Red;
+            this.deadlineBox.Location = new System.Drawing.Point(661, 47);
+            this.deadlineBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.deadlineBox.Name = "deadlineBox";
+            this.deadlineBox.Size = new System.Drawing.Size(224, 24);
+            this.deadlineBox.TabIndex = 17;
+            this.deadlineBox.Text = "Monday 12/12/2012";
             // 
-            // textBox5
+            // start_dateBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(75, 47);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 24);
-            this.textBox5.TabIndex = 16;
+            this.start_dateBox.Location = new System.Drawing.Point(75, 47);
+            this.start_dateBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.start_dateBox.Name = "start_dateBox";
+            this.start_dateBox.Size = new System.Drawing.Size(203, 24);
+            this.start_dateBox.TabIndex = 16;
             // 
             // label4
             // 
@@ -1568,6 +1568,8 @@
             this.CommTasksGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CommTasksGrid.Size = new System.Drawing.Size(1045, 130);
             this.CommTasksGrid.TabIndex = 0;
+            this.CommTasksGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CommTasksGrid_CellContentClick);
+            this.CommTasksGrid.SelectionChanged += new System.EventHandler(this.CommTasksGrid_SelectionChanged);
             // 
             // panel52
             // 
@@ -2113,6 +2115,7 @@
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(1053, 116);
             this.panel30.TabIndex = 2;
+            this.panel30.Paint += new System.Windows.Forms.PaintEventHandler(this.panel30_Paint);
             // 
             // pictureBox11
             // 
@@ -2695,6 +2698,7 @@
             this.button28.TabIndex = 2;
             this.button28.Text = "Delete Event";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // button37
             // 
@@ -2705,6 +2709,7 @@
             this.button37.TabIndex = 1;
             this.button37.Text = "Edit Event";
             this.button37.UseVisualStyleBackColor = true;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
             // 
             // button38
             // 
@@ -2715,6 +2720,7 @@
             this.button38.TabIndex = 0;
             this.button38.Text = "Add Event / Meeting";
             this.button38.UseVisualStyleBackColor = true;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
             // 
             // calendarData_Pnl
             // 
@@ -2755,14 +2761,21 @@
             // 
             // eventDetails_GridView
             // 
+            this.eventDetails_GridView.AllowUserToAddRows = false;
+            this.eventDetails_GridView.AllowUserToDeleteRows = false;
             this.eventDetails_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDetails_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventDetails_GridView.Location = new System.Drawing.Point(0, 0);
             this.eventDetails_GridView.Margin = new System.Windows.Forms.Padding(2);
+            this.eventDetails_GridView.MultiSelect = false;
             this.eventDetails_GridView.Name = "eventDetails_GridView";
+            this.eventDetails_GridView.ReadOnly = true;
             this.eventDetails_GridView.RowTemplate.Height = 28;
+            this.eventDetails_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.eventDetails_GridView.Size = new System.Drawing.Size(777, 229);
             this.eventDetails_GridView.TabIndex = 4;
+            this.eventDetails_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventDetails_GridView_CellContentClick);
+            this.eventDetails_GridView.SelectionChanged += new System.EventHandler(this.eventDetails_GridView_SelectionChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -2780,7 +2793,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.SSNL);
+            this.panel5.Controls.Add(this.typeL);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Location = new System.Drawing.Point(2, 1);
             this.panel5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -2788,20 +2801,19 @@
             this.panel5.Size = new System.Drawing.Size(218, 64);
             this.panel5.TabIndex = 11;
             // 
-            // SSNL
+            // typeL
             // 
-            this.SSNL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.typeL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SSNL.AutoSize = true;
-            this.SSNL.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.SSNL.Location = new System.Drawing.Point(17, 33);
-            this.SSNL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.SSNL.Name = "SSNL";
-            this.SSNL.Size = new System.Drawing.Size(120, 17);
-            this.SSNL.TabIndex = 1;
-            this.SSNL.Text = "12345678912345";
-            this.SSNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.typeL.AutoSize = true;
+            this.typeL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.typeL.Location = new System.Drawing.Point(17, 33);
+            this.typeL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.typeL.Name = "typeL";
+            this.typeL.Size = new System.Drawing.Size(0, 17);
+            this.typeL.TabIndex = 1;
+            this.typeL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -2815,7 +2827,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label31);
+            this.panel6.Controls.Add(this.TitleL);
             this.panel6.Controls.Add(this.label32);
             this.panel6.Location = new System.Drawing.Point(224, 1);
             this.panel6.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -2823,20 +2835,19 @@
             this.panel6.Size = new System.Drawing.Size(218, 64);
             this.panel6.TabIndex = 12;
             // 
-            // label31
+            // TitleL
             // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TitleL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label31.Location = new System.Drawing.Point(17, 33);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(120, 17);
-            this.label31.TabIndex = 1;
-            this.label31.Text = "12345678912345";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TitleL.AutoSize = true;
+            this.TitleL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TitleL.Location = new System.Drawing.Point(17, 33);
+            this.TitleL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TitleL.Name = "TitleL";
+            this.TitleL.Size = new System.Drawing.Size(0, 17);
+            this.TitleL.TabIndex = 1;
+            this.TitleL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label32
             // 
@@ -2850,7 +2861,7 @@
             // 
             // panel40
             // 
-            this.panel40.Controls.Add(this.label33);
+            this.panel40.Controls.Add(this.DateL);
             this.panel40.Controls.Add(this.label35);
             this.panel40.Location = new System.Drawing.Point(446, 1);
             this.panel40.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -2858,20 +2869,19 @@
             this.panel40.Size = new System.Drawing.Size(218, 64);
             this.panel40.TabIndex = 13;
             // 
-            // label33
+            // DateL
             // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DateL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label33.Location = new System.Drawing.Point(17, 33);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(120, 17);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "12345678912345";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DateL.AutoSize = true;
+            this.DateL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.DateL.Location = new System.Drawing.Point(17, 33);
+            this.DateL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DateL.Name = "DateL";
+            this.DateL.Size = new System.Drawing.Size(0, 17);
+            this.DateL.TabIndex = 1;
+            this.DateL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label35
             // 
@@ -2885,7 +2895,7 @@
             // 
             // panel41
             // 
-            this.panel41.Controls.Add(this.label36);
+            this.panel41.Controls.Add(this.DressL);
             this.panel41.Controls.Add(this.label37);
             this.panel41.Location = new System.Drawing.Point(2, 67);
             this.panel41.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -2893,20 +2903,19 @@
             this.panel41.Size = new System.Drawing.Size(218, 64);
             this.panel41.TabIndex = 14;
             // 
-            // label36
+            // DressL
             // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DressL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.AutoSize = true;
-            this.label36.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label36.Location = new System.Drawing.Point(17, 33);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(120, 17);
-            this.label36.TabIndex = 1;
-            this.label36.Text = "12345678912345";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DressL.AutoSize = true;
+            this.DressL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.DressL.Location = new System.Drawing.Point(17, 33);
+            this.DressL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DressL.Name = "DressL";
+            this.DressL.Size = new System.Drawing.Size(0, 17);
+            this.DressL.TabIndex = 1;
+            this.DressL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label37
             // 
@@ -2920,7 +2929,7 @@
             // 
             // panel42
             // 
-            this.panel42.Controls.Add(this.label34);
+            this.panel42.Controls.Add(this.DescL);
             this.panel42.Controls.Add(this.label41);
             this.panel42.Location = new System.Drawing.Point(224, 67);
             this.panel42.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -2928,20 +2937,19 @@
             this.panel42.Size = new System.Drawing.Size(440, 108);
             this.panel42.TabIndex = 15;
             // 
-            // label34
+            // DescL
             // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DescL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label34.AutoSize = true;
-            this.label34.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label34.Location = new System.Drawing.Point(17, 33);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(120, 17);
-            this.label34.TabIndex = 1;
-            this.label34.Text = "12345678912345";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DescL.AutoSize = true;
+            this.DescL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.DescL.Location = new System.Drawing.Point(17, 33);
+            this.DescL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DescL.Name = "DescL";
+            this.DescL.Size = new System.Drawing.Size(0, 17);
+            this.DescL.TabIndex = 1;
+            this.DescL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label41
             // 
@@ -2961,6 +2969,7 @@
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
             this.ieeeCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateChanged);
+            this.ieeeCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateSelected);
             // 
             // calendarHeader_Pnl
             // 
@@ -2987,6 +2996,7 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 8;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
             // 
             // nextEvent_Lbl
             // 
@@ -4049,12 +4059,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TitleBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox FromBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox deadlineBox;
+        private System.Windows.Forms.TextBox start_dateBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -4063,7 +4073,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ToBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox textBox1;
@@ -4096,19 +4106,19 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label SSNL;
+        private System.Windows.Forms.Label typeL;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label TitleL;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label DateL;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Panel panel41;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label DressL;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label DescL;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.DataGridView eventDetails_GridView;
         private System.Windows.Forms.TabPage sectionTasksTab;
