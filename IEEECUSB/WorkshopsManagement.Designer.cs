@@ -76,6 +76,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -97,8 +99,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -246,6 +246,7 @@
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.Size = new System.Drawing.Size(679, 68);
             this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged_1);
             // 
             // Column1
             // 
@@ -376,6 +377,7 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sessions Details";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button6
             // 
@@ -396,6 +398,7 @@
             this.button5.TabIndex = 28;
             this.button5.Text = "Attendance";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // listBox2
             // 
@@ -452,6 +455,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(240, 69);
             this.listBox1.TabIndex = 19;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // label5
             // 
@@ -659,6 +663,22 @@
             this.tabPage2.Text = "Add Workshop";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(113, 50);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePicker2.TabIndex = 38;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 50);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(102, 13);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Workshop End Date";
+            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(478, 244);
@@ -668,6 +688,7 @@
             this.button7.TabIndex = 36;
             this.button7.Text = "Reset";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // button4
             // 
@@ -678,6 +699,7 @@
             this.button4.TabIndex = 35;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // panel1
             // 
@@ -874,22 +896,6 @@
             this.textBox9.Size = new System.Drawing.Size(156, 20);
             this.textBox9.TabIndex = 13;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 50);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(102, 13);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Workshop End Date";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(113, 50);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(134, 20);
-            this.dateTimePicker2.TabIndex = 38;
-            // 
             // WorkshopsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -902,6 +908,7 @@
             this.Name = "WorkshopsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workshops and Trainings Management | IEEE CUSB Portal";
+            this.Load += new System.EventHandler(this.WorkshopsManagement_Load_1);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();

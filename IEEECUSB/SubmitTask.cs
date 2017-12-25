@@ -42,12 +42,20 @@ namespace IEEECUSB
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            string Progress_Percentage = textBox5.Text;
-            string Progress_Description = textBox2.Text;
-            int x = Convert.ToInt32(Progress_Percentage);
-            var.controllerObj.UpdateTask(ID, x, Progress_Description, 1);
-            Status status = Status.Submitted;
-            var.controllerObj.UpdateTaskStatus(ID, 1, status);
+            DialogResult dialogResult = MessageBox.Show("If task submitted you won't be able to edit this task any more, Are you sure you want to submit ?", "Submitting task", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string Progress_Percentage = textBox5.Text;
+                string Progress_Description = textBox2.Text;
+                int x = Convert.ToInt32(Progress_Percentage);
+                var.controllerObj.UpdateTask(ID, x, Progress_Description);
+                var.controllerObj.SubmitTask(ID);
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }            
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -55,7 +63,7 @@ namespace IEEECUSB
             string Progress_Percentage = textBox5.Text;
             string Progress_Description = textBox2.Text;
             int x = Convert.ToInt32(Progress_Percentage);
-            var.controllerObj.UpdateTask(ID, x, Progress_Description, 1);
+            var.controllerObj.UpdateTask(ID, x, Progress_Description);
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -66,6 +74,7 @@ namespace IEEECUSB
         private void button3_Click_1(object sender, EventArgs e)
         {
             ViewTask V = new ViewTask(ID);
+            this.Close();
             V.Show();
         }
     }

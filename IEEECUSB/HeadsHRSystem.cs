@@ -14,8 +14,6 @@ namespace IEEECUSB
         public HeadsHRSystem()
         {
             InitializeComponent();
-            committeeMembers.DataSource = var.controllerObj.SelectCommMember();
-            committeeMembers.Refresh();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -25,34 +23,44 @@ namespace IEEECUSB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string searchFor = SearchBox.Text;
-            int ID;
-            if(int.TryParse(searchFor,out ID))
+            string searchText = SearchBox.Text;
+            if (searchText != null)
             {
-                committeeMembers.DataSource = var.controllerObj.SearchInCommByID(ID);
+                int id;
+                DataTable Volunteer = null;
+                if (int.TryParse(searchText, out id))
+                {
+                    Volunteer = var.controllerObj.SearchVoluntHistByID(id);
+                }
+                else
+                    Volunteer = var.controllerObj.SearchVoluntHistByName(searchText);
+
+                if (Volunteer != null)
+                {
+                    string ID = Volunteer.Rows[0]["ID"].ToString();
+                    bool x = false;
+                    int i;
+                    for (i =0; i < committeeMembers.RowCount; i++)
+                    {
+                        if (committeeMembers.Rows[i].Cells[0].Value.ToString() == ID)
+                        {
+                            x = true;
+                            break;
+                        }
+                    }
+                    if (x)
+                    {
+                        committeeMembers.ClearSelection();
+                        committeeMembers.Rows[i].Selected = true;                        
+                    }
+                    else
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Please check the spelling, Volunteer is not found ", "Something went wrong", MessageBoxButtons.OK);
+                        committeeMembers.ClearSelection();
+                    }
+
+                }
             }
-            else
-                committeeMembers.DataSource = var.controllerObj.SearchInCommByName(searchFor);
-            committeeMembers.Refresh();
-            //memberDetails.Rows.Add(8);
-            //memberDetails.Rows[0].Cells[0].Value = "Number of Assigned Tasks";
-            //memberDetails.Rows[0].Cells[1].Value = "12";
-            //memberDetails.Rows[1].Cells[0].Value = "Number of Missed Tasks";
-            //memberDetails.Rows[1].Cells[1].Value = "1";
-            //memberDetails.Rows[2].Cells[0].Value = "Number of Submitted Tasks";
-            //memberDetails.Rows[2].Cells[1].Value = "11";
-
-            //memberDetails.Rows[3].Cells[0].Value = "Number of Submitted Tasks After Deadline";
-            //memberDetails.Rows[3].Cells[1].Value = "5";
-            //memberDetails.Rows[4].Cells[0].Value = "Number of Trainings Attended";
-            //memberDetails.Rows[4].Cells[1].Value = "11";
-            //memberDetails.Rows[5].Cells[0].Value = "Number of Meetings Attended";
-            //memberDetails.Rows[5].Cells[1].Value = "11";
-
-            //memberDetails.Rows[6].Cells[0].Value = "Number of GMs Attended";
-            //memberDetails.Rows[6].Cells[1].Value = "11";
-            //memberDetails.Rows[7].Cells[0].Value = "Number of Warnings";
-            //memberDetails.Rows[7].Cells[1].Value = "11";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -63,6 +71,96 @@ namespace IEEECUSB
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void HeadsHRSystem_Load(object sender, EventArgs e)
+        {
+            committeeMembers.DataSource = var.controllerObj.Committee();
+            committeeMembers.Refresh();
+            DataTable dt = null;
+            int ID;
+            int Sub = 0;
+            int Acc = 0;
+            int Rej = 0;
+            int Tot = 0;
+            double Eva = 0;
+            for (int i = 0; i < committeeMembers.RowCount; i++)
+            {
+                Sub = 0;
+                Acc = 0;
+                Rej = 0;
+                Tot = 0;
+                Eva = 0;
+                ID = Convert.ToInt32(committeeMembers.Rows[i].Cells[0].Value.ToString());
+                dt = var.controllerObj.Count_Member_Sub(ID);
+                if (dt.Rows.Count > 0)
+                {
+                    Sub = Convert.ToInt32(dt.Rows[0]["COUNT(Task_ID)"].ToString());
+                    dt = var.controllerObj.Count_Member_Accept(ID);
+                    Acc = Convert.ToInt32(dt.Rows[0]["COUNT(Task_ID)"].ToString());
+                    dt = var.controllerObj.Count_Member_Rejected(ID);
+                    Rej = Convert.ToInt32(dt.Rows[0]["COUNT(Task_ID)"].ToString());
+                    dt = var.controllerObj.Count_Member_Total(ID);
+                    Tot = Convert.ToInt32(dt.Rows[0]["COUNT(Task_ID)"].ToString());
+                }
+                if (Tot != 0)
+                {
+                    Eva = (Sub / Tot) + (0.5 * Acc / Tot) - (0.5 * Rej / Tot);
+                    if (Eva < 0) Eva = 0;
+                }
+                else Eva = 0;
+                Eva = Eva * 100;
+                var.controllerObj.Evaluation(Eva, ID);
+            }
+
+            committeeMembers.DataSource = var.controllerObj.Committee();
+            committeeMembers.Refresh();
+            committeeMembers.ClearSelection();
+        }
+
+        private void committeeMembers_SelectionChanged(object sender, EventArgs e)
+        {
+           
+            DataGridViewSelectedRowCollection selected = committeeMembers.SelectedRows;
+            if (committeeMembers.SelectedRows.Count != 0)
+            {
+                int ID = Convert.ToInt32(committeeMembers.SelectedRows[0].Cells["ID"].Value.ToString());
+                memberDetails.Rows[0].Cells[0].Value = committeeMembers.SelectedRows[0].Cells["ID"].Value.ToString();
+                memberDetails.Rows[0].Cells[1].Value = committeeMembers.SelectedRows[0].Cells["Name"].Value.ToString();
+                DataTable dt = var.controllerObj.Count_Member_Sub(ID);
+                memberDetails.Rows[0].Cells[2].Value = dt.Rows[0]["COUNT(Task_ID)"].ToString();
+                dt = var.controllerObj.Count_Member_Accept(ID);
+                memberDetails.Rows[0].Cells[3].Value = dt.Rows[0]["COUNT(Task_ID)"].ToString();
+                dt = var.controllerObj.Count_Member_Rejected(ID);
+                memberDetails.Rows[0].Cells[4].Value = dt.Rows[0]["COUNT(Task_ID)"].ToString();
+
+            }
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void committeeMembers_AllowUserToDeleteRowsChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string selectedItem = comboBox1.Items[comboBox1.SelectedIndex].ToString();
+            if (selectedItem == "Name")
+                committeeMembers.Sort(committeeMembers.Columns[1], ListSortDirection.Ascending);
+            else if (selectedItem == "ID")
+                committeeMembers.Sort(committeeMembers.Columns[0], ListSortDirection.Ascending);
+            else if (selectedItem == "Evaluation")
+                committeeMembers.Sort(committeeMembers.Columns[2], ListSortDirection.Ascending);
         }
     }
 }

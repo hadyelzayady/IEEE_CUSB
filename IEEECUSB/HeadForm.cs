@@ -17,8 +17,8 @@ namespace IEEECUSB
             InitializeComponent();
             updatesData_GridView.DataSource = var.controllerObj.SelectHeadUpdates();
             updatesData_GridView.Refresh();
-            //notificationsData_GridView.DataSource = var.controllerObj.SelectHeadNotif();
-            //notificationsData_GridView.Refresh();
+            notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
+            notificationsData_GridView.Refresh();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -372,7 +372,7 @@ namespace IEEECUSB
             if (selected.Count != 0)
             {
                 int x = (int)selected[0].Cells[0].Value;
-                var.controllerObj.UpdateTaskStatus(x, 1, Status.Rejected);
+                var.controllerObj.UpdateTaskStatus(x,Status.Rejected);
             }
         }
 
@@ -382,7 +382,7 @@ namespace IEEECUSB
             if (selected.Count != 0)
             {
                 int x = (int)selected[0].Cells[0].Value;
-                var.controllerObj.UpdateTaskStatus(x, 1, Status.Accepted);
+                var.controllerObj.UpdateTaskStatus(x, Status.Accepted);
             }
         }
 
@@ -406,8 +406,8 @@ namespace IEEECUSB
                 int ID;
                 foreach (DataRow row in dt.Rows)
                 {
-                    ID = Convert.ToInt32(row["ID"].ToString());
-                    var.controllerObj.InsertNotification("Reminder to do the task", "Task Reminder", DateTime.Now, ID);
+                    ID = Convert.ToInt32(row["Reciever_ID"].ToString());
+                    var.controllerObj.InsertNotification("Kindly do not forget to do your task", "Task Reminder", DateTime.Now, ID);
                 }
             }
         }
@@ -415,6 +415,27 @@ namespace IEEECUSB
         private void pictureBox22_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button38_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var.controllerObj.InsertUpdate(textBox1.Text);
+            textBox1.Clear();
         }
     }
 }

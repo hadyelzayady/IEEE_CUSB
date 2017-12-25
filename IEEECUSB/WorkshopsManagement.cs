@@ -16,24 +16,24 @@ namespace IEEECUSB
             InitializeComponent();
         }
 
-        private void WorkshopsManagement_Load(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = var.controllerObj.Committee_Workshop();
-            dataGridView2.Refresh();
 
-            DataTable dt = var.controllerObj.Committee_Members();
-            int numRows = dt.Rows.Count;
-            string name;
-            int i = 0;
+        }
 
-            foreach (DataRow row in dt.Rows)
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView2.SelectedRows;
+            if (selected.Count != 0)
             {
-                name = row["name"].ToString();
-                checkedListBox1.Items.Insert(i, name);
+                int x = (int)selected[0].Cells[0].Value;
+                int y = listBox1.SelectedIndex;
+                Attendance T = new Attendance(x,y);
+                T.Show();
             }
         }
 
-        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView2_SelectionChanged_1(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = dataGridView2.SelectedRows;
             if (selected.Count != 0)
@@ -71,12 +71,44 @@ namespace IEEECUSB
 
                 textBox11.Text = var.controllerObj.SessionCount(x).ToString();
 
+            }
 
+        }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            textBox7.Text = "";
+            textBox9.Text = "";
+            textBox10.Text = "";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
+            radioButton6.Checked = false;
+            dateTimePicker1.Value = DateTime.Now.Date;
+            dateTimePicker2.Value = DateTime.Now.Date;
+            checkedListBox1.ClearSelected();
+        }
+
+        private void WorkshopsManagement_Load_1(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = var.controllerObj.Committee_Workshop();
+            dataGridView2.Refresh();
+
+            DataTable dt = var.controllerObj.Workshops_Members();
+            int numRows = dt.Rows.Count;
+            string name;
+            int i = 0;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                name = row["Name"].ToString();
+                checkedListBox1.Items.Insert(i, name);
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = dataGridView2.SelectedRows;
             if (selected.Count != 0)
@@ -102,10 +134,13 @@ namespace IEEECUSB
                 int p = VolNum + PartNum;
                 textBox5.Text = Convert.ToString(p);
 
+                VolNum = Convert.ToInt32(var.controllerObj.CountVolunteer_Enrolled(x).ToString());
+                PartNum = Convert.ToInt32(var.controllerObj.CountParticipant_Enrolled(x).ToString());
+                textBox4.Text = Convert.ToString(VolNum + PartNum);
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             if (checkedListBox1.CheckedItems.Count != 0)
             {
@@ -127,7 +162,8 @@ namespace IEEECUSB
 
                 DataTable dt = var.controllerObj.Committee_Members();
                 var.controllerObj.InsertWorkshop(Name, Outline, Type, Start_Date, End_Date, ExpectedSessionNo);
-                int maxValue = Convert.ToInt32(var.controllerObj.MaxWorkshopID().ToString());
+                DataTable dt3 = var.controllerObj.MaxWorkshopID();
+                int maxValue = Convert.ToInt32(dt3.Rows[0]["MAX(ID)"].ToString());
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     if (checkedListBox1.GetItemChecked(i))
@@ -137,27 +173,6 @@ namespace IEEECUSB
                     }
                 }
             }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            textBox7.Text = "";
-            textBox9.Text = "";
-            textBox10.Text = "";
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
-            radioButton5.Checked = false;
-            radioButton6.Checked = false;
-            dateTimePicker1.Value = DateTime.Now.Date;
-            dateTimePicker2.Value = DateTime.Now.Date;
-            checkedListBox1.ClearSelected();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

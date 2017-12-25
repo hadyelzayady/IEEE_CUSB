@@ -38,23 +38,26 @@ namespace IEEECUSB
 
             foreach (DataRow row in dt3.Rows)
             {
-                name = row["name"].ToString();
+                name = row["Name"].ToString();
                 checkedListBox1.Items.Insert(i, name);
+                i++;
             }
-
+/*
             DataTable dt1 = var.controllerObj.GetTaskRecieversID(Task_ID);
             numRows = dt3.Rows.Count;
             int ID;
-
+            i = 0;
             foreach (DataRow row in dt1.Rows)
             {
-                ID = Convert.ToInt32(row["ID"].ToString());
+                ID = Convert.ToInt32(row["Reciever_ID"].ToString());
                 for (int y = 0; y < numRows; y++)
                 {
                     if(ID == Convert.ToInt32(dt3.Rows[y]["ID"].ToString()))
                     checkedListBox1.SetItemChecked(i, true);
+                    i++;
                 }
             }
+ */
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,9 +67,9 @@ namespace IEEECUSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(checkedListBox1.CheckedItems.Count!=0)
+            if(checkedListBox1.CheckedItems.Count!=0 && textBox1.Text != "" && textBox2.Text != "")
             {
-                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, 1, 1);
+                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker2.Value);
                 var.controllerObj.DeleteTaskRec(Task_ID);
                 DataTable dt = var.controllerObj.Committee_Members();
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
@@ -78,9 +81,7 @@ namespace IEEECUSB
                         var.controllerObj.InsertTaskReciever(Task_ID, Rec_ID);
                     }
                 }
-
-
-
+                this.Close();
             }
         }
     }

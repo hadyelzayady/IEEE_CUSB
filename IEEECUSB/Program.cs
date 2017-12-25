@@ -16,7 +16,6 @@ namespace IEEECUSB
         [STAThread]
         static void Main()
         {
-
             // if (Environment.OSVersion.Version.Major == 6)
             // SetProcessDPIAware();
             // seeding s = new seeding();
@@ -24,7 +23,7 @@ namespace IEEECUSB
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
               
-            Application.Run(new SupervisorForm());
+            Application.Run(new WorkshopsManagement());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
