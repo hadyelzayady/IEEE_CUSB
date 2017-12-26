@@ -60,11 +60,11 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 98);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(9, 78);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(935, 108);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(727, 86);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Receiver";
@@ -72,76 +72,81 @@
             // RecComm
             // 
             this.RecComm.FormattingEnabled = true;
-            this.RecComm.Location = new System.Drawing.Point(120, 28);
-            this.RecComm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RecComm.Location = new System.Drawing.Point(93, 22);
+            this.RecComm.Margin = new System.Windows.Forms.Padding(2);
             this.RecComm.Name = "RecComm";
-            this.RecComm.Size = new System.Drawing.Size(809, 28);
+            this.RecComm.Size = new System.Drawing.Size(630, 24);
             this.RecComm.TabIndex = 3;
             this.RecComm.SelectedIndexChanged += new System.EventHandler(this.RecComm_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 65);
+            this.label2.Location = new System.Drawing.Point(5, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Request Type";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Location = new System.Drawing.Point(5, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Committee";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(120, 62);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Location = new System.Drawing.Point(93, 50);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(809, 28);
+            this.comboBox2.Size = new System.Drawing.Size(630, 24);
             this.comboBox2.TabIndex = 4;
             // 
             // pictureBox20
             // 
             this.pictureBox20.Image = global::IEEECUSB.Properties.Resources.Requests_2;
-            this.pictureBox20.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox20.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(80, 76);
+            this.pictureBox20.Size = new System.Drawing.Size(62, 61);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox20.TabIndex = 9;
             this.pictureBox20.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(795, 224);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(618, 179);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 45);
+            this.button2.Size = new System.Drawing.Size(105, 36);
             this.button2.TabIndex = 16;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(580, 182);
+            this.label7.Location = new System.Drawing.Point(451, 146);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 20);
+            this.label7.Size = new System.Drawing.Size(86, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Priority Level";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 28);
+            this.label4.Location = new System.Drawing.Point(5, 22);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 20);
+            this.label4.Size = new System.Drawing.Size(130, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Request Description";
             // 
@@ -159,11 +164,11 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.RequestStartDate);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(12, 212);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 170);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(935, 275);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(727, 220);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request Details";
@@ -171,38 +176,39 @@
             // 
             // RequestDesc
             // 
-            this.RequestDesc.Location = new System.Drawing.Point(10, 51);
-            this.RequestDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RequestDesc.Location = new System.Drawing.Point(8, 41);
+            this.RequestDesc.Margin = new System.Windows.Forms.Padding(2);
             this.RequestDesc.Multiline = true;
             this.RequestDesc.Name = "RequestDesc";
             this.RequestDesc.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.RequestDesc.Size = new System.Drawing.Size(565, 218);
+            this.RequestDesc.Size = new System.Drawing.Size(440, 175);
             this.RequestDesc.TabIndex = 1;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(694, 180);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Location = new System.Drawing.Point(540, 144);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(235, 28);
+            this.comboBox3.Size = new System.Drawing.Size(184, 24);
             this.comboBox3.TabIndex = 14;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(580, 28);
+            this.label3.Location = new System.Drawing.Point(451, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Request Title";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(653, 224);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(508, 179);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 45);
+            this.button1.Size = new System.Drawing.Size(105, 36);
             this.button1.TabIndex = 7;
             this.button1.Text = "Send";
             this.button1.UseVisualStyleBackColor = true;
@@ -210,43 +216,46 @@
             // 
             // RequestTitle
             // 
-            this.RequestTitle.Location = new System.Drawing.Point(584, 51);
-            this.RequestTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RequestTitle.Location = new System.Drawing.Point(454, 41);
+            this.RequestTitle.Margin = new System.Windows.Forms.Padding(2);
             this.RequestTitle.Name = "RequestTitle";
-            this.RequestTitle.Size = new System.Drawing.Size(345, 26);
+            this.RequestTitle.Size = new System.Drawing.Size(269, 24);
             this.RequestTitle.TabIndex = 0;
             // 
             // RequestEndDate
             // 
-            this.RequestEndDate.Location = new System.Drawing.Point(694, 138);
-            this.RequestEndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RequestEndDate.Location = new System.Drawing.Point(540, 110);
+            this.RequestEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.RequestEndDate.Name = "RequestEndDate";
-            this.RequestEndDate.Size = new System.Drawing.Size(235, 26);
+            this.RequestEndDate.Size = new System.Drawing.Size(184, 24);
             this.RequestEndDate.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(580, 98);
+            this.label5.Location = new System.Drawing.Point(451, 78);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Start Date";
             // 
             // RequestStartDate
             // 
-            this.RequestStartDate.Location = new System.Drawing.Point(694, 98);
-            this.RequestStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RequestStartDate.Location = new System.Drawing.Point(540, 78);
+            this.RequestStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.RequestStartDate.Name = "RequestStartDate";
-            this.RequestStartDate.Size = new System.Drawing.Size(235, 26);
+            this.RequestStartDate.Size = new System.Drawing.Size(184, 24);
             this.RequestStartDate.TabIndex = 11;
+            this.RequestStartDate.ValueChanged += new System.EventHandler(this.RequestStartDate_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(580, 139);
+            this.label6.Location = new System.Drawing.Point(451, 111);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 20);
+            this.label6.Size = new System.Drawing.Size(92, 17);
             this.label6.TabIndex = 12;
             this.label6.Text = "Deadline Date";
             // 
@@ -255,9 +264,10 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Corbel", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label33.Location = new System.Drawing.Point(91, 52);
+            this.label33.Location = new System.Drawing.Point(71, 42);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(343, 35);
+            this.label33.Size = new System.Drawing.Size(290, 29);
             this.label33.TabIndex = 11;
             this.label33.Text = "Here you can edit a request";
             // 
@@ -266,23 +276,23 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Corbel", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label34.Location = new System.Drawing.Point(88, 3);
+            this.label34.Location = new System.Drawing.Point(68, 2);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(472, 49);
+            this.label34.Size = new System.Drawing.Size(399, 41);
             this.label34.TabIndex = 10;
             this.label34.Text = "Edit a Committee Request";
             // 
             // EditRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 499);
+            this.ClientSize = new System.Drawing.Size(745, 399);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label34);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Request | IEEE CUSB Portal";

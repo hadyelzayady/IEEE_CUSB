@@ -19,6 +19,8 @@ namespace IEEECUSB
         private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
             eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            if (eventDetails_GridView.RowCount != 0)
+                eventDetails_GridView.Columns[0].Visible = false;
             eventDetails_GridView.Refresh();
         }
         private void headTabControl_Click(object sender, EventArgs e)
@@ -43,6 +45,31 @@ namespace IEEECUSB
         }
 
         private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ieeeCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel15_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -15,17 +15,13 @@ namespace IEEECUSB
         public ViewRequest(DataGridViewSelectedRowCollection request)
         {
             InitializeComponent();
-            //requestID = (int)request[0].Cells[0].Value;
-            //RequestTitle.Text = request[0].Cells[1].Value.ToString();
-            //RequestingComm.Text = request[0].Cells[2].Value.ToString();
-            //RequestStartDate.Text = request[0].Cells[4].Value.ToString();
-            //RequestEndDate.Text = request[0].Cells[5].Value.ToString();
-
-            //Committees.DataSource = var.controllerObj.SelectCommittees();
-            //Committees.al = "CountryCode";
-            //Committees.DisplayMember = "CountryName";
-            //Committees.DataBind();
-            //Committees.Refresh();
+            requestID = (int)request[0].Cells[0].Value;
+            RequestTitle.Text = request[0].Cells[1].Value.ToString();
+            RequestComm.Text = request[0].Cells["Sender Committee"].Value.ToString();
+            RequestStartDate.Text = request[0].Cells[4].Value.ToString();
+            RequestEndDate.Text = request[0].Cells[5].Value.ToString();
+            RecComm.Text = request[0].Cells["Recieved Committee"].Value.ToString();
+            ReqDescBox.Text = request[0].Cells["Description"].Value.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
