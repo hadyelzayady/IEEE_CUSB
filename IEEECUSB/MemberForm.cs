@@ -26,24 +26,7 @@ namespace IEEECUSB
         private void headTabControl_Click(object sender, EventArgs e)
         {
 
-            if (headTabControl.SelectedTab == headTabControl.TabPages["calendarTab"])
-            {
-                eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
-                eventDetails_GridView.Refresh();
-            }
-
-            else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
-            {
-                dataGridView3.DataSource = var.controllerObj.Member_Tasks();
-                dataGridView3.Refresh();
-            }
-            else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
-            {
-                notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
-                notificationsData_GridView.Refresh();
-                updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
-                updatesData_GridView.Refresh();
-            }
+          
         }
 
         private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -141,7 +124,6 @@ namespace IEEECUSB
             new AddFile().ShowDialog();
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (filesGrid.SelectedRows.Count != 0)
@@ -161,6 +143,33 @@ namespace IEEECUSB
             eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
             eventDetails_GridView.Refresh();
             eventDetails_GridView.ClearSelection();
+        }
+
+        private void headTabControl_Click_1(object sender, EventArgs e)
+        {
+            if (headTabControl.SelectedTab == headTabControl.TabPages["calendarTab"])
+            {
+                eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+                eventDetails_GridView.Refresh();
+            }
+
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
+            {
+                dataGridView3.DataSource = var.controllerObj.Member_Tasks();
+                dataGridView3.Refresh();
+            }
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
+            {
+                notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
+                notificationsData_GridView.Refresh();
+                updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
+                updatesData_GridView.Refresh();
+            }
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["filesTab"])
+            {
+                filesGrid.DataSource = var.controllerObj.GetCommitteeFiles();
+                filesGrid.Refresh();
+            }
         }
     }
 }

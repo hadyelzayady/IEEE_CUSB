@@ -177,6 +177,7 @@
             this.headTabControl.SelectedIndex = 0;
             this.headTabControl.Size = new System.Drawing.Size(1090, 706);
             this.headTabControl.TabIndex = 1;
+            this.headTabControl.Click += new System.EventHandler(this.headTabControl_Click_1);
             // 
             // homeTab
             // 
@@ -501,6 +502,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(1078, 460);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
@@ -677,6 +679,7 @@
             this.filesGrid.Name = "filesGrid";
             this.filesGrid.ReadOnly = true;
             this.filesGrid.RowTemplate.Height = 28;
+            this.filesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.filesGrid.Size = new System.Drawing.Size(1078, 460);
             this.filesGrid.TabIndex = 0;
             // 

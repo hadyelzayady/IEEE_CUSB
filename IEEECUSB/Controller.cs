@@ -16,8 +16,8 @@ namespace IEEECUSB
         private GoogleMail mailAccount;
         private FTPManager ftpMan;
         // (Initially NULL; NO DBManager Object is created yet)
-        public int UserID = 2;
-        public int CommitteeID = 2;
+        public int UserID = 1;
+        public int CommitteeID = 1;
         public int Season = 0;
         public string JobPosition = "";
         public int SectionID = -1;
@@ -629,7 +629,7 @@ namespace IEEECUSB
 
         public DataTable Member_Tasks()
         {
-            string query = "SELECT Task.ID , Volunteer.Name , Task.Title ,  TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date FROM Task,Volunteer,TaskRecievers Where TaskRecievers.Reciever_ID =" + UserID + " AND Task.Assigner_ID = Volunteer.ID AND TaskRecievers.Task_ID = Task.ID AND TaskRecievers.Status = 'Accepted' ; ";
+            string query = "SELECT Task.ID , Volunteer.Name , Task.Title ,  TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date,TaskRecievers.Status FROM Task,Volunteer,TaskRecievers Where TaskRecievers.Reciever_ID =" + UserID + " AND Task.Assigner_ID = Volunteer.ID AND TaskRecievers.Task_ID = Task.ID AND TaskRecievers.Status = 'Accepted' ; ";
             return dbMan.ExecuteReader(query);
         }
 

@@ -76,7 +76,7 @@ namespace IEEECUSB
                     if (P == Position.Member)
                     {
                         new MemberForm().Show();
-                        this.Hide();
+                        //this.Hide();
                     }
                     else if (P == Position.Head || P == Position.ViceHead)
                     {
