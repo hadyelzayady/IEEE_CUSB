@@ -52,7 +52,15 @@ namespace IEEECUSB
             string StartDate = RequestStartDate.Value.ToString("yyyy-MM-dd");
             string EndDate = RequestEndDate.Value.ToString("yyyy-MM-dd");
             int RecCommID = (int)RecComm.SelectedValue;
-            var.controllerObj.EditRequest(requestID, Title, Desc, StartDate, EndDate, RecCommID);
+            if (var.controllerObj.EditRequest(requestID, Title, Desc, StartDate, EndDate, RecCommID) == 1)
+            {
+                MessageBox.Show("Request edited ");
+                this.Close();
+                return;
+            }
+            MessageBox.Show("try again later");
+            return;
+
         }
 
         private void RequestStartDate_ValueChanged(object sender, EventArgs e)

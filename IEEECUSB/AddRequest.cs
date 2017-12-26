@@ -56,7 +56,14 @@ namespace IEEECUSB
             string StartDate = startDate.Value.ToString("yyyy-MM-dd");
             string EndDate = endDate.Value.ToString("yyyy-MM-dd");
             int RecCommID = (int)RecComm.SelectedValue;
-            var.controllerObj.InsertRequest(Title, Desc,StartDate,EndDate, RecCommID);
+            if (var.controllerObj.InsertRequest(Title, Desc, StartDate, EndDate, RecCommID) == 1)
+            {
+                MessageBox.Show("Request sent ");
+                this.Close();
+                return;
+            }
+            MessageBox.Show("try again later");
+            this.Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

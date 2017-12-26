@@ -18,14 +18,21 @@ namespace IEEECUSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string desc = DescBox.Text;
-            string title = TitleBox.Text;
-            string Sdate=dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string Edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-            if(var.controllerObj.InsertEvent(title,desc,Sdate,Edate)==1)
+            if (dateTimePicker1.Value < DateTime.Today || dateTimePicker1.Value > dateTimePicker2.Value)
             {
-                MessageBox.Show("Event added successfully");
-                this.Close();
+                MessageBox.Show("enter valid dates");
+            }
+            else
+            {
+                string desc = DescBox.Text;
+                string title = TitleBox.Text;
+                string Sdate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                string Edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+                if (var.controllerObj.InsertEvent(title, desc, Sdate, Edate) == 1)
+                {
+                    MessageBox.Show("Event added successfully");
+                    this.Close();
+                }
             }
 
         }

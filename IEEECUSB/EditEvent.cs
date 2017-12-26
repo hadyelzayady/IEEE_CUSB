@@ -24,18 +24,25 @@ namespace IEEECUSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sdate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-            if(var.controllerObj.UpdateEvent(EventID, TitleBox.Text, DescBox.Text, sdate, edate)==1)
+            if (dateTimePicker1.Value < DateTime.Today || dateTimePicker1.Value > dateTimePicker2.Value)
             {
-                MessageBox.Show("Even edited successfully");
-                this.Close();
-                return;
+                MessageBox.Show("enter valid dates");
             }
-            MessageBox.Show("sorry error happened ,try again later");
+            else
+            {
+                string sdate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                string edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+                if (var.controllerObj.UpdateEvent(EventID, TitleBox.Text, DescBox.Text, sdate, edate) == 1)
+                {
+                    MessageBox.Show("Event edited successfully");
+                    this.Close();
+                    return;
+                }
+                MessageBox.Show("sorry error happened ,try again later");
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+            private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }

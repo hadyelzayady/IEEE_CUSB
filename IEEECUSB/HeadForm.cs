@@ -67,7 +67,7 @@ namespace IEEECUSB
         private void button36_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = SentReqList.SelectedRows;
-            if (selected != null)
+            if (selected.Count != 0)
             {
                 new ViewRequest(selected).ShowDialog();
             }
@@ -86,6 +86,8 @@ namespace IEEECUSB
         private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
             eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            if (eventDetails_GridView.RowCount != 0)
+                eventDetails_GridView.Columns[0].Visible = false;
             eventDetails_GridView.Refresh();
         }
 
@@ -188,7 +190,7 @@ namespace IEEECUSB
         private void RejectRequest(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = ReceivedReqList.SelectedRows;
-            if (selected != null)
+            if (selected.Count != 0)
             {
                 int id = (int)selected[0].Cells[0].Value;
                 if (var.controllerObj.UpdateRequestStatus(id, Status.Rejected) == 1)
@@ -219,7 +221,7 @@ namespace IEEECUSB
         private void SubmitRequest(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = ReceivedReqList.SelectedRows;
-            if (selected != null)
+            if (selected .Count!= 0)
             {
                 new SubmitRequest(selected).ShowDialog();
             }
@@ -301,6 +303,7 @@ namespace IEEECUSB
                 {
                     acceptButton.Enabled = false;
                     rejectButton.Enabled = false;
+                    UpdateSubmitButton.Enabled = false;
                     return;
                 }
                 acceptButton.Enabled = true;
@@ -520,6 +523,16 @@ namespace IEEECUSB
         private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.Refresh();
+            eventDetails_GridView.ClearSelection();
+            DescL.Text = "";
+            DateL.Text = "";
+            TitleL.Text = "";
         }
     }
 }

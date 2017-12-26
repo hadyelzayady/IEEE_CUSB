@@ -80,6 +80,7 @@ namespace IEEECUSB
                 {
                     //show success
                     MessageBox.Show("Request Updated Successfully");
+                    this.Close();
                     return;
                 }
                 //error

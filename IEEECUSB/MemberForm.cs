@@ -87,7 +87,7 @@ namespace IEEECUSB
         private void button30_Click(object sender, EventArgs e)
         {
             string HREval = var.controllerObj.GetEvaluation().ToString();
-            MessageBox.Show("your eval is " + HREval);
+            MessageBox.Show("your evaluation is " + HREval);
         }
 
         private void button24_Click(object sender, EventArgs e)

@@ -71,16 +71,27 @@ namespace IEEECUSB
             }
             else if (headTabControl.SelectedTab == headTabControl.TabPages["committeesAffairs"])
             {
+                //
                 if (CommitteesCombo.Items.Count == 0)
                 {
                     CommitteesCombo.DataSource = var.controllerObj.SelectSectionCommittees();
                     CommitteesCombo.ValueMember = "ID";
                     CommitteesCombo.DisplayMember = "Name";
                 }
-                if (tabControl1.SelectedTab == tabControl1.TabPages["sectionTasksTab"] && CommitteesCombo.Items.Count!=0)
+                //if (tabControl1.SelectedTab == tabControl1.TabPages["sectionTasksTab"] && CommitteesCombo.Items.Count!=0)
+                //{
+                //    dataGridView4.DataSource = var.controllerObj.Section_Task();
+                //    dataGridView4.Refresh();
+                //}
+                if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"] && CommitteesCombo.Items.Count != 0)
                 {
-                    dataGridView4.DataSource = var.controllerObj.Section_Task();
-                    dataGridView4.Refresh();
+                    int CommID = (int)CommitteesCombo.SelectedValue;
+                    IOrequests.DataSource = var.controllerObj.CommRequests(CommID);
+                }
+                if (tabControl1.SelectedTab == tabControl1.TabPages["CommsTasks"] && CommitteesCombo.Items.Count != 0)
+                {
+                    int CommID = (int)CommitteesCombo.SelectedValue;
+                    IOrequests.DataSource = var.controllerObj.Committee_Tasks(CommID);
                 }
 
             }
