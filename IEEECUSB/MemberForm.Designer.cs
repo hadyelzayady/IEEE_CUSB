@@ -32,12 +32,7 @@
             this.homeTab = new System.Windows.Forms.TabPage();
             this.homeLayout_Pnl = new System.Windows.Forms.TableLayoutPanel();
             this.footerLayout_Pnl = new System.Windows.Forms.Panel();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
             this.notificationsContent_Pnl = new System.Windows.Forms.Panel();
             this.notificationsData_GridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,7 +43,6 @@
             this.updatesTitle_Lbl = new System.Windows.Forms.Label();
             this.homeHeader_Pnl = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.loggedInAs_Lbl = new System.Windows.Forms.Label();
             this.welcomeSentence2_Lbl = new System.Windows.Forms.Label();
             this.welcomeSentence1_Lbl = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
@@ -66,7 +60,6 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.filesTab = new System.Windows.Forms.TabPage();
@@ -74,15 +67,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.filesGrid = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -96,7 +86,6 @@
             this.ieeeCalendar = new System.Windows.Forms.MonthCalendar();
             this.calendarHeader_Pnl = new System.Windows.Forms.Panel();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.nextEvent_Lbl = new System.Windows.Forms.Label();
             this.eventsAndMeetingsSubTitle_Lbl = new System.Windows.Forms.Label();
             this.eventsAndMeetingsTitle_Lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -106,7 +95,6 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel27 = new System.Windows.Forms.Panel();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -116,24 +104,9 @@
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.panel26 = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.timetableTab = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.headTabControl.SuspendLayout();
             this.homeTab.SuspendLayout();
             this.homeLayout_Pnl.SuspendLayout();
@@ -160,7 +133,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filesGrid)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -186,14 +159,6 @@
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.timetableTab.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            this.panel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // headTabControl
@@ -204,7 +169,6 @@
             this.headTabControl.Controls.Add(this.calendarTab);
             this.headTabControl.Controls.Add(this.chatTab);
             this.headTabControl.Controls.Add(this.emailTab);
-            this.headTabControl.Controls.Add(this.timetableTab);
             this.headTabControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.headTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.headTabControl.Location = new System.Drawing.Point(0, 0);
@@ -253,12 +217,7 @@
             // 
             // footerLayout_Pnl
             // 
-            this.footerLayout_Pnl.Controls.Add(this.button33);
-            this.footerLayout_Pnl.Controls.Add(this.button35);
-            this.footerLayout_Pnl.Controls.Add(this.button32);
-            this.footerLayout_Pnl.Controls.Add(this.button31);
             this.footerLayout_Pnl.Controls.Add(this.button30);
-            this.footerLayout_Pnl.Controls.Add(this.button29);
             this.footerLayout_Pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.footerLayout_Pnl.Location = new System.Drawing.Point(2, 518);
             this.footerLayout_Pnl.Margin = new System.Windows.Forms.Padding(2);
@@ -266,65 +225,16 @@
             this.footerLayout_Pnl.Size = new System.Drawing.Size(922, 28);
             this.footerLayout_Pnl.TabIndex = 1;
             // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(783, 0);
-            this.button33.Margin = new System.Windows.Forms.Padding(2);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(130, 29);
-            this.button33.TabIndex = 7;
-            this.button33.Text = "Help";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.Location = new System.Drawing.Point(599, 0);
-            this.button35.Margin = new System.Windows.Forms.Padding(2);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(179, 29);
-            this.button35.TabIndex = 6;
-            this.button35.Text = "Report a System Error";
-            this.button35.UseVisualStyleBackColor = true;
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(426, 0);
-            this.button32.Margin = new System.Windows.Forms.Padding(2);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(170, 29);
-            this.button32.TabIndex = 3;
-            this.button32.Text = "Committee Facebook Group";
-            this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(269, 0);
-            this.button31.Margin = new System.Windows.Forms.Padding(2);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(153, 29);
-            this.button31.TabIndex = 2;
-            this.button31.Text = "Rules and Regulations";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
             // button30
             // 
-            this.button30.Location = new System.Drawing.Point(135, 0);
+            this.button30.Location = new System.Drawing.Point(2, -1);
             this.button30.Margin = new System.Windows.Forms.Padding(2);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(130, 29);
             this.button30.TabIndex = 1;
             this.button30.Text = "HR Evaluation";
             this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(0, 0);
-            this.button29.Margin = new System.Windows.Forms.Padding(2);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(130, 29);
-            this.button29.TabIndex = 0;
-            this.button29.Text = "Feedback";
-            this.button29.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // notificationsContent_Pnl
             // 
@@ -424,7 +334,6 @@
             // homeHeader_Pnl
             // 
             this.homeHeader_Pnl.Controls.Add(this.pictureBox2);
-            this.homeHeader_Pnl.Controls.Add(this.loggedInAs_Lbl);
             this.homeHeader_Pnl.Controls.Add(this.welcomeSentence2_Lbl);
             this.homeHeader_Pnl.Controls.Add(this.welcomeSentence1_Lbl);
             this.homeHeader_Pnl.Controls.Add(this.logoPictureBox);
@@ -446,18 +355,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-            // 
-            // loggedInAs_Lbl
-            // 
-            this.loggedInAs_Lbl.AutoSize = true;
-            this.loggedInAs_Lbl.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loggedInAs_Lbl.ForeColor = System.Drawing.Color.Black;
-            this.loggedInAs_Lbl.Location = new System.Drawing.Point(75, 72);
-            this.loggedInAs_Lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.loggedInAs_Lbl.Name = "loggedInAs_Lbl";
-            this.loggedInAs_Lbl.Size = new System.Drawing.Size(492, 19);
-            this.loggedInAs_Lbl.TabIndex = 3;
-            this.loggedInAs_Lbl.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
             // 
             // welcomeSentence2_Lbl
             // 
@@ -548,6 +445,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Edit / Submit";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button9
             // 
@@ -558,6 +456,7 @@
             this.button9.TabIndex = 2;
             this.button9.Text = "Open";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -568,6 +467,7 @@
             this.button10.TabIndex = 1;
             this.button10.Text = "Reject Task";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button24
             // 
@@ -578,6 +478,7 @@
             this.button24.TabIndex = 0;
             this.button24.Text = "Accept Task";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // panel10
             // 
@@ -602,6 +503,7 @@
             this.dataGridView3.RowTemplate.Height = 28;
             this.dataGridView3.Size = new System.Drawing.Size(922, 370);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // panel11
             // 
@@ -630,7 +532,6 @@
             // 
             this.panel15.Controls.Add(this.pictureBox4);
             this.panel15.Controls.Add(this.pictureBox12);
-            this.panel15.Controls.Add(this.label10);
             this.panel15.Controls.Add(this.label11);
             this.panel15.Controls.Add(this.label12);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -639,6 +540,7 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(922, 92);
             this.panel15.TabIndex = 1;
+            this.panel15.Paint += new System.Windows.Forms.PaintEventHandler(this.panel15_Paint);
             // 
             // pictureBox4
             // 
@@ -662,18 +564,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 8;
             this.pictureBox12.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(75, 72);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(492, 19);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // label11
             // 
@@ -698,6 +589,7 @@
             this.label12.Size = new System.Drawing.Size(224, 33);
             this.label12.TabIndex = 1;
             this.label12.Text = "My Personal Tasks";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // filesTab
             // 
@@ -735,8 +627,6 @@
             // 
             this.panel7.Controls.Add(this.button2);
             this.panel7.Controls.Add(this.button3);
-            this.panel7.Controls.Add(this.button11);
-            this.panel7.Controls.Add(this.button12);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(2, 518);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
@@ -746,47 +636,29 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(426, 0);
+            this.button2.Location = new System.Drawing.Point(162, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 29);
             this.button2.TabIndex = 3;
             this.button2.Text = "Upload New File";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(269, 0);
+            this.button3.Location = new System.Drawing.Point(5, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(153, 29);
             this.button3.TabIndex = 2;
             this.button3.Text = "Download";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(135, 0);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(130, 29);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "File Info";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(0, 0);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(130, 29);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "Open File";
-            this.button12.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.dataGridView5);
+            this.panel17.Controls.Add(this.filesGrid);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(2, 144);
             this.panel17.Margin = new System.Windows.Forms.Padding(2);
@@ -794,19 +666,19 @@
             this.panel17.Size = new System.Drawing.Size(922, 370);
             this.panel17.TabIndex = 1;
             // 
-            // dataGridView5
+            // filesGrid
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView5.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.RowTemplate.Height = 28;
-            this.dataGridView5.Size = new System.Drawing.Size(922, 370);
-            this.dataGridView5.TabIndex = 0;
+            this.filesGrid.AllowUserToAddRows = false;
+            this.filesGrid.AllowUserToDeleteRows = false;
+            this.filesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filesGrid.Location = new System.Drawing.Point(0, 0);
+            this.filesGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.filesGrid.Name = "filesGrid";
+            this.filesGrid.ReadOnly = true;
+            this.filesGrid.RowTemplate.Height = 28;
+            this.filesGrid.Size = new System.Drawing.Size(922, 370);
+            this.filesGrid.TabIndex = 0;
             // 
             // panel18
             // 
@@ -834,7 +706,6 @@
             // panel19
             // 
             this.panel19.Controls.Add(this.pictureBox13);
-            this.panel19.Controls.Add(this.label14);
             this.panel19.Controls.Add(this.label15);
             this.panel19.Controls.Add(this.label16);
             this.panel19.Controls.Add(this.pictureBox5);
@@ -856,18 +727,6 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 8;
             this.pictureBox13.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(75, 72);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(492, 19);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
             // 
             // label15
             // 
@@ -982,29 +841,33 @@
             // 
             // eventDetails_GridView
             // 
+            this.eventDetails_GridView.AllowUserToAddRows = false;
+            this.eventDetails_GridView.AllowUserToDeleteRows = false;
             this.eventDetails_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDetails_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventDetails_GridView.Location = new System.Drawing.Point(0, 0);
             this.eventDetails_GridView.Margin = new System.Windows.Forms.Padding(2);
             this.eventDetails_GridView.Name = "eventDetails_GridView";
+            this.eventDetails_GridView.ReadOnly = true;
             this.eventDetails_GridView.RowTemplate.Height = 28;
             this.eventDetails_GridView.Size = new System.Drawing.Size(685, 403);
             this.eventDetails_GridView.TabIndex = 0;
+            this.eventDetails_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventDetails_GridView_CellContentClick);
             // 
             // ieeeCalendar
             // 
             this.ieeeCalendar.CalendarDimensions = new System.Drawing.Size(1, 2);
             this.ieeeCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ieeeCalendar.Location = new System.Drawing.Point(6, 6);
-            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
+            this.ieeeCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateChanged);
             this.ieeeCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateSelected);
             // 
             // calendarHeader_Pnl
             // 
             this.calendarHeader_Pnl.Controls.Add(this.pictureBox14);
-            this.calendarHeader_Pnl.Controls.Add(this.nextEvent_Lbl);
             this.calendarHeader_Pnl.Controls.Add(this.eventsAndMeetingsSubTitle_Lbl);
             this.calendarHeader_Pnl.Controls.Add(this.eventsAndMeetingsTitle_Lbl);
             this.calendarHeader_Pnl.Controls.Add(this.pictureBox1);
@@ -1026,18 +889,6 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 8;
             this.pictureBox14.TabStop = false;
-            // 
-            // nextEvent_Lbl
-            // 
-            this.nextEvent_Lbl.AutoSize = true;
-            this.nextEvent_Lbl.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextEvent_Lbl.ForeColor = System.Drawing.Color.Black;
-            this.nextEvent_Lbl.Location = new System.Drawing.Point(75, 72);
-            this.nextEvent_Lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nextEvent_Lbl.Name = "nextEvent_Lbl";
-            this.nextEvent_Lbl.Size = new System.Drawing.Size(492, 19);
-            this.nextEvent_Lbl.TabIndex = 3;
-            this.nextEvent_Lbl.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
             // 
             // eventsAndMeetingsSubTitle_Lbl
             // 
@@ -1125,7 +976,6 @@
             // panel27
             // 
             this.panel27.Controls.Add(this.pictureBox16);
-            this.panel27.Controls.Add(this.label22);
             this.panel27.Controls.Add(this.label23);
             this.panel27.Controls.Add(this.label24);
             this.panel27.Controls.Add(this.pictureBox7);
@@ -1147,18 +997,6 @@
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 8;
             this.pictureBox16.TabStop = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(75, 72);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(492, 19);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
             // 
             // label23
             // 
@@ -1246,7 +1084,6 @@
             // panel26
             // 
             this.panel26.Controls.Add(this.pictureBox17);
-            this.panel26.Controls.Add(this.label21);
             this.panel26.Controls.Add(this.label25);
             this.panel26.Controls.Add(this.label26);
             this.panel26.Controls.Add(this.pictureBox8);
@@ -1268,18 +1105,6 @@
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 8;
             this.pictureBox17.TabStop = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(75, 72);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(492, 19);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
             // 
             // label25
             // 
@@ -1316,175 +1141,6 @@
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
-            // timetableTab
-            // 
-            this.timetableTab.Controls.Add(this.tableLayoutPanel9);
-            this.timetableTab.Location = new System.Drawing.Point(4, 22);
-            this.timetableTab.Margin = new System.Windows.Forms.Padding(2);
-            this.timetableTab.Name = "timetableTab";
-            this.timetableTab.Size = new System.Drawing.Size(926, 548);
-            this.timetableTab.TabIndex = 9;
-            this.timetableTab.Text = "My Timetable";
-            this.timetableTab.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.panel16, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.panel29, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.panel31, 0, 0);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 3;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(926, 548);
-            this.tableLayoutPanel9.TabIndex = 7;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.button25);
-            this.panel16.Controls.Add(this.button26);
-            this.panel16.Controls.Add(this.button27);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(2, 518);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(922, 28);
-            this.panel16.TabIndex = 7;
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(269, 0);
-            this.button25.Margin = new System.Windows.Forms.Padding(2);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(153, 29);
-            this.button25.TabIndex = 2;
-            this.button25.Text = "Print";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(135, 0);
-            this.button26.Margin = new System.Windows.Forms.Padding(2);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(130, 29);
-            this.button26.TabIndex = 1;
-            this.button26.Text = "Save";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(0, 0);
-            this.button27.Margin = new System.Windows.Forms.Padding(2);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(130, 29);
-            this.button27.TabIndex = 0;
-            this.button27.Text = "Edit";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.dataGridView7);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel29.Location = new System.Drawing.Point(2, 98);
-            this.panel29.Margin = new System.Windows.Forms.Padding(2);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(922, 416);
-            this.panel29.TabIndex = 1;
-            // 
-            // dataGridView7
-            // 
-            this.dataGridView7.AllowUserToAddRows = false;
-            this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView7.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.RowTemplate.Height = 28;
-            this.dataGridView7.Size = new System.Drawing.Size(922, 416);
-            this.dataGridView7.TabIndex = 0;
-            // 
-            // panel31
-            // 
-            this.panel31.Controls.Add(this.pictureBox18);
-            this.panel31.Controls.Add(this.label28);
-            this.panel31.Controls.Add(this.label29);
-            this.panel31.Controls.Add(this.label30);
-            this.panel31.Controls.Add(this.pictureBox9);
-            this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel31.Location = new System.Drawing.Point(2, 2);
-            this.panel31.Margin = new System.Windows.Forms.Padding(2);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(922, 92);
-            this.panel31.TabIndex = 1;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox18.Image = global::IEEECUSB.Properties.Resources.Refresh_S;
-            this.pictureBox18.Location = new System.Drawing.Point(824, 0);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(98, 92);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 8;
-            this.pictureBox18.TabStop = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(75, 72);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(492, 19);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Logged in as: Mahmoud Morsy | Head of Embedded Systems Directorate";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Corbel", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label29.Location = new System.Drawing.Point(75, 34);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(738, 23);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "Here you can add your weekly timetable to avoid clashes for future events and mee" +
-    "tings";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Corbel", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label30.Location = new System.Drawing.Point(73, 2);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(174, 33);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "My Timetable";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::IEEECUSB.Properties.Resources.Timetable;
-            this.pictureBox9.Location = new System.Drawing.Point(4, 13);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(67, 67);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
-            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1494,6 +1150,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MemberForm";
             this.Text = "IEEE CUSB Portal";
+            this.Load += new System.EventHandler(this.MemberForm_Load);
             this.headTabControl.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
             this.homeLayout_Pnl.ResumeLayout(false);
@@ -1525,7 +1182,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filesGrid)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel19.ResumeLayout(false);
@@ -1556,15 +1213,6 @@
             this.panel26.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.timetableTab.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            this.panel31.ResumeLayout(false);
-            this.panel31.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1575,12 +1223,7 @@
         private System.Windows.Forms.TabPage homeTab;
         private System.Windows.Forms.TableLayoutPanel homeLayout_Pnl;
         private System.Windows.Forms.Panel footerLayout_Pnl;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Panel notificationsContent_Pnl;
         private System.Windows.Forms.DataGridView notificationsData_GridView;
         private System.Windows.Forms.Panel panel1;
@@ -1591,7 +1234,6 @@
         private System.Windows.Forms.Label updatesTitle_Lbl;
         private System.Windows.Forms.Panel homeHeader_Pnl;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label loggedInAs_Lbl;
         private System.Windows.Forms.Label welcomeSentence2_Lbl;
         private System.Windows.Forms.Label welcomeSentence1_Lbl;
         private System.Windows.Forms.PictureBox logoPictureBox;
@@ -1609,7 +1251,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage filesTab;
@@ -1617,15 +1258,12 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView filesGrid;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -1639,7 +1277,6 @@
         private System.Windows.Forms.MonthCalendar ieeeCalendar;
         private System.Windows.Forms.Panel calendarHeader_Pnl;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Label nextEvent_Lbl;
         private System.Windows.Forms.Label eventsAndMeetingsSubTitle_Lbl;
         private System.Windows.Forms.Label eventsAndMeetingsTitle_Lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1649,7 +1286,6 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -1659,23 +1295,8 @@
         private System.Windows.Forms.WebBrowser webBrowser2;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TabPage timetableTab;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.Panel panel31;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

@@ -68,5 +68,36 @@ namespace IEEECUSB
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string progressDesc = ProgressDesc.Text;
+            int progressPerc;
+            if (int.TryParse(ProgressPerc.Text, out progressPerc))
+            {
+
+                if (var.controllerObj.MemeberUpdateRequest(requestID, progressDesc, progressPerc) == 1)
+                {
+                    //show success
+                    MessageBox.Show("Request Updated Successfully");
+                    return;
+                }
+                //error
+                MessageBox.Show("error in Updating request");
+                return;
+            }
+
+            MessageBox.Show("enter progress percent value");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

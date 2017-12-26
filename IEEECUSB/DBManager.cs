@@ -14,7 +14,7 @@ namespace IEEECUSB
 
         public DBManager()
         {
-            string connString = "server=160.153.16.55;user id=TestDB1;database=MahmoudMorsy;PASSWORD=12345678;";
+            string connString = "server=160.153.16.55;user id=TestDB1;database=MahmoudMorsy;PASSWORD=12345678;Convert Zero Datetime=True";
             myConnection = new MySqlConnection();
             //Checking Connection
             try

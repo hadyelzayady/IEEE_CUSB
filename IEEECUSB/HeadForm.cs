@@ -28,7 +28,10 @@ namespace IEEECUSB
 
         private void HeadForm_Load(object sender, EventArgs e)
         {
-
+            notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
+            notificationsData_GridView.Refresh();
+            updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
+            updatesData_GridView.Refresh();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -48,7 +51,7 @@ namespace IEEECUSB
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace IEEECUSB
 
         private void button29_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button36_Click(object sender, EventArgs e)
@@ -82,13 +85,13 @@ namespace IEEECUSB
 
         private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
-            eventDetails_GridView.DataSource= var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
             eventDetails_GridView.Refresh();
         }
 
         private void button38_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView9_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,6 +139,11 @@ namespace IEEECUSB
             {
                 updatesData_GridView.DataSource = var.controllerObj.SelectHeadNotif();
                 updatesData_GridView.Refresh();
+            }
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["filesTab"])
+            {
+                filesGrid.DataSource = var.controllerObj.GetCommitteeFiles();
+                filesGrid.Refresh();
             }
         }
 
@@ -189,16 +197,16 @@ namespace IEEECUSB
                 }
             }
         }
-        private void Refresh(int rec=0,int sen=0)
+        private void Refresh(int rec = 0, int sen = 0)
         {
-            if(rec==1)
+            if (rec == 1)
             {
                 ReceivedReqList.DataSource = var.controllerObj.SelectReceivedRequests();
                 if (ReceivedReqList.RowCount != 0)
                     ReceivedReqList.Columns[0].Visible = false;
                 ReceivedReqList.Refresh();
             }
-            if(sen==1)
+            if (sen == 1)
             {
                 SentReqList.DataSource = var.controllerObj.SelectSentRequests();
                 if (SentReqList.RowCount != 0)
@@ -246,25 +254,25 @@ namespace IEEECUSB
 
         }
 
-         private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             AddTask T = new AddTask();
         }
 
-         private void button4_Click(object sender, EventArgs e)
-         {
-             int x = Convert.ToInt32(Task_ID);
-             SubmitTask T = new SubmitTask(x);
-             T.Show();
-             Task_ID = "";
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int x = Convert.ToInt32(Task_ID);
+            SubmitTask T = new SubmitTask(x);
+            T.Show();
+            Task_ID = "";
 
-         }
+        }
 
-         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-         {
-             int rowIndex = e.RowIndex;
-             Task_ID = dataGridView3.Rows[rowIndex].Cells[1].Value.ToString();
-         }
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            Task_ID = dataGridView3.Rows[rowIndex].Cells[1].Value.ToString();
+        }
 
         private void button7_Click_1(object sender, EventArgs e)
         {
@@ -372,7 +380,7 @@ namespace IEEECUSB
             if (selected.Count != 0)
             {
                 int x = (int)selected[0].Cells[0].Value;
-                var.controllerObj.UpdateTaskStatus(x,Status.Rejected);
+                var.controllerObj.UpdateTaskStatus(x, Status.Rejected);
             }
         }
 
@@ -419,16 +427,29 @@ namespace IEEECUSB
 
         private void button38_Click_1(object sender, EventArgs e)
         {
-
+            new AddEvent().ShowDialog();
         }
 
         private void button37_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                new EditEvent(selected[0]).ShowDialog();
 
         }
 
         private void button28_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                if (var.controllerObj.DeleteEvent((int)selected[0].Cells["ID"].Value) == 1)
+                {
+                    MessageBox.Show("Event deleted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error ,event not deleted");
+                }
 
         }
 
@@ -436,6 +457,69 @@ namespace IEEECUSB
         {
             var.controllerObj.InsertUpdate(textBox1.Text);
             textBox1.Clear();
+        }
+
+        private void eventDetails_GridView_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+            {
+                DescL.Text = selected[0].Cells["Description"].Value.ToString();
+                TitleL.Text = selected[0].Cells["Title"].Value.ToString();
+                DateL.Text = selected[0].Cells["Start_Date"].Value.ToString() + " To " + selected[0].Cells["End_Date"].Value.ToString();
+                // DescL.Text = selected[0].Cells["DressCode"].Value.ToString();
+
+            }
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+            notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
+            notificationsData_GridView.Refresh();
+            updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
+            updatesData_GridView.Refresh();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            dataGridView4.DataSource = var.controllerObj.Committee_Tasks();
+            dataGridView4.Refresh();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = var.controllerObj.Member_Tasks();
+            dataGridView3.Refresh();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new AddFile().ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (filesGrid.SelectedRows.Count != 0)
+            {
+                string ServerFilePath = filesGrid.SelectedRows[0].Cells["URL"].Value.ToString();
+                string FileName = filesGrid.SelectedRows[0].Cells["File Title"].Value.ToString() + filesGrid.SelectedRows[0].Cells["Type"].Value.ToString();
+                string LocalFilePath = new FileManager().ChooseFileSavePath(FileName);
+
+                if (LocalFilePath != "")
+                    var.controllerObj.DownloadFile(LocalFilePath, ServerFilePath);
+
+            }
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

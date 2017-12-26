@@ -18,12 +18,12 @@ namespace IEEECUSB
         {
             // if (Environment.OSVersion.Version.Major == 6)
             // SetProcessDPIAware();
-            // seeding s = new seeding();
+            //seeding s = new seeding();
             var.controllerObj = new Controller();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
               
-            Application.Run(new WorkshopsManagement());
+            Application.Run(new Login());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

@@ -34,10 +34,10 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -113,6 +113,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List of Participants enrolled in the workshop";
             // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Location = new System.Drawing.Point(7, 19);
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(619, 109);
+            this.checkedListBox2.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.checkedListBox1);
@@ -126,6 +134,14 @@
             this.groupBox2.Text = "List of Volunteer enrolled in the workshop";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(8, 19);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(618, 109);
+            this.checkedListBox1.TabIndex = 0;
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -137,27 +153,11 @@
             this.label33.Size = new System.Drawing.Size(0, 23);
             this.label33.TabIndex = 27;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(8, 19);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(618, 109);
-            this.checkedListBox1.TabIndex = 0;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(7, 19);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(619, 109);
-            this.checkedListBox2.TabIndex = 0;
-            // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 516);
+            this.ClientSize = new System.Drawing.Size(649, 381);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.label34);

@@ -18,7 +18,7 @@ namespace IEEECUSB
 
         private void button18_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void CommitteesCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,13 +39,63 @@ namespace IEEECUSB
             var.controllerObj.InsertUpdate(textBox9.Text);
             textBox9.Clear();
         }
-        
+
         private void OfficersForm_Load(object sender, EventArgs e)
         {
             notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
             notificationsData_GridView.Refresh();
             updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
             updatesData_GridView.Refresh();
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            new AddEvent().ShowDialog();
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                new EditEvent(selected[0]).ShowDialog();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                if (var.controllerObj.DeleteEvent((int)selected[0].Cells["ID"].Value) == 1)
+                {
+                    MessageBox.Show("Event deleted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error ,event not deleted");
+                }
+
+        }
+
+        private void eventDetails_GridView_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+            {
+                DescL.Text = selected[0].Cells["Description"].Value.ToString();
+                TitleL.Text = selected[0].Cells["Title"].Value.ToString();
+                DateL.Text = selected[0].Cells["Start_Date"].Value.ToString() + " To " + selected[0].Cells["End_Date"].Value.ToString();
+                // DescL.Text = selected[0].Cells["DressCode"].Value.ToString();
+
+            }
+        }
+
+
+
+        private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            if (eventDetails_GridView.RowCount != 0)
+                eventDetails_GridView.Columns[0].Visible = false;
+            eventDetails_GridView.Refresh();
         }
 
         private void headTabControl_Click(object sender, EventArgs e)
@@ -87,7 +137,7 @@ namespace IEEECUSB
             {
                 dataGridView4.DataSource = var.controllerObj.HighBoard_Tasks();
                 dataGridView4.Refresh();
-            }   
+            }
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
@@ -112,7 +162,7 @@ namespace IEEECUSB
                 if (CommTasksGrid.RowCount != 0)
                     CommTasksGrid.Columns[0].Visible = false;
             }
-            else if (tabControl1.SelectedTab == tabControl1.TabPages["CommsFiles"] && CommitteesCombo.Items.Count !=0)
+            else if (tabControl1.SelectedTab == tabControl1.TabPages["CommsFiles"] && CommitteesCombo.Items.Count != 0)
             {
 
             }
@@ -127,14 +177,14 @@ namespace IEEECUSB
             DataGridViewSelectedRowCollection selected = IOrequests.SelectedRows;
             if (IOrequests.SelectedRows.Count != 0)
             {
-                    FromCommitteBox.Text = IOrequests.SelectedRows[0].Cells["Sender Committee"].Value.ToString();
-                    ToCommitteeBox.Text = IOrequests.SelectedRows[0].Cells["Reciever Committee"].Value.ToString();
-                    StartDateBox.Text = IOrequests.SelectedRows[0].Cells["Start_Date"].Value.ToString();
-                    DeadlineDate.Text = IOrequests.SelectedRows[0].Cells["Deadline_Date"].Value.ToString();
-                    DescriptionBox.Text = IOrequests.SelectedRows[0].Cells["Description"].Value.ToString();
-                    PriorityBox.Text = IOrequests.SelectedRows[0].Cells["Priority"].Value.ToString();
-                    RequestTitleBox.Text = IOrequests.SelectedRows[0].Cells["Title"].Value.ToString();
-            }                            
+                FromCommitteBox.Text = IOrequests.SelectedRows[0].Cells["Sender Committee"].Value.ToString();
+                ToCommitteeBox.Text = IOrequests.SelectedRows[0].Cells["Reciever Committee"].Value.ToString();
+                StartDateBox.Text = IOrequests.SelectedRows[0].Cells["Start_Date"].Value.ToString();
+                DeadlineDate.Text = IOrequests.SelectedRows[0].Cells["Deadline_Date"].Value.ToString();
+                DescriptionBox.Text = IOrequests.SelectedRows[0].Cells["Description"].Value.ToString();
+                PriorityBox.Text = IOrequests.SelectedRows[0].Cells["Priority"].Value.ToString();
+                RequestTitleBox.Text = IOrequests.SelectedRows[0].Cells["Title"].Value.ToString();
+            }
         }
 
         private void IOrequests_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -269,9 +319,27 @@ namespace IEEECUSB
             HR.Show();
         }
 
-        private void dataGridView4_SelectionChanged(object sender, EventArgs e)
+        private void button38_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button37_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = eventDetails_GridView.SelectedRows;
+            if (selected.Count != 0)
+                new EditEvent(selected[0]).ShowDialog();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
     }
 }
+       

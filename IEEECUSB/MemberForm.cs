@@ -19,25 +19,29 @@ namespace IEEECUSB
         private void ieeeCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
             eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            if (eventDetails_GridView.RowCount != 0)
+                eventDetails_GridView.Columns[0].Visible = false;
             eventDetails_GridView.Refresh();
         }
         private void headTabControl_Click(object sender, EventArgs e)
         {
 
-           if (headTabControl.SelectedTab == headTabControl.TabPages["calendarTab"])
+            if (headTabControl.SelectedTab == headTabControl.TabPages["calendarTab"])
             {
                 eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
                 eventDetails_GridView.Refresh();
             }
-        
+
             else if (headTabControl.SelectedTab == headTabControl.TabPages["myTasksTab"])
             {
                 dataGridView3.DataSource = var.controllerObj.Member_Tasks();
                 dataGridView3.Refresh();
             }
-           else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
             {
-                updatesData_GridView.DataSource = var.controllerObj.SelectMemberNotif();
+                notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
+                notificationsData_GridView.Refresh();
+                updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
                 updatesData_GridView.Refresh();
             }
         }
@@ -45,6 +49,111 @@ namespace IEEECUSB
         private void updatesData_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ieeeCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void eventDetails_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MemberForm_Load(object sender, EventArgs e)
+        {
+            notificationsData_GridView.DataSource = var.controllerObj.Member_Notification();
+            notificationsData_GridView.Refresh();
+            updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
+            updatesData_GridView.Refresh();
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            string HREval = var.controllerObj.GetEvaluation().ToString();
+            MessageBox.Show("your eval is " + HREval);
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                var.controllerObj.UpdateTaskStatus(x, Status.Accepted);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                var.controllerObj.UpdateTaskStatus(x, Status.Rejected);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                new ViewTask(x).ShowDialog();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = dataGridView3.SelectedRows;
+            if (selected.Count != 0)
+            {
+                int x = (int)selected[0].Cells[0].Value;
+                new SubmitTask(x).ShowDialog();
+            }
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = var.controllerObj.Member_Tasks();
+            dataGridView3.Refresh();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new AddFile().ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (filesGrid.SelectedRows.Count != 0)
+            {
+                string ServerFilePath = filesGrid.SelectedRows[0].Cells["URL"].Value.ToString();
+                string FileName = filesGrid.SelectedRows[0].Cells["File Title"].Value.ToString() + filesGrid.SelectedRows[0].Cells["Type"].Value.ToString();
+                string LocalFilePath = new FileManager().ChooseFileSavePath(FileName);
+
+                if (LocalFilePath != "")
+                    var.controllerObj.DownloadFile(LocalFilePath, ServerFilePath);
+
+            }
         }
     }
 }

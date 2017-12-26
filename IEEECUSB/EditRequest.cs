@@ -15,11 +15,11 @@ namespace IEEECUSB
         public EditRequest(DataGridViewSelectedRowCollection request)
         {
             InitializeComponent();
-            requestID = (int)request[0].Cells[0].Value;
-            RequestTitle.Text = request[0].Cells[1].Value.ToString();
-            RequestDesc.Text = request[0].Cells[3].Value.ToString();
-            RequestStartDate.Text = request[0].Cells[4].Value.ToString();
-            RequestEndDate.Text = request[0].Cells[5].Value.ToString();
+            requestID = (int)request[0].Cells["ID"].Value;
+            RequestTitle.Text = request[0].Cells["Title"].Value.ToString();
+            RequestDesc.Text = request[0].Cells["Description"].Value.ToString();
+            RequestStartDate.Text = request[0].Cells["Start_date"].Value.ToString();
+            RequestEndDate.Text = request[0].Cells["End_date"].Value.ToString();
             RecComm.DataSource = var.controllerObj.SelectCommittees();
             RecComm.ValueMember = "ID";
             RecComm.DisplayMember = "Name";
@@ -53,6 +53,16 @@ namespace IEEECUSB
             string EndDate = RequestEndDate.Value.ToString("yyyy-MM-dd");
             int RecCommID = (int)RecComm.SelectedValue;
             var.controllerObj.EditRequest(requestID, Title, Desc, StartDate, EndDate, RecCommID);
+        }
+
+        private void RequestStartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
