@@ -88,7 +88,7 @@ namespace IEEECUSB
                 {
                     //SectionID = Convert.ToInt32(returnData.Rows[0]["ID"].ToString());
                     SectionID = -1; 
-                        }
+                }
                 else
                 {
                     returnPosition = Position.None;
@@ -520,7 +520,7 @@ namespace IEEECUSB
 
         public DataTable Member_Notification()
         {
-            string query = "SELECT Descriptoin FROM Notification join Volunteer on Notificatoin.Vol_ID = Volunteer.ID Where (Vol_ID ='" + UserID + "' AND Notificatoin.Creation_Date < Volunteer.Last_Login) ; ";
+            string query = "SELECT Description FROM Notification join Volunteer on Notification.Vol_ID = Volunteer.ID Where (Vol_ID ='" + UserID + "' AND Notification.Creation_Date < Volunteer.Last_Login) ; ";
             return dbMan.ExecuteReader(query);
         }
 
@@ -882,19 +882,19 @@ namespace IEEECUSB
             DateTime y = DateTime.Now;
             if (CommitteeID == 100)
             {
-                string query = "SELECT Description From Update Where End_Date > '" + y.ToString("yyyy-MM-dd") + "';";
+                string query = "SELECT Description From MahmoudMorsy.Update Where End_Date > '" + y.ToString("yyyy-MM-dd") + "';";
                 return dbMan.ExecuteReader(query);
             }
             else if (CommitteeID == 101)
             {
-                string query = "SELECT Description From Update Where (Section_ID = '" + SectionID + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "');";
+                string query = "SELECT Description From MahmoudMorsy.Update Where (Section_ID = '" + SectionID + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "');";
                 return dbMan.ExecuteReader(query);
             }
             else
             {
                 string off = "Officer";
                 string sup = "Supervisor";
-                string query = "SELECT Description From Update Where (Committee_ID = '" + CommitteeID + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "') OR (Type = '" + off + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "') OR (Type = '" + sup + "' AND Section_ID = '" + SectionID + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "');";
+                string query = "SELECT Description From MahmoudMorsy.Update Where (Committee_ID = '" + CommitteeID + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "') OR (Type = '" + off + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "') OR (Type = '" + sup + "' AND Section_ID = '" + SectionID + "' AND End_Date > '" + y.ToString("yyyy-MM-dd") + "');";
                 return dbMan.ExecuteReader(query);
             }
         }
