@@ -155,5 +155,12 @@ namespace IEEECUSB
 
             }
         }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            eventDetails_GridView.DataSource = var.controllerObj.SelectEvents(ieeeCalendar.SelectionRange.Start);
+            eventDetails_GridView.Refresh();
+            eventDetails_GridView.ClearSelection();
+        }
     }
 }

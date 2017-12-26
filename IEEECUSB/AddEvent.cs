@@ -18,7 +18,7 @@ namespace IEEECUSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value < DateTime.Today || dateTimePicker1.Value > dateTimePicker2.Value)
+            if (dateTimePicker1.Value < DateTime.Today || dateTimePicker1.Value.Subtract(dateTimePicker2.Value).Days >= 1)
             {
                 MessageBox.Show("enter valid dates");
             }
@@ -28,7 +28,12 @@ namespace IEEECUSB
                 string title = TitleBox.Text;
                 string Sdate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
                 string Edate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-                if (var.controllerObj.InsertEvent(title, desc, Sdate, Edate) == 1)
+                if(title.Length <4)
+                {
+                    MessageBox.Show("enter title greater than 4 chars");
+                    return;
+                }
+                else if (var.controllerObj.InsertEvent(title, desc, Sdate, Edate) == 1)
                 {
                     MessageBox.Show("Event added successfully");
                     this.Close();

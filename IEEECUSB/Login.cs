@@ -44,7 +44,6 @@ namespace IEEECUSB
                     new AdminPanel().Show();
                     this.Hide();
                 }
-
             }
             else
             {
@@ -92,7 +91,7 @@ namespace IEEECUSB
                     else if (P == Position.Officer)
                     {
                         new OfficersForm().Show();
-                        this.Hide();
+                        //this.Hide();
                     }
                     else
                     {

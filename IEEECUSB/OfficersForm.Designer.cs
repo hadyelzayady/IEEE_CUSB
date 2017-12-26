@@ -553,6 +553,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // welcomeSentence2_Lbl
             // 
@@ -1018,7 +1019,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(1041, 45);
             this.tableLayoutPanel15.TabIndex = 15;
             // 
@@ -1097,7 +1098,7 @@
             this.CommsTasks.Location = new System.Drawing.Point(4, 25);
             this.CommsTasks.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.CommsTasks.Name = "CommsTasks";
-            this.CommsTasks.Size = new System.Drawing.Size(1048, 300);
+            this.CommsTasks.Size = new System.Drawing.Size(1049, 303);
             this.CommsTasks.TabIndex = 2;
             this.CommsTasks.Text = "Committee Tasks";
             this.CommsTasks.UseVisualStyleBackColor = true;
@@ -1117,7 +1118,7 @@
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(1048, 300);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(1049, 303);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -1127,13 +1128,13 @@
             this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 170);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 171);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1044, 129);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1045, 131);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
             // groupBox1
@@ -1264,8 +1265,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1040, 43);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1041, 45);
             this.tableLayoutPanel3.TabIndex = 15;
             // 
             // groupBox2
@@ -1276,7 +1277,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.groupBox2.Size = new System.Drawing.Size(516, 41);
+            this.groupBox2.Size = new System.Drawing.Size(517, 43);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Submission Details and Notes";
@@ -1288,7 +1289,7 @@
             this.textBox8.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(512, 22);
+            this.textBox8.Size = new System.Drawing.Size(513, 24);
             this.textBox8.TabIndex = 1;
             // 
             // groupBox3
@@ -1299,7 +1300,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.groupBox3.Size = new System.Drawing.Size(516, 41);
+            this.groupBox3.Size = new System.Drawing.Size(516, 43);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Task Description";
@@ -1311,7 +1312,7 @@
             this.textBox18.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(512, 22);
+            this.textBox18.Size = new System.Drawing.Size(512, 24);
             this.textBox18.TabIndex = 0;
             // 
             // panel51
@@ -1321,7 +1322,7 @@
             this.panel51.Location = new System.Drawing.Point(2, 39);
             this.panel51.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(1044, 129);
+            this.panel51.Size = new System.Drawing.Size(1045, 130);
             this.panel51.TabIndex = 1;
             // 
             // CommTasksGrid
@@ -1360,7 +1361,7 @@
             this.CommTasksGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.CommTasksGrid.RowTemplate.Height = 28;
             this.CommTasksGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CommTasksGrid.Size = new System.Drawing.Size(1044, 129);
+            this.CommTasksGrid.Size = new System.Drawing.Size(1045, 130);
             this.CommTasksGrid.TabIndex = 0;
             this.CommTasksGrid.SelectionChanged += new System.EventHandler(this.CommTasksGrid_SelectionChanged);
             // 
@@ -1371,7 +1372,7 @@
             this.panel52.Location = new System.Drawing.Point(2, 1);
             this.panel52.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(1044, 36);
+            this.panel52.Size = new System.Drawing.Size(1045, 36);
             this.panel52.TabIndex = 1;
             // 
             // label59
@@ -1635,6 +1636,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView4.Size = new System.Drawing.Size(1053, 352);
             this.dataGridView4.TabIndex = 0;
             // 
@@ -2057,12 +2059,16 @@
             // 
             // eventDetails_GridView
             // 
+            this.eventDetails_GridView.AllowUserToAddRows = false;
+            this.eventDetails_GridView.AllowUserToDeleteRows = false;
             this.eventDetails_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDetails_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventDetails_GridView.Location = new System.Drawing.Point(0, 0);
             this.eventDetails_GridView.Margin = new System.Windows.Forms.Padding(2);
             this.eventDetails_GridView.Name = "eventDetails_GridView";
+            this.eventDetails_GridView.ReadOnly = true;
             this.eventDetails_GridView.RowTemplate.Height = 28;
+            this.eventDetails_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.eventDetails_GridView.Size = new System.Drawing.Size(777, 229);
             this.eventDetails_GridView.TabIndex = 4;
             this.eventDetails_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventDetails_GridView_CellContentClick);
@@ -2186,7 +2192,7 @@
             // 
             this.ieeeCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ieeeCalendar.Location = new System.Drawing.Point(7, 7);
-            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
             // 
@@ -2214,6 +2220,7 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 8;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
             // 
             // eventsAndMeetingsSubTitle_Lbl
             // 

@@ -647,7 +647,7 @@
             this.ieeeCalendar.CalendarDimensions = new System.Drawing.Size(1, 2);
             this.ieeeCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ieeeCalendar.Location = new System.Drawing.Point(8, 8);
-            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(8);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
             this.ieeeCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);

@@ -859,7 +859,7 @@
             this.ieeeCalendar.CalendarDimensions = new System.Drawing.Size(1, 2);
             this.ieeeCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ieeeCalendar.Location = new System.Drawing.Point(7, 7);
-            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ieeeCalendar.Margin = new System.Windows.Forms.Padding(7);
             this.ieeeCalendar.Name = "ieeeCalendar";
             this.ieeeCalendar.TabIndex = 0;
             this.ieeeCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.ieeeCalendar_DateChanged);
@@ -889,6 +889,7 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 8;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
             // 
             // eventsAndMeetingsSubTitle_Lbl
             // 
