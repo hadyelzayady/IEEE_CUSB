@@ -32,6 +32,11 @@ namespace IEEECUSB
             notificationsData_GridView.Refresh();
             updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
             updatesData_GridView.Refresh();
+            if (var.controllerObj.IsHRHead())
+            {
+                VolunteersManagement.Visible = true;
+                ParticipantsManagement.Visible = true;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -509,9 +514,17 @@ namespace IEEECUSB
                 string FileName = filesGrid.SelectedRows[0].Cells["File Title"].Value.ToString() + filesGrid.SelectedRows[0].Cells["Type"].Value.ToString();
                 string LocalFilePath = new FileManager().ChooseFileSavePath(FileName);
 
+                bool ret = false;
                 if (LocalFilePath != "")
-                    var.controllerObj.DownloadFile(LocalFilePath, ServerFilePath);
-
+                    ret = var.controllerObj.DownloadFile(LocalFilePath, ServerFilePath);
+                if (ret == true)
+                {
+                    MessageBox.Show("Your File is Downloaded Successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("An Error Occurred!");
+                }
             }
         }
 
