@@ -21,6 +21,114 @@ namespace IEEECUSB
         public int Season = 0;
         public string JobPosition = "";
         public int SectionID = -1;
+             internal bool ChangeAdminPassword(string OldPassword, string NewPassword)
+        {
+            string query = $"UPDATE Admin SET Password='{NewPassword}' WHERE Password='{OldPassword}'";
+            if (dbMan.ExecuteNonQuery(query) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        internal bool ChangeFTPAccount(string FTPLink, string Username, string NewPassword, string OldUsername)
+        {
+            string query = $"UPDATE FTPAccess SET URL='{FTPLink}', Username='{Username}', Password='{NewPassword}' WHERE Username='{OldUsername}'";
+            if (dbMan.ExecuteNonQuery(query) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        internal DataTable GetFTPCredentials()
+        {
+            string query = "SELECT * FROM FTPAccess";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+
+        internal string GetSeason()
+        {
+            return Season.ToString();
+        }
+        internal string GetCurrentCommitteeSectionName()
+        {
+            string query = $"SELECT Section.Name FROM Section, Committee WHERE Section.ID=Section_ID AND Committee.ID='{CommitteeID.ToString()}'";
+            DataTable d = dbMan.ExecuteReader(query);
+            string ret = "";
+            if (d != null)
+            {
+                ret = d.Rows[0]["Name"].ToString();
+            }
+            return ret;
+        }
+        internal bool UploadFile(string LocalFilePath, string ServerLoc, string DestFolder, string DestFileName, string FileType, string FileDescription)
+        {
+            string ServerDestinationPath = ServerLoc + "/" + DestFolder;
+            string query = $"INSERT INTO File(Title, Description, Type, Writer_ID, Committee_ID, Committee_Season, URL) Values('{DestFileName}', '{FileDescription}','{FileType}', '{UserID.ToString()}', '{CommitteeID}', '{Season}', '{ServerDestinationPath + "/" + DestFileName + FileType}')";
+            bool FolderExist = ftpMan.createDirectoryIfNotExist(ServerLoc, DestFolder);
+            bool Ret = false;
+            if (FolderExist)
+            {
+                Ret = ftpMan.uploadFile(LocalFilePath, ServerLoc+"/"+ DestFolder + "/" + DestFileName + FileType);
+                if (Ret)
+                {
+                    dbMan.ExecuteNonQuery(query);
+                }
+            }
+            else
+            {
+                Ret = false;
+            }
+            return Ret;
+        }
+        internal bool UploadFile(string LocalFilePath, string DestFileName, string FileType, string FileDescription)
+        {
+            string query = $"INSERT INTO File(Title, Description, Type, Writer_ID, Committee_ID, Committee_Season, URL) Values('{DestFileName}', '{FileDescription}','{FileType}', '{UserID.ToString()}', '{CommitteeID}', '{Season}', '{DestFileName + FileType}')";
+            bool Ret = ftpMan.uploadFile(LocalFilePath,DestFileName + FileType);
+            if (Ret)
+            {
+                if (dbMan.ExecuteNonQuery(query) == 0)
+                {
+                    Ret = false;
+                }
+                else
+                {
+                    Ret = true;
+                }
+            }
+            return Ret;
+        }
+
+
+        internal bool IsHRHead()
+        {
+            string query = $"SELECT Committee.Name FROM Committee, Volunteer WHERE Volunteer.Committee_ID=Committee.ID AND Volunteer.ID='{UserID.ToString()}'";
+            DataTable d = dbMan.ExecuteReader(query);
+            bool ret = false;
+            if (d != null)
+            {
+                if (d.Rows[0][0].ToString() == "Human Resources")
+                {
+                    ret = true;
+                }
+                else
+                {
+                    ret = false;
+                }
+            }
+            else
+            {
+                ret = false;
+            }
+            return ret;
+        }
         internal ErrorType Login(GoogleMail MailAccount)
         {
             /* This function logins and returns the user id */
@@ -218,7 +326,7 @@ namespace IEEECUSB
             string query = "SELECT Season, ID, Name FROM Section WHERE Season='" + Season + "'";
             return dbMan.ExecuteReader(query);
         }
-        internal int AddSeason(string SeasonNumber, string ChairID, string ViceID, string TreasurerID, string SecretaryID)
+                internal int AddSeason(string SeasonNumber, string ChairID, string ViceID, string TreasurerID, string SecretaryID)
         {
             if (SeasonNumber == "")
             {
@@ -265,18 +373,21 @@ namespace IEEECUSB
             {
                 return 0;
             }
-
-            if (SupervisorID == "" && SecDesc != "")
+            if (SupervisorID == "" && SecDesc == "")
             {
-                query = $"INSERT INTO Section(Season, Name, Description) VALUES('{SeasonNumber}',{SectionName}', '{SecDesc}')";
+                query = $"INSERT INTO Section(Season, Name) VALUES('{SeasonNumber}','{SectionName}')";
+            }
+            else if (SupervisorID == "" && SecDesc != "")
+            {
+                query = $"INSERT INTO Section(Season, Name, Description) VALUES('{SeasonNumber}','{SectionName}', '{SecDesc}')";
             }
             else if ((SupervisorID != "" && SecDesc != ""))
             {
-                query = $"INSERT INTO Section(Season, Name, Description, Supervisor_ID) VALUES('{SeasonNumber}',{SectionName}', '{SecDesc}', '{SupervisorID}')";
+                query = $"INSERT INTO Section(Season, Name, Description, Supervisor_ID) VALUES('{SeasonNumber}','{SectionName}', '{SecDesc}', '{SupervisorID}')";
             }
             else if (SupervisorID != "" && SecDesc == "")
             {
-                query = $"INSERT INTO Section(Season, Name, Supervisor_ID) VALUES('{SeasonNumber}',{SectionName}', '{SupervisorID}')";
+                query = $"INSERT INTO Section(Season, Name, Supervisor_ID) VALUES('{SeasonNumber}','{SectionName}', '{SupervisorID}')";
             }
             return dbMan.ExecuteNonQuery(query);
         }
@@ -408,7 +519,11 @@ namespace IEEECUSB
         public Controller()
         {
             dbMan = new DBManager(); // Create the DBManager Object
-            ftpMan = new FTPManager("ftp://ftp.ieeecusb.org", "IEEECUSBPortal@ieeecusb.org", "123456789");
+            DataTable d = GetFTPCredentials();
+            if (d != null)
+            {
+                ftpMan = new FTPManager(d.Rows[0]["URL"].ToString(), d.Rows[0]["Username"].ToString(), d.Rows[0]["Password"].ToString());
+            }
         }
         public void TerminateConnection()
         {
