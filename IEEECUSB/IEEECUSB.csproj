@@ -106,6 +106,10 @@
     <Compile Include="Attendance.Designer.cs">
       <DependentUpon>Attendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeAdminPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAdminPW.Designer.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="EditEvent.cs">
@@ -228,6 +232,7 @@
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAdminPW.resx" />
     <EmbeddedResource Include="EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
     </EmbeddedResource>

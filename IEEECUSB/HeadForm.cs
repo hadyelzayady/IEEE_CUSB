@@ -551,5 +551,15 @@ namespace IEEECUSB
                 new ViewRequest(selected).ShowDialog();
             }
         }
+
+        private void button7_Click_3(object sender, EventArgs e)
+        {
+            new VolunteersManagement().Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            new ParticipantsManagement().Show();
+        }
     }
 }

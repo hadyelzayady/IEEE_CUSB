@@ -358,6 +358,16 @@ namespace IEEECUSB
             updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
             updatesData_GridView.Refresh();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            new VolunteersManagement().Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            new ParticipantsManagement().Show();
+        }
     }
 }
        
