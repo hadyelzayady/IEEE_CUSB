@@ -20,6 +20,72 @@ namespace IEEECUSB
             Username = User;
             Password = Pass;
         }
+        public bool DoesFtpDirectoryExist(string dirPath)
+        {
+            try
+            {
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(Path + "/" + dirPath + "/");
+                request.Method = WebRequestMethods.Ftp.ListDirectory;
+                request.Credentials = new NetworkCredential(Username, Password);
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+                return true;
+            }
+            catch (WebException ex)
+            {
+                return false;
+            }
+        }
+        public bool createDirectoryIfNotExist(string ServerLocation, string DirectoryName)
+        {
+            bool ServerLoc = false;
+            bool DirectoryLoc = false;
+            if (!DoesFtpDirectoryExist(ServerLocation))
+            {
+                ServerLoc = createDirectory("", ServerLocation);
+            }
+            else
+            {
+                ServerLoc = true;
+            }
+            if (ServerLoc == true)
+            {
+                if (!DoesFtpDirectoryExist(ServerLocation + "/" + DirectoryName))
+                {
+                    DirectoryLoc = createDirectory(ServerLocation, DirectoryName);
+                }
+                else
+                {
+                    DirectoryLoc = true;
+                }
+            }
+            return DirectoryLoc;
+        }
+        public bool createDirectoryIfNotExist(string ServerLocation, string ServerSubLocation, string DirectoryName)
+        {
+            bool FirstTwo = false;
+            bool DirectoryLoc = false;
+            if (DoesFtpDirectoryExist(ServerLocation + "/" + ServerSubLocation + "/" + DirectoryName))
+            {
+                DirectoryLoc = true;
+            }
+            else
+            {
+                FirstTwo = createDirectoryIfNotExist(ServerLocation, ServerSubLocation);
+                if (FirstTwo == true)
+                {
+                    if (DoesFtpDirectoryExist(ServerLocation + "/" + ServerSubLocation + "/" + DirectoryName))
+                    {
+                        DirectoryLoc = true;
+                    }
+                    else
+                    {
+                        DirectoryLoc = createDirectory(ServerLocation + "/" + ServerSubLocation, DirectoryName);
+                    }
+                }
+            }
+            return DirectoryLoc;
+        }
+
         public bool uploadFile(string LocalLocation, string LocalFileName, string ServerLocation, string ServerFileName)
         {
             try
