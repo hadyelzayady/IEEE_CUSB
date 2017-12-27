@@ -16,7 +16,7 @@ namespace IEEECUSB
         private GoogleMail mailAccount;
         private FTPManager ftpMan;
         // (Initially NULL; NO DBManager Object is created yet)
-        public int UserID = 1;
+        public int UserID = 52;
         public int CommitteeID = 1;
         public int Season = 0;
         public string JobPosition = "";
@@ -82,8 +82,9 @@ namespace IEEECUSB
             }
             else if (JobPosition == "Supervisor")
             {
-                query = "SELECT ID FROM Section WHERE Supervisor_ID='" + UserID.ToString() + "'";
+                query = "SELECT ID FROM Section WHERE Supervisor_ID=" + UserID+ ";";
                 returnData = dbMan.ExecuteReader(query);
+                returnPosition = Position.Supervisor;
                 if (returnData != null)
                 {
                     //SectionID = Convert.ToInt32(returnData.Rows[0]["ID"].ToString());
@@ -532,18 +533,28 @@ namespace IEEECUSB
 
         public DataTable Committee_Tasks(int Committee_ID)
         {
-            string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
-                "FROM Task join TaskRecievers on Task_ID=Task.ID " +
-                "join Volunteer on Volunteer.ID=Reciever_ID " +
-                "where Volunteer.Committee_ID = '" + Committee_ID + "';";
+            //string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+            //    "FROM Task join TaskRecievers on Task_ID=Task.ID " +
+            //    "join Volunteer on Volunteer.ID=Reciever_ID " +
+            //    "where Volunteer.Committee_ID = '" + Committee_ID + "';";
+            //return dbMan.ExecuteReader(query);
+            string query = $"SELECT Task.Description,Reciever.Name as 'Reciever',Assigner.Name as 'Assigner', Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+               "FROM Task join TaskRecievers on Task_ID=Task.ID " +
+               "join Volunteer as Reciever on Reciever.ID=Reciever_ID join Volunteer as Assigner on Assigner.ID =Task.Assigner_ID " +
+               "where Reciever.Committee_ID = " + Committee_ID + " order by Assigner.ID;";
             return dbMan.ExecuteReader(query);
         }
         public DataTable Committee_Tasks()
         {
-            string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
-                "FROM Task join TaskRecievers on Task_ID=Task.ID " +
-                "join Volunteer on Volunteer.ID=Reciever_ID " +
-                "where Volunteer.Committee_ID = '" + CommitteeID + "';";
+            //string query = $"SELECT Volunteer.Name, Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+            //    "FROM Task join TaskRecievers on Task_ID=Task.ID " +
+            //    "join Volunteer on Volunteer.ID=Reciever_ID " +
+            //    "where Volunteer.Committee_ID = '" + CommitteeID + "';";
+            //return dbMan.ExecuteReader(query);
+            string query = $"SELECT Task.Description,Reciever.Name as 'Reciever',Assigner.Name as 'Assigner', Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+               "FROM Task join TaskRecievers on Task_ID=Task.ID " +
+               "join Volunteer as Reciever on Reciever.ID=Reciever_ID join Volunteer as Assigner on Assigner.ID =Task.Assigner_ID " +
+               "where Reciever.Committee_ID = " + CommitteeID + " order by Assigner.ID;";
             return dbMan.ExecuteReader(query);
         }
 

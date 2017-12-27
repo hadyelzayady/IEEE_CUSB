@@ -36,8 +36,17 @@ namespace IEEECUSB
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"] && CommitteesCombo.Items.Count != 0)
+            {
                 int CommID = (int)CommitteesCombo.SelectedValue;
                 IOrequests.DataSource = var.controllerObj.CommRequests(CommID);
+            }
+            if (tabControl1.SelectedTab == tabControl1.TabPages["CommsTasks"] && CommitteesCombo.Items.Count != 0)
+            {
+                int CommID = (int)CommitteesCombo.SelectedValue;
+                IOrequests.DataSource = var.controllerObj.CommTask(CommID);
+            }
+
         }
 
         private void label39_Click(object sender, EventArgs e)
@@ -91,7 +100,7 @@ namespace IEEECUSB
                 if (tabControl1.SelectedTab == tabControl1.TabPages["CommsTasks"] && CommitteesCombo.Items.Count != 0)
                 {
                     int CommID = (int)CommitteesCombo.SelectedValue;
-                    IOrequests.DataSource = var.controllerObj.Committee_Tasks(CommID);
+                    IOrequests.DataSource = var.controllerObj.CommTask(CommID);
                 }
 
             }
@@ -118,15 +127,18 @@ namespace IEEECUSB
 
         private void IOrequests_SelectionChanged(object sender, EventArgs e)
         {
-            if (IOrequests.SelectedRows.Count != 0)
+            if (headTabControl.SelectedTab == headTabControl.TabPages["committeesAffairs"] && tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"])
             {
-                FromCommitteBox.Text = IOrequests.SelectedRows[0].Cells["Sender Committee"].Value.ToString();
-                ToCommitteeBox.Text = IOrequests.SelectedRows[0].Cells["Reciever Committee"].Value.ToString();
-                StartDateBox.Text = IOrequests.SelectedRows[0].Cells["Start_Date"].Value.ToString();
-                DeadlineDate.Text = IOrequests.SelectedRows[0].Cells["Deadline_Date"].Value.ToString();
-                DescriptionBox.Text = IOrequests.SelectedRows[0].Cells["Description"].Value.ToString();
-                PriorityBox.Text = IOrequests.SelectedRows[0].Cells["Priority"].Value.ToString();
-                RequestTitleBox.Text = IOrequests.SelectedRows[0].Cells["Title"].Value.ToString();
+                if (IOrequests.SelectedRows.Count != 0)
+                {
+                    FromCommitteBox.Text = IOrequests.SelectedRows[0].Cells["Sender Committee"].Value.ToString();
+                    ToCommitteeBox.Text = IOrequests.SelectedRows[0].Cells["Reciever Committee"].Value.ToString();
+                    StartDateBox.Text = IOrequests.SelectedRows[0].Cells["Start_Date"].Value.ToString();
+                    DeadlineDate.Text = IOrequests.SelectedRows[0].Cells["Deadline_Date"].Value.ToString();
+                    DescriptionBox.Text = IOrequests.SelectedRows[0].Cells["Description"].Value.ToString();
+                    PriorityBox.Text = IOrequests.SelectedRows[0].Cells["Priority"].Value.ToString();
+                    RequestTitleBox.Text = IOrequests.SelectedRows[0].Cells["Title"].Value.ToString();
+                }
             }
 
         }
@@ -154,7 +166,21 @@ namespace IEEECUSB
 
         private void CommitteesCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (CommitteesCombo.SelectedText != "")
+            {
+                int CommID = (int)CommitteesCombo.SelectedValue;
 
+                if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"])
+                {
+                    IOrequests.DataSource = var.controllerObj.CommRequests(CommID);
+                    IOrequests.Refresh();
+                }
+                else if (tabControl1.SelectedTab == tabControl1.TabPages["CommsTasks"])
+                {
+                    CommTasksGrid.DataSource = var.controllerObj.Committee_Tasks(CommID);
+                    CommTasksGrid.Refresh();
+                }
+            }
         }
 
         private void IOrequests_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -218,10 +244,11 @@ namespace IEEECUSB
             {
                 DataGridViewRow selectedRow = CommTasksGrid.SelectedRows[0];
                 FromBox.Text = selectedRow.Cells["Assigner"].Value.ToString();
+                ToListBox.Items.Clear();
                 foreach (DataGridViewRow row in CommTasksGrid.Rows)
                 {
                     if (row.Cells["Assigner"].Value.ToString() == selectedRow.Cells["Assigner"].Value.ToString())
-                        ToBox.Text += row.Cells["Reciever"];
+                        ToListBox.Items.Add( row.Cells["Reciever"].Value.ToString());
                 }
                 start_dateBox.Text = selectedRow.Cells["Start_Date"].Value.ToString();
                 TitleBox.Text = selectedRow.Cells["Title"].Value.ToString();
