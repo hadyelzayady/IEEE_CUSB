@@ -32,6 +32,11 @@ namespace IEEECUSB
             notificationsData_GridView.Refresh();
             updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
             updatesData_GridView.Refresh();
+            if (var.controllerObj.IsHRHead())
+            {
+                VolunteersManagement.Visible = true;
+                ParticipantsManagement.Visible = true;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
