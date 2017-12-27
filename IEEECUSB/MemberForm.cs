@@ -126,15 +126,22 @@ namespace IEEECUSB
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (filesGrid.SelectedRows.Count != 0)
+             if (filesGrid.SelectedRows.Count != 0)
             {
                 string ServerFilePath = filesGrid.SelectedRows[0].Cells["URL"].Value.ToString();
                 string FileName = filesGrid.SelectedRows[0].Cells["File Title"].Value.ToString() + filesGrid.SelectedRows[0].Cells["Type"].Value.ToString();
                 string LocalFilePath = new FileManager().ChooseFileSavePath(FileName);
-
+                bool ret = false;
                 if (LocalFilePath != "")
-                    var.controllerObj.DownloadFile(LocalFilePath, ServerFilePath);
-
+                    ret = var.controllerObj.DownloadFile(LocalFilePath, ServerFilePath);
+                if (ret == true)
+                {
+                    MessageBox.Show("Your File is Downloaded Successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("An Error Occurred!");
+                }
             }
         }
 
