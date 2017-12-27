@@ -24,6 +24,7 @@ namespace IEEECUSB
                 try
                 {
                     TableGrid.DataSource = var.controllerObj.GetTableData(TablesList.Text);
+                    TableGrid.Refresh();
                 }
                 catch { }
             }
@@ -64,6 +65,7 @@ namespace IEEECUSB
                 Tables.Add(TablesDB.Rows[i][0].ToString());
             }
             TablesList.DataSource = Tables;
+            TablesList.Refresh();
 
             //Committee Season
             List<string> Seasons = new List<string>();
@@ -72,10 +74,22 @@ namespace IEEECUSB
             {
                 Seasons.Add(SeasonsDB.Rows[i][0].ToString());
             }
+            try
+            {
+                CommSection.Items.Clear();
+            }
+            catch { }
             CommSeason.DataSource = Seasons;
+            CommSection.Refresh();
 
             //Section Seasons
+            try
+            {
+                SecSeason.Items.Clear();
+            }
+            catch { }
             SecSeason.DataSource = Seasons;
+            SecSeason.Refresh();
 
         }
 
@@ -100,7 +114,13 @@ namespace IEEECUSB
                 {
                     Sections.Add(SectionsDB.Rows[i]["Name"].ToString());
                 }
+                try
+                {
+                    CommSection.Items.Clear();
+                }
+                catch { }
                 CommSection.DataSource = Sections;
+                CommSection.Refresh();
             }
             else
             {
@@ -153,5 +173,39 @@ namespace IEEECUSB
 
         }
 
+        private void CommSeason_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //Committee Sections
+            List<string> Sections = new List<string>();
+            DataTable SectionsDB = var.controllerObj.GetAvailableSections(CommSeason.Text);
+            if (SectionsDB != null)
+            {
+                for (int i = 0; i < SectionsDB.Rows.Count; i++)
+                {
+                    Sections.Add(SectionsDB.Rows[i]["Name"].ToString());
+                }
+                try
+                {
+                    CommSection.Items.Clear();
+                }
+                catch { }
+                CommSection.DataSource = Sections;
+                CommSection.Refresh();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void SecSeason_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ChangeAdminPW().ShowDialog();
+        }
     }
 }

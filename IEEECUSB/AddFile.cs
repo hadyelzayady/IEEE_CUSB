@@ -23,15 +23,23 @@ namespace IEEECUSB
 
         private void UploadFile_Click(object sender, EventArgs e)
         {
+            bool Return = false;
             if (FileTitle.Text == "")
             {
                 MessageBox.Show("Please Write a File Title");
             }
             if (FilePath != "")
             {
-                string DestinationPath = var.controllerObj.GetCommitteeFolderPath();
                 string FileExt = Path.GetExtension(FilePath);
-                var.controllerObj.UploadFile(FilePath, DestinationPath, FileTitle.Text, FileExt, FileDescription.Text);
+                Return = var.controllerObj.UploadFile(FilePath, FileTitle.Text, FileExt, FileDescription.Text);
+            }
+            if (Return == false)
+            {
+                MessageBox.Show("An Error Occurred!");
+            }
+            else
+            {
+                MessageBox.Show("You file is uploaded successfully!");
             }
             this.Close();
         }
