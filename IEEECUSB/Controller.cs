@@ -407,6 +407,7 @@ namespace IEEECUSB
         public Controller()
         {
             dbMan = new DBManager(); // Create the DBManager Object
+            ftpMan = new FTPManager("ftp://ftp.ieeecusb.org", "IEEECUSBPortal@ieeecusb.org", "123456789");
         }
         public void TerminateConnection()
         {
