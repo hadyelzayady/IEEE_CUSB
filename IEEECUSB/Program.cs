@@ -23,7 +23,7 @@ namespace IEEECUSB
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
               
-            Application.Run(new SupervisorForm());
+            Application.Run(new HeadForm());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

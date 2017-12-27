@@ -16,7 +16,7 @@ namespace IEEECUSB
         private GoogleMail mailAccount;
         private FTPManager ftpMan;
         // (Initially NULL; NO DBManager Object is created yet)
-        public int UserID = 52;
+        public int UserID = 58;
         public int CommitteeID = 1;
         public int Season = 0;
         public string JobPosition = "";
@@ -552,7 +552,7 @@ namespace IEEECUSB
             //    "join Volunteer on Volunteer.ID=Reciever_ID " +
             //    "where Volunteer.Committee_ID = '" + CommitteeID + "';";
             //return dbMan.ExecuteReader(query);
-            string query = $"SELECT Task.Description,Reciever.Name as 'Reciever',Assigner.Name as 'Assigner', Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
+            string query = $"SELECT Task.ID,Task.Description,Reciever.Name as 'Reciever',Assigner.Name as 'Assigner', Task.Title , TaskRecievers.Progress_Description , Task.Start_Date, Task.Deadline_Date " +
                "FROM Task join TaskRecievers on Task_ID=Task.ID " +
                "join Volunteer as Reciever on Reciever.ID=Reciever_ID join Volunteer as Assigner on Assigner.ID =Task.Assigner_ID " +
                "where Reciever.Committee_ID = " + CommitteeID + " order by Assigner.ID;";
@@ -965,7 +965,7 @@ namespace IEEECUSB
 
         public DataTable Section_Task()
         {
-                string query = "SELECT Task.ID , Task.Title , Task.Start_Date, , Task.Deadline,  FROM Task,Committee,Section,Volunteer Where Volunteer.ID = Section.Supervisor_ID AND Committee.Section_ID = Section.ID AND Task.Committee_ID = Committee.ID AND Volunteer.ID='" + UserID + "';; ";
+                string query = "SELECT Task.ID , Task.Title , Task.Start_Date, Task.Description, Task.Deadline_Date  FROM Task,Committee,Section,Volunteer Where Volunteer.ID = Section.Supervisor_ID AND Committee.Section_ID = Section.ID AND Task.Committee_ID = Committee.ID AND Volunteer.ID='" + UserID + "';";
                 return dbMan.ExecuteReader(query);
         }
     }

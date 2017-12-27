@@ -1023,7 +1023,7 @@
             this.editTab.Margin = new System.Windows.Forms.Padding(2);
             this.editTab.Name = "editTab";
             this.editTab.Padding = new System.Windows.Forms.Padding(2);
-            this.editTab.Size = new System.Drawing.Size(1077, 541);
+            this.editTab.Size = new System.Drawing.Size(1078, 543);
             this.editTab.TabIndex = 1;
             this.editTab.Text = "Edit";
             this.editTab.UseVisualStyleBackColor = true;
@@ -1035,7 +1035,7 @@
             this.flowLayoutPanel6.Location = new System.Drawing.Point(2, 473);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(1073, 66);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(1074, 68);
             this.flowLayoutPanel6.TabIndex = 15;
             // 
             // panel34
@@ -1081,7 +1081,7 @@
             this.panel33.Location = new System.Drawing.Point(2, 445);
             this.panel33.Margin = new System.Windows.Forms.Padding(2);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(1073, 28);
+            this.panel33.Size = new System.Drawing.Size(1074, 28);
             this.panel33.TabIndex = 14;
             // 
             // pictureBox9
@@ -1090,7 +1090,7 @@
             this.pictureBox9.Location = new System.Drawing.Point(139, 0);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(934, 28);
+            this.pictureBox9.Size = new System.Drawing.Size(935, 28);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
@@ -1115,7 +1115,7 @@
             this.flowLayoutPanel5.Location = new System.Drawing.Point(2, 377);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(1073, 68);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1074, 68);
             this.flowLayoutPanel5.TabIndex = 13;
             // 
             // panel31
@@ -1182,7 +1182,7 @@
             this.panel30.Location = new System.Drawing.Point(2, 349);
             this.panel30.Margin = new System.Windows.Forms.Padding(2);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(1073, 28);
+            this.panel30.Size = new System.Drawing.Size(1074, 28);
             this.panel30.TabIndex = 12;
             // 
             // pictureBox8
@@ -1191,7 +1191,7 @@
             this.pictureBox8.Location = new System.Drawing.Point(197, 0);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(876, 28);
+            this.pictureBox8.Size = new System.Drawing.Size(877, 28);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 3;
             this.pictureBox8.TabStop = false;
@@ -1222,7 +1222,7 @@
             this.flowLayoutPanel4.Location = new System.Drawing.Point(2, 211);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1073, 138);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1074, 138);
             this.flowLayoutPanel4.TabIndex = 11;
             // 
             // panel21
@@ -1462,7 +1462,7 @@
             this.panel20.Location = new System.Drawing.Point(2, 183);
             this.panel20.Margin = new System.Windows.Forms.Padding(2);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1073, 28);
+            this.panel20.Size = new System.Drawing.Size(1074, 28);
             this.panel20.TabIndex = 10;
             // 
             // pictureBox7
@@ -1471,7 +1471,7 @@
             this.pictureBox7.Location = new System.Drawing.Point(211, 0);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(862, 28);
+            this.pictureBox7.Size = new System.Drawing.Size(863, 28);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
@@ -1502,7 +1502,7 @@
             this.panel19.Location = new System.Drawing.Point(2, 2);
             this.panel19.Margin = new System.Windows.Forms.Padding(2);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1073, 181);
+            this.panel19.Size = new System.Drawing.Size(1074, 181);
             this.panel19.TabIndex = 9;
             this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
             // 
@@ -1601,7 +1601,7 @@
             this.addTab.Margin = new System.Windows.Forms.Padding(2);
             this.addTab.Name = "addTab";
             this.addTab.Padding = new System.Windows.Forms.Padding(2);
-            this.addTab.Size = new System.Drawing.Size(1077, 541);
+            this.addTab.Size = new System.Drawing.Size(1078, 543);
             this.addTab.TabIndex = 2;
             this.addTab.Text = "Add";
             this.addTab.UseVisualStyleBackColor = true;
@@ -1613,7 +1613,7 @@
             this.panel36.Location = new System.Drawing.Point(2, 2);
             this.panel36.Margin = new System.Windows.Forms.Padding(2);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(1073, 537);
+            this.panel36.Size = new System.Drawing.Size(1074, 539);
             this.panel36.TabIndex = 0;
             // 
             // panel37
@@ -1627,7 +1627,7 @@
             this.panel37.Location = new System.Drawing.Point(0, 0);
             this.panel37.Margin = new System.Windows.Forms.Padding(2);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(1073, 537);
+            this.panel37.Size = new System.Drawing.Size(1074, 539);
             this.panel37.TabIndex = 0;
             // 
             // flowLayoutPanel8
@@ -1638,7 +1638,7 @@
             this.flowLayoutPanel8.Location = new System.Drawing.Point(0, 375);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(1073, 68);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(1074, 68);
             this.flowLayoutPanel8.TabIndex = 14;
             // 
             // panel50
@@ -1705,7 +1705,7 @@
             this.panel49.Location = new System.Drawing.Point(0, 347);
             this.panel49.Margin = new System.Windows.Forms.Padding(2);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(1073, 28);
+            this.panel49.Size = new System.Drawing.Size(1074, 28);
             this.panel49.TabIndex = 13;
             // 
             // pictureBox12
@@ -1714,7 +1714,7 @@
             this.pictureBox12.Location = new System.Drawing.Point(197, 0);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(876, 28);
+            this.pictureBox12.Size = new System.Drawing.Size(877, 28);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 3;
             this.pictureBox12.TabStop = false;
@@ -1745,7 +1745,7 @@
             this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 209);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(1073, 138);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(1074, 138);
             this.flowLayoutPanel7.TabIndex = 12;
             // 
             // panel40
@@ -1984,7 +1984,7 @@
             this.panel39.Location = new System.Drawing.Point(0, 181);
             this.panel39.Margin = new System.Windows.Forms.Padding(2);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(1073, 28);
+            this.panel39.Size = new System.Drawing.Size(1074, 28);
             this.panel39.TabIndex = 11;
             // 
             // pictureBox11
@@ -1993,7 +1993,7 @@
             this.pictureBox11.Location = new System.Drawing.Point(211, 0);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(862, 28);
+            this.pictureBox11.Size = new System.Drawing.Size(863, 28);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 3;
             this.pictureBox11.TabStop = false;
@@ -2024,7 +2024,7 @@
             this.panel38.Location = new System.Drawing.Point(0, 0);
             this.panel38.Margin = new System.Windows.Forms.Padding(2);
             this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(1073, 181);
+            this.panel38.Size = new System.Drawing.Size(1074, 181);
             this.panel38.TabIndex = 10;
             // 
             // label2

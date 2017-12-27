@@ -340,9 +340,9 @@ namespace IEEECUSB
         private void button1_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selected = dataGridView4.SelectedRows;
-            int x = (int)selected[0].Cells[0].Value;
             if (selected.Count != 0)
             {
+                int x = (int)selected[0].Cells["ID"].Value;
                 new EditTask(x).ShowDialog();
             }
         }
@@ -533,6 +533,15 @@ namespace IEEECUSB
             DescL.Text = "";
             DateL.Text = "";
             TitleL.Text = "";
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selected = ReceivedReqList.SelectedRows;
+            if (selected.Count != 0)
+            {
+                new ViewRequest(selected).ShowDialog();
+            }
         }
     }
 }

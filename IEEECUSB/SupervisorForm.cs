@@ -78,6 +78,11 @@ namespace IEEECUSB
                 updatesData_GridView.DataSource = var.controllerObj.SelectHeadNotif();
                 updatesData_GridView.Refresh();
             }
+            else if (headTabControl.SelectedTab == headTabControl.TabPages["sectionTasksTab"])
+            {
+                dataGridView4.DataSource = var.controllerObj.Section_Task();
+                dataGridView4.Refresh();
+            }
             else if (headTabControl.SelectedTab == headTabControl.TabPages["committeesAffairs"])
             {
                 //
@@ -87,11 +92,7 @@ namespace IEEECUSB
                     CommitteesCombo.ValueMember = "ID";
                     CommitteesCombo.DisplayMember = "Name";
                 }
-                //if (tabControl1.SelectedTab == tabControl1.TabPages["sectionTasksTab"] && CommitteesCombo.Items.Count!=0)
-                //{
-                //    dataGridView4.DataSource = var.controllerObj.Section_Task();
-                //    dataGridView4.Refresh();
-                //}
+
                 if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"] && CommitteesCombo.Items.Count != 0)
                 {
                     int CommID = (int)CommitteesCombo.SelectedValue;
@@ -103,11 +104,6 @@ namespace IEEECUSB
                     IOrequests.DataSource = var.controllerObj.CommTask(CommID);
                 }
 
-            }
-            else if (headTabControl.SelectedTab == headTabControl.TabPages["homeTab"])
-            {
-                updatesData_GridView.DataSource = var.controllerObj.SelectHeadNotif();
-                updatesData_GridView.Refresh();
             }
         }
 
@@ -168,7 +164,7 @@ namespace IEEECUSB
         {
             if (CommitteesCombo.SelectedText != "")
             {
-                int CommID = (int)CommitteesCombo.SelectedValue;
+                int CommID = int.Parse(CommitteesCombo.SelectedValue.ToString());
 
                 if (tabControl1.SelectedTab == tabControl1.TabPages["CommsRequests"])
                 {
@@ -369,6 +365,11 @@ namespace IEEECUSB
             notificationsData_GridView.Refresh();
             updatesData_GridView.DataSource = var.controllerObj.Member_Updates();
             updatesData_GridView.Refresh();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

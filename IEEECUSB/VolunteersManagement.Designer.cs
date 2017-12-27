@@ -90,7 +90,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NameL = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.JobTitleL = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.editTab = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -405,6 +405,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(986, 572);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // viewTab
             // 
@@ -981,7 +982,7 @@
             this.panel1.Controls.Add(this.IDLabel);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.NameL);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.JobTitleL);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(2, 2);
@@ -998,9 +999,8 @@
             this.IDLabel.Location = new System.Drawing.Point(450, 64);
             this.IDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(81, 23);
+            this.IDLabel.Size = new System.Drawing.Size(0, 23);
             this.IDLabel.TabIndex = 8;
-            this.IDLabel.Text = "ID : 1995";
             // 
             // groupBox1
             // 
@@ -1033,17 +1033,16 @@
             this.NameL.TabIndex = 1;
             this.NameL.Text = "Mahmoud Mohamed Morsy";
             // 
-            // label2
+            // JobTitleL
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(187, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(248, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Embedded Systems Moderator";
+            this.JobTitleL.AutoSize = true;
+            this.JobTitleL.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JobTitleL.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.JobTitleL.Location = new System.Drawing.Point(187, 64);
+            this.JobTitleL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.JobTitleL.Name = "JobTitleL";
+            this.JobTitleL.Size = new System.Drawing.Size(0, 23);
+            this.JobTitleL.TabIndex = 2;
             // 
             // button1
             // 
@@ -1069,7 +1068,7 @@
             this.editTab.Margin = new System.Windows.Forms.Padding(2);
             this.editTab.Name = "editTab";
             this.editTab.Padding = new System.Windows.Forms.Padding(2);
-            this.editTab.Size = new System.Drawing.Size(978, 541);
+            this.editTab.Size = new System.Drawing.Size(978, 543);
             this.editTab.TabIndex = 1;
             this.editTab.Text = "Edit";
             this.editTab.UseVisualStyleBackColor = true;
@@ -1081,7 +1080,7 @@
             this.flowLayoutPanel6.Location = new System.Drawing.Point(2, 473);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(974, 66);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(974, 68);
             this.flowLayoutPanel6.TabIndex = 15;
             // 
             // panel35
@@ -1669,7 +1668,7 @@
             this.addTab.Margin = new System.Windows.Forms.Padding(2);
             this.addTab.Name = "addTab";
             this.addTab.Padding = new System.Windows.Forms.Padding(2);
-            this.addTab.Size = new System.Drawing.Size(978, 541);
+            this.addTab.Size = new System.Drawing.Size(978, 543);
             this.addTab.TabIndex = 2;
             this.addTab.Text = "Add";
             this.addTab.UseVisualStyleBackColor = true;
@@ -1681,7 +1680,7 @@
             this.panel36.Location = new System.Drawing.Point(2, 2);
             this.panel36.Margin = new System.Windows.Forms.Padding(2);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(974, 537);
+            this.panel36.Size = new System.Drawing.Size(974, 539);
             this.panel36.TabIndex = 0;
             // 
             // panel37
@@ -1697,7 +1696,7 @@
             this.panel37.Location = new System.Drawing.Point(0, 0);
             this.panel37.Margin = new System.Windows.Forms.Padding(2);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(974, 537);
+            this.panel37.Size = new System.Drawing.Size(974, 539);
             this.panel37.TabIndex = 0;
             // 
             // flowLayoutPanel9
@@ -1707,7 +1706,7 @@
             this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 471);
             this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(974, 66);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(974, 68);
             this.flowLayoutPanel9.TabIndex = 16;
             // 
             // panel54
@@ -2553,7 +2552,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NameL;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label JobTitleL;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage editTab;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;

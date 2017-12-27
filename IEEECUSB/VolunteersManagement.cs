@@ -54,7 +54,7 @@ namespace IEEECUSB
                     SSNL.Text = Volunteer.Rows[0]["National_ID"].ToString();
                     PhoneL.Text = Volunteer.Rows[0]["Mobile"].ToString();
                     EmailL.Text = Volunteer.Rows[0]["Mail"].ToString();
-                    IDLabel.Text = Volunteer.Rows[0]["ID"].ToString();
+                    IDLabel.Text = "ID:"+Volunteer.Rows[0]["ID"].ToString();
                     if(Volunteer.Rows[0]["Birthdate"].ToString()!="")
                         BirthdateL.Text = Convert.ToDateTime(Volunteer.Rows[0]["Birthdate"].ToString()).ToShortDateString();
                     GraduationL.Text = Volunteer.Rows[0]["Graduation_Year"].ToString();
@@ -63,6 +63,7 @@ namespace IEEECUSB
                     statusL.Text = Volunteer.Rows[0]["Activity_Status"].ToString();
                     UniversityL.Text = Volunteer.Rows[0]["University"].ToString();
                     int CommID = (int)Volunteer.Rows[0]["Committee_ID"];
+                    JobTitleL.Text = Volunteer.Rows[0]["Job_Title"].ToString();
                     CommsComb2.SelectedValue = CommID;
                     CommL.Text = CommsComb2.GetItemText(CommsComb2.SelectedItem);
                     VolunteeringSeasonsL.Text = "";
@@ -178,6 +179,14 @@ namespace IEEECUSB
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == editTab)
+            {
+                tabControl1.SelectedTab = viewTab;
+            }
         }
     }
 }
