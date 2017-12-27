@@ -177,9 +177,6 @@
             this.panel41 = new System.Windows.Forms.Panel();
             this.Birthdatepicker = new System.Windows.Forms.DateTimePicker();
             this.label44 = new System.Windows.Forms.Label();
-            this.panel42 = new System.Windows.Forms.Panel();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
             this.panel43 = new System.Windows.Forms.Panel();
             this.JobTitleCombo = new System.Windows.Forms.ComboBox();
             this.label48 = new System.Windows.Forms.Label();
@@ -285,7 +282,6 @@
             this.flowLayoutPanel7.SuspendLayout();
             this.panel40.SuspendLayout();
             this.panel41.SuspendLayout();
-            this.panel42.SuspendLayout();
             this.panel43.SuspendLayout();
             this.panel44.SuspendLayout();
             this.panel45.SuspendLayout();
@@ -1877,7 +1873,6 @@
             // 
             this.flowLayoutPanel7.Controls.Add(this.panel40);
             this.flowLayoutPanel7.Controls.Add(this.panel41);
-            this.flowLayoutPanel7.Controls.Add(this.panel42);
             this.flowLayoutPanel7.Controls.Add(this.panel43);
             this.flowLayoutPanel7.Controls.Add(this.panel44);
             this.flowLayoutPanel7.Controls.Add(this.panel45);
@@ -1948,39 +1943,11 @@
             this.label44.TabIndex = 0;
             this.label44.Text = "Birth Date";
             // 
-            // panel42
-            // 
-            this.panel42.Controls.Add(this.textBox16);
-            this.panel42.Controls.Add(this.label46);
-            this.panel42.Location = new System.Drawing.Point(307, 2);
-            this.panel42.Margin = new System.Windows.Forms.Padding(2);
-            this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(149, 64);
-            this.panel42.TabIndex = 0;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(20, 34);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(128, 24);
-            this.textBox16.TabIndex = 2;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(17, 15);
-            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(84, 17);
-            this.label46.TabIndex = 0;
-            this.label46.Text = "Volunteer ID";
-            // 
             // panel43
             // 
             this.panel43.Controls.Add(this.JobTitleCombo);
             this.panel43.Controls.Add(this.label48);
-            this.panel43.Location = new System.Drawing.Point(460, 2);
+            this.panel43.Location = new System.Drawing.Point(307, 2);
             this.panel43.Margin = new System.Windows.Forms.Padding(2);
             this.panel43.Name = "panel43";
             this.panel43.Size = new System.Drawing.Size(149, 64);
@@ -2009,7 +1976,7 @@
             // 
             this.panel44.Controls.Add(this.CommsComb);
             this.panel44.Controls.Add(this.label50);
-            this.panel44.Location = new System.Drawing.Point(613, 2);
+            this.panel44.Location = new System.Drawing.Point(460, 2);
             this.panel44.Margin = new System.Windows.Forms.Padding(2);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(149, 64);
@@ -2039,7 +2006,7 @@
             // 
             this.panel45.Controls.Add(this.CollegeBox);
             this.panel45.Controls.Add(this.label52);
-            this.panel45.Location = new System.Drawing.Point(2, 70);
+            this.panel45.Location = new System.Drawing.Point(613, 2);
             this.panel45.Margin = new System.Windows.Forms.Padding(2);
             this.panel45.Name = "panel45";
             this.panel45.Size = new System.Drawing.Size(218, 64);
@@ -2067,7 +2034,7 @@
             // 
             this.panel46.Controls.Add(this.DepartBox);
             this.panel46.Controls.Add(this.label54);
-            this.panel46.Location = new System.Drawing.Point(224, 70);
+            this.panel46.Location = new System.Drawing.Point(2, 70);
             this.panel46.Margin = new System.Windows.Forms.Padding(2);
             this.panel46.Name = "panel46";
             this.panel46.Size = new System.Drawing.Size(218, 64);
@@ -2095,7 +2062,7 @@
             // 
             this.panel47.Controls.Add(this.GradYearPicker);
             this.panel47.Controls.Add(this.label57);
-            this.panel47.Location = new System.Drawing.Point(446, 70);
+            this.panel47.Location = new System.Drawing.Point(224, 70);
             this.panel47.Margin = new System.Windows.Forms.Padding(2);
             this.panel47.Name = "panel47";
             this.panel47.Size = new System.Drawing.Size(149, 64);
@@ -2126,7 +2093,7 @@
             // 
             this.panel48.Controls.Add(this.UniversityBox);
             this.panel48.Controls.Add(this.label59);
-            this.panel48.Location = new System.Drawing.Point(599, 70);
+            this.panel48.Location = new System.Drawing.Point(377, 70);
             this.panel48.Margin = new System.Windows.Forms.Padding(2);
             this.panel48.Name = "panel48";
             this.panel48.Size = new System.Drawing.Size(194, 64);
@@ -2461,8 +2428,6 @@
             this.panel40.PerformLayout();
             this.panel41.ResumeLayout(false);
             this.panel41.PerformLayout();
-            this.panel42.ResumeLayout(false);
-            this.panel42.PerformLayout();
             this.panel43.ResumeLayout(false);
             this.panel43.PerformLayout();
             this.panel44.ResumeLayout(false);
@@ -2631,8 +2596,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Panel panel41;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Panel panel43;
         private System.Windows.Forms.ComboBox JobTitleCombo;
         private System.Windows.Forms.Label label48;
@@ -2668,7 +2631,6 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.DateTimePicker Birthdatepicker;
         private System.Windows.Forms.DateTimePicker GradYearPicker;
         private System.Windows.Forms.Panel panel21;

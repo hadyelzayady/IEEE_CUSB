@@ -69,8 +69,12 @@ namespace IEEECUSB
         {
             if(checkedListBox1.CheckedItems.Count!=0 && textBox1.Text != "" && textBox2.Text != "")
             {
-                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker2.Value);
+                var.controllerObj.DeleteTask(Task_ID);
                 var.controllerObj.DeleteTaskRec(Task_ID);
+                var.controllerObj.InsertTask(textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker2.Value);
+                DataTable dt1 = var.controllerObj.MaxTaskID();
+                Task_ID = Convert.ToInt32(dt1.Rows[0]["MAX(ID)"].ToString());
+
                 DataTable dt = var.controllerObj.Committee_Members();
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {

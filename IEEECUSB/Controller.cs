@@ -474,7 +474,7 @@ namespace IEEECUSB
         {
             string query = "SELECT Volunteer.Name ,Task.Title , Task.Start_Date,Task.End_Date ,Task.Description  from" +
                  " Task join TaskRecievers on Task.ID=Task_ID join Volunteer on Assigner_ID=Volunteer.ID" +
-                " where Task.Status IS NULL and Reciever_ID=" + UserID + " UNION " +
+                " where TaskRecievers.Status IS NULL and Reciever_ID=" + UserID + " UNION " +
                 "select Committee.Name,Request.Title,Request.Start_Date,Request.End_Date,Request.Description FROM " +
                 "Request join Committee on Request.ID = Sender_Comm_ID " +
                 "where Reciever_Comm_ID= " + CommitteeID + ";";
@@ -522,7 +522,7 @@ namespace IEEECUSB
 
         public DataTable Member_Notification()
         {
-            string query = "SELECT Description FROM Notification join Volunteer on Notification.Vol_ID = Volunteer.ID Where (Vol_ID ='" + UserID + "' AND Notification.Creation_Date < Volunteer.Last_Login) ; ";
+            string query = "SELECT Description FROM Notification join Volunteer on  Notification.Vol_ID = Volunteer.ID Where (Vol_ID ='" + UserID + "') ; ";
             return dbMan.ExecuteReader(query);
         }
 
@@ -610,6 +610,12 @@ namespace IEEECUSB
         public int InsertTask(string Title, string description, DateTime Start_Date, DateTime Deadline)
         {
             string query = "INSERT INTO Task (Title,Description , Assigner_ID,Committee_ID , Creation_Date , Start_Date , Deadline_Date) Values ('" + Title + "','" + description + "','" + UserID + "','" + CommitteeID + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + Start_Date.ToString("yyyy-MM-dd") + "','" + Deadline.ToString("yyyy-MM-dd") + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int EditTask(string Title, string description, DateTime Start_Date, DateTime Deadline)
+        {
+            string query = "Update Task (Title,Description , Assigner_ID,Committee_ID , Creation_Date , Start_Date , Deadline_Date) Values ('" + Title + "','" + description + "','" + UserID + "','" + CommitteeID + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + Start_Date.ToString("yyyy-MM-dd") + "','" + Deadline.ToString("yyyy-MM-dd") + "')";
             return dbMan.ExecuteNonQuery(query);
         }
 
